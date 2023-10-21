@@ -5,10 +5,10 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     [
-      "@nuxtjs/strapi",
+      '@nuxtjs/strapi',
       {
         strapi: {
-          url: "http://localhost:1337",
+          url: 'http://localhost:1337',
         },
       },
     ],
