@@ -19,6 +19,11 @@ export default defineNuxtConfig({
     // Keys within public are also exposed client-side
     public: {
       apiBase: '/api',
+  css: ['~/assets/css/main.css'],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
     },
   },
 });
