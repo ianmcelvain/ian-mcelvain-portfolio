@@ -1,9 +1,7 @@
 <template>
-  <div></div>
+  <h1 class="text-3xl font-bold underline">Hello world!</h1>
 </template>
 
-<script setup>
-console.log("tetsts");
-</script>
+<script setup></script>
 
 <style lang="scss" scoped></style>
