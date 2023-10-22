@@ -17,6 +17,7 @@ module.exports = {
   rules: {
     quotes: [2, 'single', { avoidEscape: true }],
     'no-console': 'warn',
+    'vue/multi-word-component-names': 'off',
     // 'vue/require-default-prop': 'off',
   },
 };
