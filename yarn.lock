@@ -6691,7 +6691,14 @@ vue-router@^4.2.5:
   dependencies:
     "@vue/devtools-api" "^6.5.0"
 
-vue@^3.3.4:
+vue3-marquee-slider@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/vue3-marquee-slider/-/vue3-marquee-slider-1.0.5.tgz#bccba9db644831b212541d249ec7080129d8ee88"
+  integrity sha512-92nrvGrmTC9Ltqz6QRXdkuJ5Tj6gM+69xy8sEB2kq/xY8RI/FTQxDF6QiCyJdieJDNL67giKlhJVDL0D9i9SxQ==
+  dependencies:
+    vue "^3.2.45"
+
+vue@^3.2.45, vue@^3.3.4:
   version "3.3.6"
   resolved "https://registry.yarnpkg.com/vue/-/vue-3.3.6.tgz#bc1b129a73705db16da90aa1edde539d7401ca9d"
   integrity sha512-jJIDETeWJnoY+gfn4ZtMPMS5KtbP4ax+CT4dcQFhTnWEk8xMupFyQ0JxL28nvT/M4+p4a0ptxaV2WY0LiIxvRg==
