@@ -24,6 +24,16 @@ export default defineNuxtConfig({
       },
     ],
   ],
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false,
+    },
+    {
+      path: '~/components/layout',
+      pathPrefix: false,
+    },
+  ],
   css: ['~/assets/css/main.css'],
   postcss: {
     plugins: {

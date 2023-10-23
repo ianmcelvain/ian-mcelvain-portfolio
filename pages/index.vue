@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <ArticleContainer class="text-center">
     <h4 className="subtitle">
       Writing games, native apps, and websites since 2012
     </h4>
@@ -19,7 +19,7 @@
         <IconButton text="ianmcelvain" icon="mdi:github" />
       </a>
     </div>
-  </div>
+  </ArticleContainer>
 </template>
 
 <script setup></script>

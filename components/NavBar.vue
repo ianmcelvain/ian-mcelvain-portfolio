@@ -57,6 +57,6 @@ function handleClick(page) {
   @apply lg:top-0 lg:left-0 lg:flex lg:flex-col lg:h-screen lg:w-[150px]
           md:top-0 md:left-0 md:flex md:flex-col md:h-screen md:w-[150px]
           sm:top-0 sm:left-0 sm:flex sm:flex-col sm:h-screen sm:w-[150px] sm:justify-normal
-          mt-20 text-white fixed inline-flex w-full flex-row bg-white bottom-0 z-20 justify-around;
+          mt-20 text-white inline-flex w-full flex-row bg-white bottom-0 z-20 justify-around;
 }
 </style>

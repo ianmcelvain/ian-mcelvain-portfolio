@@ -1,10 +1,8 @@
 <template>
-  <div>
+  <div class="flex">
     <NavBar />
     <PageContainer>
-      <ReadingContainer>
-        <slot />
-      </ReadingContainer>
+      <slot />
     </PageContainer>
   </div>
 </template>
