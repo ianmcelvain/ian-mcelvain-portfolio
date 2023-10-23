@@ -1,0 +1,60 @@
+<template>
+  <div id="navigation" class="navbar">
+    <NuxtLink
+      v-for="page in pages"
+      :key="page.route"
+      :to="page.route"
+      @click="handleClick(page)"
+    >
+      <IconButton
+        :icon="page.icon"
+        :width="50"
+        orientation="vertical"
+        :active="page.active"
+      >
+        {{ page.name }}
+      </IconButton>
+    </NuxtLink>
+  </div>
+</template>
+
+<script setup>
+const pages = ref([
+  {
+    route: '/',
+    name: 'Information',
+    icon: 'mdi:information-outline',
+    active: true,
+  },
+  {
+    route: '/updates',
+    name: 'Updates',
+    icon: 'mdi:file-document-edit-outline',
+  },
+  {
+    route: '/projects',
+    name: 'Projects',
+    icon: 'mdi:archive-outline',
+  },
+]);
+
+function resetActivePages() {
+  pages.value.forEach((page) => {
+    delete page.active;
+  });
+}
+
+function handleClick(page) {
+  resetActivePages();
+  page.active = true;
+}
+</script>
+
+<style lang="css" scoped>
+.navbar {
+  @apply lg:top-0 lg:left-0 lg:flex lg:flex-col lg:h-screen lg:w-[150px]
+          md:top-0 md:left-0 md:flex md:flex-col md:h-screen md:w-[150px]
+          sm:top-0 sm:left-0 sm:flex sm:flex-col sm:h-screen sm:w-[150px] sm:justify-normal
+          mt-20 text-white fixed inline-flex w-full flex-row bg-white bottom-0 z-20 justify-around;
+}
+</style>
