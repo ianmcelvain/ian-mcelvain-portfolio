@@ -16,9 +16,7 @@
         </IconButton>
       </a>
       <a href="https://github.com/ianmcelvain" target="_blank" rel="noreferrer">
-        <IconButton icon="mdi:github">
-          {{ 'ianmcelvain' }}
-        </IconButton>
+        <IconButton text="ianmcelvain" icon="mdi:github" />
       </a>
     </div>
   </div>
