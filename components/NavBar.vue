@@ -4,11 +4,13 @@
       v-for="page in pages"
       :key="page.route"
       :to="page.route"
+      class="mx-auto my-4"
       @click="handleClick(page)"
     >
       <IconButton
         :icon="page.icon"
-        :width="50"
+        :text="page.name"
+        :width="32"
         orientation="vertical"
         :active="page.active"
       >

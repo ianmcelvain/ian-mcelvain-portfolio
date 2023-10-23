@@ -1,5 +1,10 @@
 <template>
-  <Tooltip :title="text" :disabled="!text">
+  <Tooltip
+    :title="text"
+    :orientation="orientation"
+    :disabled="!text"
+    :class="`button-tooltip ${orientation} ${active ? 'active' : ''}`"
+  >
     <Icon
       :icon="icon"
       :width="width"
@@ -36,12 +41,11 @@ const props = defineProps({
 </script>
 
 <style scoped>
-.icon {
-  @apply h-12 w-12 
-          text-gray-800 hover:scale-110 hover:shadow-md cursor-pointer 
+.button-tooltip {
+  @apply text-gray-800 hover:scale-110 hover:shadow-md cursor-pointer 
           hover:rounded-xl transition-all duration-200 ease-linear;
 }
-.icon.active {
+.button-tooltip.active {
   @apply shadow-md rounded-xl scale-110 bg-gray-800 text-white;
 }
 </style>

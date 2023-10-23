@@ -26,20 +26,17 @@ const props = defineProps({
 
 <style scoped>
 .tooltip-content {
-  @apply relative flex items-center justify-center
+  @apply relative flex items-center justify-center p-2
           bottom-2 sm:bottom-0 md:bottom-0 lg:bottom-0;
 }
 .tooltip-content.horizontal {
   @apply mr-8 mb-4;
 }
-.tooltip-content.vertical {
-  @apply mx-auto my-4;
-}
 .tooltip {
   @apply absolute w-auto p-2 m-2 min-w-max
-          rounded-md shadow-md text-white bg-gray-800
-          text-xs font-bold transition-all duration-100
-          scale-0 origin-left group-hover:scale-100;
+            rounded-md shadow-md text-white bg-gray-800
+            text-xs font-bold transition-all duration-100
+            scale-0 origin-left group-hover:scale-100;
 }
 .tooltip.horizontal {
   @apply top-12;
