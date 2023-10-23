@@ -16,8 +16,16 @@ module.exports = {
   ],
   rules: {
     quotes: [2, 'single', { avoidEscape: true }],
+    'prettier/prettier': [
+      'warn',
+      {
+        singleQuote: true,
+        semi: true,
+      },
+    ],
     'no-console': 'warn',
     'vue/multi-word-component-names': 'off',
+    // "tailwindcss/no-custom-classname": "off",
     // 'vue/require-default-prop': 'off',
   },
 };
