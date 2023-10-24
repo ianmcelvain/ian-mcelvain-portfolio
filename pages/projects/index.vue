@@ -1,5 +1,5 @@
 <template>
-  <IconButtonGroup :items="categories" />
+  <IconButtonGroup :items="categories" @active-change="handleActiveChange" />
 </template>
 
 <script setup>
@@ -21,6 +21,10 @@ const categories = ref([
     icon: 'mdi:web',
   },
 ]);
+
+function handleActiveChange(item) {
+  // TODO: filter projects here
+}
 </script>
 
 <style scoped></style>

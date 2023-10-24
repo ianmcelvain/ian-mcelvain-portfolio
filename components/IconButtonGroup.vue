@@ -5,6 +5,8 @@
       :key="item.name"
       :icon="item.icon"
       :text="item.name"
+      :active="activeItem.name === item.name"
+      @click="handleClick(item)"
     />
   </div>
 </template>
@@ -20,6 +22,16 @@ const props = defineProps({
     default: 'horizontal',
   },
 });
+
+const { items } = toRefs(props);
+const activeItem = ref(items.value[0]);
+
+const emit = defineEmits(['activeChange']);
+
+function handleClick(item) {
+  activeItem.value = item;
+  emit('activeChange', item);
+}
 </script>
 
 <style scoped>
