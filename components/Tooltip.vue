@@ -34,9 +34,9 @@ const props = defineProps({
 }
 .tooltip {
   @apply absolute w-auto p-2 m-2 min-w-max
-            rounded-md shadow-md text-white bg-gray-800
-            text-xs font-bold transition-all duration-100
-            scale-0 origin-left group-hover:scale-100;
+          rounded-md shadow-md text-white bg-gray-800
+          text-xs font-bold transition-all duration-100
+          scale-0 origin-left group-hover:scale-100;
 }
 .tooltip.horizontal {
   @apply top-12;
