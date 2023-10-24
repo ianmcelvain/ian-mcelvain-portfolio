@@ -52,7 +52,7 @@ function handleClick(page) {
 }
 </script>
 
-<style lang="css" scoped>
+<style scoped>
 .navbar {
   @apply lg:top-0 lg:left-0 lg:flex lg:flex-col lg:h-screen lg:w-[150px]
           md:top-0 md:left-0 md:flex md:flex-col md:h-screen md:w-[150px]
