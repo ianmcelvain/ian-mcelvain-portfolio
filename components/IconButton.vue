@@ -27,7 +27,7 @@ const props = defineProps({
   },
   width: {
     type: Number,
-    default: 44,
+    default: 32,
   },
   orientation: {
     type: String,
