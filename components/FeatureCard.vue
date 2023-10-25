@@ -50,9 +50,6 @@ defineProps({
 </script>
 
 <style scoped>
-.feature {
-  @apply mt-12;
-}
 .feature-image {
   @apply h-56 -mt-8 bg-cover bg-center rounded-xl relative shadow-md;
 }
