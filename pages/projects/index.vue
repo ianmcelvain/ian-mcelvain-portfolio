@@ -4,7 +4,6 @@
       :items="PROJECT_CATEGORIES"
       @active-change="handleActiveChange"
     />
-
     <Grid>
       <FeatureCard
         v-for="project in filteredProjects"
