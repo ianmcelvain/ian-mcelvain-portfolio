@@ -1,8 +1,11 @@
 <template>
   <div>
-    <IconButtonGroup :items="categories" @active-change="handleActiveChange" />
+    <IconButtonGroup
+      :items="PROJECT_CATEGORIES"
+      @active-change="handleActiveChange"
+    />
 
-    <div class="project-grid">
+    <Grid>
       <FeatureCard
         v-for="project in filteredProjects"
         :key="project.title"
@@ -10,11 +13,13 @@
         :title="project.title"
         :description="project.description"
       />
-    </div>
+    </Grid>
   </div>
 </template>
 
 <script setup>
+import PROJECT_CATEGORIES from '~/constants/project_categories';
+
 const projectData = [
   {
     title: 'Balloon Fight',
@@ -49,25 +54,6 @@ const projectData = [
   },
 ];
 
-const categories = ref([
-  {
-    name: 'All',
-    icon: 'mdi:layers-triple-outline',
-  },
-  {
-    name: 'Game',
-    icon: 'mdi:controller-classic-outline',
-  },
-  {
-    name: 'App',
-    icon: 'mdi:cellphone',
-  },
-  {
-    name: 'Website',
-    icon: 'mdi:web',
-  },
-]);
-
 const filteredProjects = ref(projectData);
 
 function handleActiveChange(category) {
@@ -82,9 +68,4 @@ function handleActiveChange(category) {
 }
 </script>
 
-<style scoped>
-.project-grid {
-  @apply grid gap-12 my-8 grid-cols-1 
-          sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4;
-}
-</style>
+<style scoped></style>
