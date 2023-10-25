@@ -44,19 +44,6 @@ const projectData = [
     category: 'other',
   },
 ];
-
-const filteredProjects = ref(projectData);
-
-function handleActiveChange(category) {
-  if (category.name === 'All') {
-    filteredProjects.value = projectData;
-    return;
-  }
-
-  filteredProjects.value = projectData.filter((project) => {
-    return project.category === category.name.toLowerCase();
-  });
-}
 </script>
 
 <style scoped></style>

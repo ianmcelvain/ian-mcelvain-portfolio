@@ -1,6 +1,6 @@
 <template>
   <div>
-    <CardGrid type="Blog" :data="updateData" />
+    <CardGrid type="Blog" :categories="UPDATE_CATEGORIES" :data="updateData" />
   </div>
 </template>
 
@@ -45,19 +45,6 @@ const updateData = [
     publishDate: 'February 12th 2023',
   },
 ];
-
-const filteredUpdates = ref(updateData);
-
-function handleActiveChange(category) {
-  if (category.name === 'All') {
-    filteredUpdates.value = updateData;
-    return;
-  }
-
-  filteredUpdates.value = updateData.filter((update) => {
-    return update.category === category.name.toLowerCase();
-  });
-}
 </script>
 
 <style scoped></style>
