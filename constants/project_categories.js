@@ -15,6 +15,10 @@ const PROJECT_CATEGORIES = Object.freeze([
     name: 'Website',
     icon: 'mdi:web',
   },
+  {
+    name: 'Other',
+    icon: 'mdi:console-line',
+  },
 ]);
 
 export default PROJECT_CATEGORIES;
