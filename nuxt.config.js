@@ -23,7 +23,24 @@ export default defineNuxtConfig({
         },
       },
     ],
+    ['@nuxtjs/apollo'],
   ],
+  // apollo: {
+  //   clients: {
+  //     default: {
+  //       httpEndpoint:
+  //         process.env.BACKEND_URL || 'http://localhost:1337/graphql',
+  //     },
+  //   },
+  // },
+  apollo: {
+    clients: {
+      default: {
+        httpEndpoint:
+          process.env.BACKEND_URL || 'http://localhost:1337/graphql',
+      },
+    },
+  },
   components: [
     {
       path: '~/components',
