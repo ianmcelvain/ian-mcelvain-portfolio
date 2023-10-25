@@ -1,6 +1,6 @@
 <template>
   <div>
-    <CardGrid type="Blog" :categories="UPDATE_CATEGORIES" :data="updateData" />
+    <CardGrid type="Blog" :data="updateData" />
   </div>
 </template>
 

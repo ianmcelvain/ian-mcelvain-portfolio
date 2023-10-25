@@ -1,6 +1,10 @@
 <template>
   <div>
-    <IconButtonGroup :items="categories" @active-change="handleActiveChange" />
+    <IconButtonGroup
+      v-if="categories.length"
+      :items="categories"
+      @active-change="handleActiveChange"
+    />
     <Grid>
       <component
         :is="cardComponent"
