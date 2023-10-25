@@ -5,7 +5,9 @@
   >
     <div
       class="post-thumbnail h-60 mb-4 relative"
-      :style="{ backgroundImage: `url(${image})` }"
+      :style="{
+        backgroundImage: `url(http://localhost:1337${featuredImage.data.attributes.url})`,
+      }"
     >
       <div
         class="absolute flex font-medium drop-shadow-lg bottom-0 left-0 -mb-5 ml-3"
@@ -25,7 +27,7 @@
     </div>
     <div class="mt-10">
       <div class="text-xs">
-        {{ publishDate }}
+        {{ publishedAt }}
       </div>
       <h3>{{ title }}</h3>
       <p>{{ excerpt }}</p>
@@ -42,13 +44,13 @@
 <script setup>
 import { Icon } from '@iconify/vue';
 
-defineProps({
+const props = defineProps({
   title: {
     type: String,
     required: true,
   },
-  image: {
-    type: String,
+  featuredImage: {
+    type: Object,
     required: true,
   },
   excerpt: {
@@ -63,7 +65,7 @@ defineProps({
     type: String,
     default: '',
   },
-  publishDate: {
+  publishedAt: {
     type: String,
     required: true,
   },

@@ -10,7 +10,7 @@
         :is="cardComponent"
         v-for="(card, index) in filteredCards"
         :key="index"
-        v-bind="card"
+        v-bind="card.attributes"
       />
     </Grid>
   </div>
