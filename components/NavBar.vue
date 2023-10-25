@@ -21,12 +21,13 @@
 </template>
 
 <script setup>
+const { path } = useRoute();
+
 const pages = ref([
   {
     route: '/',
     name: 'Information',
     icon: 'mdi:information-outline',
-    active: true,
   },
   {
     route: '/updates',
@@ -50,6 +51,11 @@ function handleClick(page) {
   resetActivePages();
   page.active = true;
 }
+
+// Set current page on initial site visit to active
+pages.value.forEach((page) => {
+  if (page.route === path) page.active = true;
+});
 </script>
 
 <style scoped>
