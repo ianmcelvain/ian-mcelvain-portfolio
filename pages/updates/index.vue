@@ -1,21 +1,6 @@
 <template>
   <div>
-    <IconButtonGroup
-      :items="UPDATE_CATEGORIES"
-      @active-change="handleActiveChange"
-    />
-    <Grid>
-      <BlogCard
-        v-for="(update, index) in filteredUpdates"
-        :key="index"
-        :title="update.title"
-        :image="update.image"
-        :excerpt="update.excerpt"
-        :category="update.category"
-        :tag="update.tag"
-        :publish-date="update.publishDate"
-      />
-    </Grid>
+    <CardGrid type="Blog" :categories="UPDATE_CATEGORIES" :data="updateData" />
   </div>
 </template>
 
@@ -45,7 +30,7 @@ const updateData = [
     title: 'Balloon Fight',
     image:
       'https://cdn.sanity.io/images/exj3bhzf/production/736302c62d76b32c9c2e7ebe1f4ff01bf1549f8c-1198x759.jpg',
-    excerpt: 'Better animations, better systems, Papa Johnss...',
+    excerpt: 'Better animations, better systems, Papa Johns...',
     category: 'uncategorized',
     tag: 'Balloon Fight',
     publishDate: 'February 12th 2023',

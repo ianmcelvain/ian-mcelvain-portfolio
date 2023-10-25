@@ -1,18 +1,10 @@
 <template>
   <div>
-    <IconButtonGroup
-      :items="PROJECT_CATEGORIES"
-      @active-change="handleActiveChange"
+    <CardGrid
+      type="Feature"
+      :categories="PROJECT_CATEGORIES"
+      :data="projectData"
     />
-    <Grid>
-      <FeatureCard
-        v-for="project in filteredProjects"
-        :key="project.title"
-        :image="project.image"
-        :title="project.title"
-        :description="project.description"
-      />
-    </Grid>
   </div>
 </template>
 
