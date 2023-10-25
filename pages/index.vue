@@ -1,13 +1,13 @@
 <template>
   <ArticleContainer class="text-center">
     <h4 className="subtitle">
-      Writing games, native apps, and websites since 2012
+      I've been writing games, native apps, and websites since 2012
     </h4>
     <p>
-      Started by making Call of Duty mods in C++ which transitioned into
-      developing games shortly after. Since then games have been my main focus
-      but in parallel I use those software principles and patterns for apps and
-      the web.
+      I started by developing mods for Call of Duty using C++ and it naturally
+      transitioned into developing games shortly after. Since then games have
+      been my main focus but in parallel I use those software principles and
+      patterns for apps and the web.
     </p>
     <div className="flex my-8 justify-center items-center">
       <a href="mailto:ian.mcelvain@gmail.com">

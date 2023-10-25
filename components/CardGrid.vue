@@ -33,7 +33,7 @@ const props = defineProps({
 });
 
 const cardComponent = defineAsyncComponent(() =>
-  import(`../components/${props.type}Card`),
+  import(`../components/${props.type}Card`)
 );
 
 const filteredCards = ref(props.data);

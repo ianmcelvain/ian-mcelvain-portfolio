@@ -15,14 +15,7 @@ module.exports = {
     // 'plugin:vue/recommended' // Use this if you are using Vue.js 2.x.
   ],
   rules: {
-    quotes: [2, 'single', { avoidEscape: true }],
-    'prettier/prettier': [
-      'warn',
-      {
-        singleQuote: true,
-        semi: true,
-      },
-    ],
+    // quotes: [2, 'single', { avoidEscape: true }],
     'no-console': 'warn',
     'vue/multi-word-component-names': 'off',
     // "tailwindcss/no-custom-classname": "off",

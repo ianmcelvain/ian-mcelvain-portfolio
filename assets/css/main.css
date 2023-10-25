@@ -2,11 +2,10 @@
 @tailwind utilities;
 @tailwind base;
 
-
 h3 {
-    @apply text-2xl mb-4 font-bold;
+  @apply text-2xl mb-4 font-bold;
 }
 
 p {
-    @apply mb-6;
+  @apply mb-6;
 }
