@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "update_categories",
+  "info": {
+    "singularName": "update-category",
+    "pluralName": "update-categories",
+    "displayName": "Update Category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "icon": {
+      "type": "string"
+    }
+  }
+}

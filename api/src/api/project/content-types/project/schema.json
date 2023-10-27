@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "updates",
+  "collectionName": "projects",
   "info": {
-    "singularName": "update",
-    "pluralName": "updates",
-    "displayName": "Update",
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Project",
     "description": ""
   },
   "options": {
@@ -21,6 +21,9 @@
     "body": {
       "type": "richtext"
     },
+    "externalLink": {
+      "type": "string"
+    },
     "featuredImage": {
       "type": "media",
       "multiple": false,
@@ -36,15 +39,18 @@
       "type": "uid",
       "targetField": "title"
     },
-    "tags": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::tag.tag"
-    },
-    "update_category": {
+    "status": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::update-category.update-category"
+      "target": "api::status.status"
+    },
+    "startedAt": {
+      "type": "date"
+    },
+    "project_category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project-category.project-category"
     }
   }
 }

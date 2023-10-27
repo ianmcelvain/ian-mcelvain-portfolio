@@ -1,21 +1,24 @@
 <template>
   <NuxtLink
-    to="/"
+    :to="{
+      path: `updates/${slug}`,
+      query: { id },
+    }"
     class="text-gray-800 relative justify-between rounded-xl p-4 shadow-lg transition-all hover:shadow-xl p-2 duration-300 tranform-gpu translate-y-0 hover:-translate-y-1 ease-in-out"
   >
     <div
-      class="post-thumbnail h-60 mb-4 relative"
+      class="post-thumbnail bg-center bg-cover h-60 mb-4 relative"
       :style="{
-        backgroundImage: `url(http://localhost:1337${featuredImage.data.attributes.url})`,
+        backgroundImage: `url(http://localhost:1337${featuredImage.url})`,
       }"
     >
       <div
         class="absolute flex font-medium drop-shadow-lg bottom-0 left-0 -mb-5 ml-3"
       >
         <span
-          :class="`text hover ${category}  whitespace-nowrap rounded-2xl bg-white px-2.5 py-2.5 text-sm mr-2 cursor-pointer transition-all duration-300 hover:bg-gray-700 hover:text-white tranform-gpu translate-y-0 hover:-translate-y-1 ease-in-out`"
+          :class="`text hover ${category.slug}  whitespace-nowrap rounded-2xl bg-white px-2.5 py-2.5 text-sm mr-2 cursor-pointer transition-all duration-300 hover:bg-gray-700 hover:text-white tranform-gpu translate-y-0 hover:-translate-y-1 ease-in-out`"
         >
-          <Icon icon="mdi:source-branch" :width="20" />
+          <Icon :icon="category.icon" :width="20" />
         </span>
         <a
           href="/"
@@ -45,7 +48,15 @@
 import { Icon } from '@iconify/vue';
 
 const props = defineProps({
+  id: {
+    type: String,
+    required: true,
+  },
   title: {
+    type: String,
+    required: true,
+  },
+  slug: {
     type: String,
     required: true,
   },
@@ -62,8 +73,11 @@ const props = defineProps({
     default: '',
   },
   category: {
-    type: String,
-    default: '',
+    type: Object,
+    required: true,
+    validator(value) {
+      return [('title', 'slug', 'icon')].every((key) => key in value);
+    },
   },
   publishedAt: {
     type: String,

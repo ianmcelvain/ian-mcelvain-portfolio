@@ -2,10 +2,10 @@
   <div :class="`icon-button-group ${orientation}`">
     <IconButton
       v-for="item in items"
-      :key="item.name"
+      :key="item.id"
       :icon="item.icon"
-      :text="item.name"
-      :active="activeItem.name === item.name"
+      :text="item.title"
+      :active="activeItem.title === item.title"
       @click="handleClick(item)"
     />
   </div>

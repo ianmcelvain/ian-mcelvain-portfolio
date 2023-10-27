@@ -12,7 +12,7 @@
     <div className="flex my-8 justify-center items-center">
       <a href="mailto:ian.mcelvain@gmail.com">
         <IconButton icon="mdi:email-outline">
-          {{ 'ia.nmcelvain@gmail.com' }}
+          {{ 'ian.nmcelvain@gmail.com' }}
         </IconButton>
       </a>
       <a href="https://github.com/ianmcelvain" target="_blank" rel="noreferrer">

@@ -1,8 +1,8 @@
 <template>
   <div>
     <IconButtonGroup
-      v-if="categories.length"
-      :items="categories"
+      v-if="adjustedCategories.length"
+      :items="adjustedCategories"
       @active-change="handleActiveChange"
     />
     <Grid>
@@ -10,7 +10,7 @@
         :is="cardComponent"
         v-for="(card, index) in filteredCards"
         :key="index"
-        v-bind="card.attributes"
+        v-bind="card"
       />
     </Grid>
   </div>
@@ -32,6 +32,15 @@ const props = defineProps({
   },
 });
 
+const adjustedCategories = ref([
+  {
+    title: 'All',
+    slug: 'all',
+    icon: 'mdi:layers-triple-outline',
+  },
+  ...props.categories,
+]);
+
 const cardComponent = defineAsyncComponent(() =>
   import(`../components/${props.type}Card`)
 );
@@ -39,13 +48,13 @@ const cardComponent = defineAsyncComponent(() =>
 const filteredCards = ref(props.data);
 
 function handleActiveChange(category) {
-  if (category.name === 'All') {
+  if (category.slug === 'all') {
     filteredCards.value = props.data;
     return;
   }
 
   filteredCards.value = props.data.filter((card) => {
-    return card.category === category.name.toLowerCase();
+    return card.category.slug === category.slug;
   });
 }
 </script>

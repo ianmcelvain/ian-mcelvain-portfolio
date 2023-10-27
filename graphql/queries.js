@@ -15,6 +15,15 @@ export const allUpdatesQuery = gql`
               }
             }
           }
+          category: update_category {
+            data {
+              attributes {
+                title
+                icon
+                slug
+              }
+            }
+          }
           body
           publishedAt
           slug
@@ -25,8 +34,41 @@ export const allUpdatesQuery = gql`
 `;
 
 export const singleUpdateQuery = gql`
-  query singleUpdateQuery {
-    update(id: 1) {
+  query singleUpdateQuery($id: ID!) {
+    update(id: $id) {
+      data {
+        id
+        attributes {
+          title
+          excerpt
+          featuredImage {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+          update_category {
+            data {
+              attributes {
+                title
+                icon
+                slug
+              }
+            }
+          }
+          body
+          publishedAt
+          slug
+        }
+      }
+    }
+  }
+`;
+
+export const allProjectsQuery = gql`
+  query allProjectsQuery {
+    projects {
       data {
         id
         attributes {
@@ -42,6 +84,54 @@ export const singleUpdateQuery = gql`
           body
           publishedAt
           slug
+          status {
+            data {
+              id
+              attributes {
+                title
+                slug
+                icon
+              }
+            }
+          }
+          category: project_category {
+            data {
+              attributes {
+                title
+                icon
+                slug
+              }
+            }
+          }
+          externalLink
+        }
+      }
+    }
+  }
+`;
+
+export const allProjectCategoiresQuery = gql`
+  query allProjectCategoriesQuery {
+    projectCategories {
+      data {
+        attributes {
+          title
+          slug
+          icon
+        }
+      }
+    }
+  }
+`;
+
+export const allUpdateCategoiresQuery = gql`
+  query allUpdateCategoriesQuery {
+    updateCategories {
+      data {
+        attributes {
+          title
+          slug
+          icon
         }
       }
     }
