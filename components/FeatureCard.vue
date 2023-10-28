@@ -6,7 +6,13 @@
         backgroundImage: `url(http://localhost:1337${featuredImage.url})`,
       }"
     ></div>
-    <NuxtLink to="/" class="feature-link">
+    <NuxtLink
+      :to="{
+        path: `projects/${slug}`,
+        query: { id },
+      }"
+      class="feature-link"
+    >
       <Icon :icon="category.icon" :width="26" class="flex-none mt-1.5 mr-2.5" />
       <div>
         <h3 class="text-gray-800">{{ title }}</h3>
@@ -30,11 +36,19 @@
 import { Icon } from '@iconify/vue';
 
 defineProps({
+  id: {
+    type: String,
+    required: true,
+  },
   featuredImage: {
     type: Object,
     required: true,
   },
   title: {
+    type: String,
+    required: true,
+  },
+  slug: {
     type: String,
     required: true,
   },

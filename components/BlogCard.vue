@@ -30,7 +30,7 @@
     </div>
     <div class="mt-10">
       <div class="text-xs">
-        {{ publishedAt }}
+        {{ format(new Date(publishedAt), 'MMMM do yyyy') }}
       </div>
       <h3>{{ title }}</h3>
       <p>{{ excerpt }}</p>
@@ -46,6 +46,7 @@
 
 <script setup>
 import { Icon } from '@iconify/vue';
+import { format } from 'date-fns';
 
 const props = defineProps({
   id: {

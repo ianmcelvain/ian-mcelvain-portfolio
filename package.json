@@ -31,8 +31,18 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "date-fns": "^2.30.0",
     "graphql": "^16.8.1",
     "graphql-tag": "^2.12.6",
+    "markdown-it": "^13.0.2",
+    "markdown-it-abbr": "^1.0.4",
+    "markdown-it-anchor": "^8.6.7",
+    "markdown-it-footnote": "^3.0.3",
+    "markdown-it-highlightjs": "^4.0.1",
+    "markdown-it-sub": "^1.0.0",
+    "markdown-it-sup": "^1.0.0",
+    "markdown-it-task-lists": "^2.1.1",
+    "markdown-it-toc-done-right": "^4.2.0",
     "strapi-flatten-graphql": "^0.1.0",
     "vue3-marquee-slider": "^1.0.5"
   }

@@ -30,7 +30,7 @@ const props = defineProps({
           bottom-2 sm:bottom-0 md:bottom-0 lg:bottom-0;
 }
 .tooltip-content.horizontal {
-  @apply mr-8 mb-24;
+  @apply mr-8 mb-12;
 }
 .tooltip {
   @apply absolute w-auto p-2 m-2 min-w-max

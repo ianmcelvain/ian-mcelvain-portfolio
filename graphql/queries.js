@@ -24,6 +24,14 @@ export const allUpdatesQuery = gql`
               }
             }
           }
+          tags {
+            data {
+              attributes {
+                title
+                slug
+              }
+            }
+          }
           body
           publishedAt
           slug
@@ -48,7 +56,7 @@ export const singleUpdateQuery = gql`
               }
             }
           }
-          update_category {
+          category: update_category {
             data {
               attributes {
                 title
@@ -60,6 +68,50 @@ export const singleUpdateQuery = gql`
           body
           publishedAt
           slug
+        }
+      }
+    }
+  }
+`;
+
+export const singleProjectQuery = gql`
+  query singleProjectQuery($id: ID!) {
+    project(id: $id) {
+      data {
+        id
+        attributes {
+          title
+          excerpt
+          featuredImage {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+          category: project_category {
+            data {
+              attributes {
+                title
+                icon
+                slug
+              }
+            }
+          }
+          status {
+            data {
+              id
+              attributes {
+                title
+                slug
+                icon
+              }
+            }
+          }
+          body
+          startedAt
+          slug
+          externalLink
         }
       }
     }
