@@ -9,8 +9,13 @@
       <component
         :is="cardComponent"
         v-for="(card, index) in filteredCards"
+        v-show="filteredCards.length"
         :key="index"
         v-bind="card"
+      />
+      <p
+        v-show="!filteredCards.length && currentCategory.title"
+        v-html="noResultsMessage"
       />
     </Grid>
   </div>
@@ -32,6 +37,10 @@ const props = defineProps({
   },
 });
 
+const cardComponent = defineAsyncComponent(() =>
+  import(`../components/${props.type}Card`)
+);
+
 const adjustedCategories = ref([
   {
     title: 'All',
@@ -40,14 +49,22 @@ const adjustedCategories = ref([
   },
   ...props.categories,
 ]);
-
-const cardComponent = defineAsyncComponent(() =>
-  import(`../components/${props.type}Card`)
-);
-
+const currentCategory = ref(adjustedCategories.value[0]);
 const filteredCards = ref(props.data);
 
+const noResultsMessage = computed(() => {
+  const { slug } = currentCategory.value;
+
+  if (slug === 'all') {
+    return 'No more updates 😞';
+  }
+
+  return `No <strong>${slug}</strong> updates 😞`;
+});
+
 function handleActiveChange(category) {
+  currentCategory.value = category;
+
   if (category.slug === 'all') {
     filteredCards.value = props.data;
     return;

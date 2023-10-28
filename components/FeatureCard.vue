@@ -75,10 +75,10 @@ defineProps({
 
 <style scoped>
 .feature-image {
-  @apply h-56 -mt-8 bg-cover bg-center rounded-xl relative shadow-md;
+  @apply h-56 bg-cover bg-center rounded-xl relative shadow-md;
 }
 .feature-link {
-  @apply relative flex bg-white -mt-8 shadow-lg mx-8 -mt-8 rounded-xl p-3 
+  @apply relative flex bg-white shadow-lg mx-8 -mt-8 rounded-xl p-3 
           transition-all duration-300 transform-gpu translate-y-0 
           hover:shadow-xl hover:-translate-y-1 ease-in-out;
 }

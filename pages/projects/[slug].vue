@@ -42,10 +42,10 @@ const project = await useAsyncQuery(singleProjectQuery, query).then(
   @apply mt-8 mb-16 text-center;
 }
 .featured-image {
-  @apply -mt-8 bg-cover bg-center rounded-xl shadow-md h-[30vh] lg:h-[40vh];
+  @apply bg-cover bg-center rounded-xl shadow-md h-[30vh] lg:h-[40vh];
 }
 .details {
-  @apply bg-white w-[70%] lg:w-[60%] xl:w-[50%] mx-auto -mt-8 shadow-lg -mt-8 rounded-xl p-3;
+  @apply bg-white w-[70%] lg:w-[60%] xl:w-[50%] mx-auto -mt-8 shadow-lg rounded-xl p-3;
 }
 .details.title {
   @apply text-gray-800;
