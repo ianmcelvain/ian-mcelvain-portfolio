@@ -4,7 +4,7 @@
       <div class="block rounded-xl">
         <div class="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 rounded-xl">
           <NuxtLink
-            :to="latestUpdate.link"
+            :to="latestUpdate.location"
             class="lg:col-span-2 xl:col-span-3 h-[400px] rounded-2xl drop-shadow-md"
             :style="{
               backgroundImage: `url(http://localhost:1337${latestUpdate.featuredImage.url})`,
@@ -19,7 +19,7 @@
               <div class="text-xs">
                 {{ format(new Date(latestUpdate.publishedAt), 'MMMM do yyyy') }}
               </div>
-              <NuxtLink :to="latestUpdate.link">
+              <NuxtLink :to="latestUpdate.location">
                 <h2 class="mb-2">{{ latestUpdate.title }}</h2>
               </NuxtLink>
               <div
@@ -60,7 +60,7 @@ const updates = await useAsyncQuery(allUpdatesQuery).then(({ data }) =>
 );
 
 const latestUpdate = updates.pop();
-latestUpdate.link = {
+latestUpdate.location = {
   path: `/updates/${latestUpdate.slug}`,
   query: { id: latestUpdate.id },
 };

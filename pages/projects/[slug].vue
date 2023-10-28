@@ -20,7 +20,7 @@
       </div>
     </div>
     <ArticleContainer>
-      <MarkdownRenderer :source="project.body" />>
+      <MarkdownRenderer :source="project.body" />
     </ArticleContainer>
   </div>
 </template>
