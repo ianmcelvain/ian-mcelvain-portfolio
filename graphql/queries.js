@@ -42,8 +42,8 @@ export const allUpdatesQuery = gql`
 `;
 
 export const singleUpdateQuery = gql`
-  query singleUpdateQuery($id: ID!) {
-    update(id: $id) {
+  query singleUpdateQuery($slug: String!) {
+    update(slug: $slug) {
       data {
         id
         attributes {

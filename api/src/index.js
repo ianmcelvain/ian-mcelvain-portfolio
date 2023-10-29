@@ -7,7 +7,37 @@ module.exports = {
    *
    * This gives you an opportunity to extend code.
    */
-  register(/*{ strapi }*/) {},
+  register({ strapi }) {
+    const extensionService = strapi.service('plugin::graphql.extension');
+    extensionService.use(({ strapi }) => ({
+      typeDefs: `
+        type Query {
+          update(slug: String!): UpdateEntityResponse
+        }
+      `,
+      resolvers: {
+        Query: {
+          update: {
+            resolve: async (parent, args, context) => {
+              const { toEntityResponse } = strapi.service(
+                'plugin::graphql.format'
+              ).returnTypes;
+
+              const data = await strapi.services['api::update.update'].find({
+                filters: { slug: args.slug },
+              });
+
+              const response = toEntityResponse(data.results[0]);
+
+              console.log('##################', response, '##################');
+
+              return response;
+            },
+          },
+        },
+      },
+    }));
+  },
 
   /**
    * An asynchronous bootstrap function that runs before

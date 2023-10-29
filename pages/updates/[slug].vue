@@ -16,7 +16,7 @@
     </div>
     <div class="text-center mt-16">
       <div class="text-xs">
-        {{ update.publishedAt }}
+        {{ format(new Date(update.publishedAt), 'MMMM do yyyy') }}
       </div>
       <h1 class="m-4">{{ update.title }}</h1>
       <div>{{ update.excerpt }}</div>
@@ -38,12 +38,15 @@
 <script setup>
 import { singleUpdateQuery } from '~/graphql/queries';
 import flatten from '~/utilities/flatten';
+import { format } from 'date-fns';
 
-const { query } = useRoute();
+const { params } = useRoute();
 
-const update = await useAsyncQuery(singleUpdateQuery, query).then(({ data }) =>
-  flatten(data.value.update)
-);
+const update = await useAsyncQuery(singleUpdateQuery, {
+  slug: params.slug,
+}).then(({ data }) => {
+  return flatten(data.value.update);
+});
 </script>
 
 <style scoped>
