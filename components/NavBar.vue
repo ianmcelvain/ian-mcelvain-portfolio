@@ -21,13 +21,6 @@
 </template>
 
 <script setup>
-const props = defineProps({
-  width: {
-    type: Number,
-    default: () => 150,
-  },
-});
-
 const { path } = useRoute();
 
 const pages = ref([
