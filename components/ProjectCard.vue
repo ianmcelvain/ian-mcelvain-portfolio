@@ -20,7 +20,7 @@
           >
             {{ status.title }}
           </span>
-          <Icon :icon="'mdi:chevron-right'" :width="20" class="mt-2 ml-auto" />
+          <Icon icon="feather:chevron-right" :width="20" class="mt-2 ml-auto" />
         </div>
       </div>
     </NuxtLink>

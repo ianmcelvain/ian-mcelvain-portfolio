@@ -21,7 +21,7 @@
           href="/"
           class="whitespace-nowrap rounded-2xl bg-white px-2.5 py-2.5 text-sm text-gray-700 mr-2 cursor-pointer transition-all duration-300 hover:bg-gray-700 hover:text-white tranform-gpu translate-y-0 hover:-translate-y-1 ease-in-out"
         >
-          <Icon icon="mdi:message" :width="20" />
+          <Icon icon="feather:message-square" :width="20" />
         </a>
       </div>
     </div>

@@ -11,7 +11,7 @@
           :icon="update.category.icon"
           :title="update.category.title"
         />
-        <FloatingIcon icon="mdi:message" title="2" />
+        <FloatingIcon icon="feather:message-square" title="2" />
       </div>
     </div>
     <div class="text-center my-16">

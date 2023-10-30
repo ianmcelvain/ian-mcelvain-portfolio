@@ -1,5 +1,9 @@
 <template>
   <div>
+    <h4 class="flex items-center">
+      {{ type }} <Icon icon="feather:chevron-right" :width="20" class="mx-2" />
+      {{ currentCategory.title }}
+    </h4>
     <IconButtonGroup
       v-if="adjustedCategories.length"
       :items="adjustedCategories"
@@ -22,6 +26,8 @@
 </template>
 
 <script setup>
+import { Icon } from '@iconify/vue';
+
 const props = defineProps({
   type: {
     type: String,
@@ -49,7 +55,7 @@ const adjustedCategories = ref([
   {
     title: 'All',
     slug: 'all',
-    icon: 'mdi:layers-triple-outline',
+    icon: 'feather:layers',
   },
   ...props.categories,
 ]);

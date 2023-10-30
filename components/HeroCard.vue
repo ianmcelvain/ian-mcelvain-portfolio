@@ -23,7 +23,7 @@
             </NuxtLink>
             <div class="flex justify-center mb-8 font-medium lg:justify-normal">
               <FloatingIcon :icon="category.icon" :title="category.title" />
-              <FloatingIcon icon="mdi:message" title="2" />
+              <FloatingIcon icon="feather:message-square" title="2" />
             </div>
             <p>{{ excerpt }}</p>
             <Tag v-for="tag in tags" :key="tag.slug" class="mr-4">{{

@@ -11,12 +11,12 @@
     </p>
     <div className="flex my-8 justify-center items-center">
       <a href="mailto:ian.mcelvain@gmail.com">
-        <IconButton icon="mdi:email-outline">
+        <IconButton icon="feather:mail">
           {{ 'ian.nmcelvain@gmail.com' }}
         </IconButton>
       </a>
       <a href="https://github.com/ianmcelvain" target="_blank" rel="noreferrer">
-        <IconButton text="ianmcelvain" icon="mdi:github" />
+        <IconButton text="ianmcelvain" icon="feather:github" />
       </a>
     </div>
   </ArticleContainer>

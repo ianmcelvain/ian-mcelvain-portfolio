@@ -34,17 +34,17 @@ const pages = ref([
   {
     route: '/',
     name: 'Information',
-    icon: 'mdi:information-outline',
+    icon: 'feather:info',
   },
   {
     route: '/updates',
     name: 'Updates',
-    icon: 'mdi:file-document-edit-outline',
+    icon: 'feather:edit',
   },
   {
     route: '/projects',
     name: 'Projects',
-    icon: 'mdi:archive-outline',
+    icon: 'feather:archive',
   },
 ]);
 
