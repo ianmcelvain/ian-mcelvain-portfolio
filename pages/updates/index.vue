@@ -8,7 +8,6 @@
 <script setup>
 import { allUpdateCategoiresQuery, allUpdatesQuery } from '~/graphql/queries';
 import flatten from '~/utilities/flatten';
-import { format } from 'date-fns';
 
 const graphql = useStrapiGraphQL();
 

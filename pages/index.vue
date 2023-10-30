@@ -22,10 +22,6 @@
   </ArticleContainer>
 </template>
 
-<script setup>
-const { find } = useStrapi();
-const response = await find('updates');
-console.log('🚀 ~ file: index.vue:28 ~ response:', response);
-</script>
+<script setup></script>
 
 <style scoped></style>
