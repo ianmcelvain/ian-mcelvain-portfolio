@@ -30,11 +30,13 @@ import { Icon } from '@iconify/vue';
 import { singleProjectQuery } from '~/graphql/queries';
 import flatten from '~/utilities/flatten';
 
-const { query } = useRoute();
+const { params } = useRoute();
 
-const project = await useAsyncQuery(singleProjectQuery, query).then(
-  ({ data }) => flatten(data.value.project)
-);
+const project = await useAsyncQuery(singleProjectQuery, {
+  slug: params.slug,
+}).then(({ data }) => {
+  return flatten(data.value.project);
+});
 </script>
 
 <style scoped>

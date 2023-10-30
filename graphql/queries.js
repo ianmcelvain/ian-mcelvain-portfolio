@@ -75,8 +75,8 @@ export const singleUpdateQuery = gql`
 `;
 
 export const singleProjectQuery = gql`
-  query singleProjectQuery($id: ID!) {
-    project(id: $id) {
+  query singleProjectQuery($slug: String!) {
+    project(slug: $slug) {
       data {
         id
         attributes {

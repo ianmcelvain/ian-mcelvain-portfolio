@@ -13,6 +13,9 @@ module.exports = {
       typeDefs: `
         type Query {
           update(slug: String!): UpdateEntityResponse
+        },
+        type Query {
+          project(slug: String!): ProjectEntityResponse
         }
       `,
       resolvers: {
@@ -24,6 +27,23 @@ module.exports = {
               ).returnTypes;
 
               const data = await strapi.services['api::update.update'].find({
+                filters: { slug: args.slug },
+              });
+
+              const response = toEntityResponse(data.results[0]);
+
+              console.log('##################', response, '##################');
+
+              return response;
+            },
+          },
+          project: {
+            resolve: async (parent, args, context) => {
+              const { toEntityResponse } = strapi.service(
+                'plugin::graphql.format'
+              ).returnTypes;
+
+              const data = await strapi.services['api::project.project'].find({
                 filters: { slug: args.slug },
               });
 
