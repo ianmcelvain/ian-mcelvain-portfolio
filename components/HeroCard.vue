@@ -6,7 +6,7 @@
           :to="location"
           class="lg:col-span-2 xl:col-span-3 h-[400px] rounded-2xl drop-shadow-md"
           :style="{
-            backgroundImage: `url(http://localhost:1337${featuredImage.url})`,
+            backgroundImage: `url(${useStrapiMedia(featuredImage.url)})`,
           }"
         ></NuxtLink>
         <div

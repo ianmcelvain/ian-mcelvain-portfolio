@@ -4,7 +4,7 @@
       <div
         class="featured-image"
         :style="{
-          backgroundImage: `url(http://localhost:1337${project.featuredImage.url})`,
+          backgroundImage: `url(${useStrapiMedia(project.featuredImage.url)})`,
         }"
       ></div>
       <div class="details">
@@ -28,7 +28,6 @@
 <script setup>
 import { Icon } from '@iconify/vue';
 import { singleProjectQuery } from '~/graphql/queries';
-import flatten from '~/utilities/flatten';
 
 const { params } = useRoute();
 const { query } = useBackend();

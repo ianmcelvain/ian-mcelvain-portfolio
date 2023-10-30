@@ -6,7 +6,7 @@
     <div
       class="post-thumbnail bg-center bg-cover h-60 mb-4 relative"
       :style="{
-        backgroundImage: `url(http://localhost:1337${featuredImage.url})`,
+        backgroundImage: `url(${useStrapiMedia(featuredImage.url)})`,
       }"
     >
       <div
