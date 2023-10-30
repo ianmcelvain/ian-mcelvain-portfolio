@@ -6,7 +6,7 @@
         backgroundImage: `url(http://localhost:1337${featuredImage.url})`,
       }"
     ></div>
-    <NuxtLink :to="`projects/${slug}`" class="feature-link">
+    <NuxtLink :to="`/projects/${slug}`" class="feature-link">
       <Icon :icon="category.icon" :width="26" class="flex-none mt-1.5 mr-2.5" />
       <div>
         <h3 class="text-gray-800">{{ title }}</h3>

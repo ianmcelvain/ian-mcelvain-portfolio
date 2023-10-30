@@ -1,6 +1,6 @@
 <template>
   <div>
-    <CardGrid type="Feature" :categories="projectCategories" :data="data" />
+    <CardGrid type="Project" :categories="projectCategories" :data="data" />
   </div>
 </template>
 

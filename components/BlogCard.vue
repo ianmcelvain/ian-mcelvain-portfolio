@@ -1,6 +1,6 @@
 <template>
   <NuxtLink
-    :to="`updates/${slug}`"
+    :to="`/updates/${slug}`"
     class="text-gray-800 relative justify-between rounded-xl p-4 shadow-lg transition-all hover:shadow-xl p-2 duration-300 tranform-gpu translate-y-0 hover:-translate-y-1 ease-in-out"
   >
     <div
@@ -46,10 +46,6 @@ import { Icon } from '@iconify/vue';
 import { format } from 'date-fns';
 
 const props = defineProps({
-  id: {
-    type: String,
-    required: true,
-  },
   title: {
     type: String,
     required: true,

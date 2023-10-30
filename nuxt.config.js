@@ -1,9 +1,14 @@
+import gql from '@rollup/plugin-graphql';
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: false,
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
+  },
+  vite: {
+    plugins: [gql()],
   },
   runtimeConfig: {
     // The private keys which are only available server-side
