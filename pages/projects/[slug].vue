@@ -41,7 +41,7 @@ const project = await useAsyncQuery(singleProjectQuery, {
 
 <style scoped>
 .header {
-  @apply mt-8 mb-16 text-center;
+  @apply mb-16 text-center;
 }
 .featured-image {
   @apply bg-cover bg-center rounded-xl shadow-md h-[30vh] lg:h-[40vh];

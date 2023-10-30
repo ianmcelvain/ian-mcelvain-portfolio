@@ -1,8 +1,8 @@
 <template>
-  <div class="flex">
+  <div>
     <NavBar />
     <Breadcrumbs
-      v-show="route.path !== '/'"
+      v-show="breadcrumbs.length > 2"
       class="absolute top-8 left-64"
       :breadcrumbs="breadcrumbs"
     />
@@ -15,8 +15,15 @@
 <script setup>
 import { useBreadcrumbs } from '../composables/useBreadcrumbs';
 
-const route = useRoute();
 const { breadcrumbs } = useBreadcrumbs();
 </script>
 
-<style scoped></style>
+<style>
+/* Layout margins to compensate sidebar width */
+.navbar {
+  @apply w-full sm:w-[150px] md:w-[150px] lg:w-[150px];
+}
+.page-container {
+  @apply ml-0 sm:ml-[150px] md:ml-[150px] lg:ml-[150px];
+}
+</style>

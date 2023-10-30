@@ -12,7 +12,7 @@ h3 {
   @apply text-lg font-bold mb-4;
 }
 h4 {
-  @apply text-sm font-semibold uppercase tracking-widest my-8
+  @apply text-sm font-semibold uppercase tracking-widest mb-8
 }
 p {
   @apply mb-6;
