@@ -5,7 +5,7 @@
       :items="adjustedCategories"
       @active-change="handleActiveChange"
     />
-    <Grid>
+    <Grid :size="size">
       <component
         :is="cardComponent"
         v-for="(card, index) in filteredCards"
@@ -34,6 +34,10 @@ const props = defineProps({
   data: {
     type: Array,
     required: true,
+  },
+  size: {
+    type: String,
+    default: () => 'medium',
   },
 });
 

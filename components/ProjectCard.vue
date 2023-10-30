@@ -8,13 +8,18 @@
     ></div>
     <NuxtLink :to="`/projects/${slug}`" class="feature-link">
       <Icon :icon="category.icon" :width="26" class="flex-none mt-1.5 mr-2.5" />
-      <div>
+      <div class="grow">
         <h3 class="text-gray-800">{{ title }}</h3>
         <div class="mb-0 text-sm text-gray-500">
           <p>{{ excerpt }}</p>
         </div>
         <div class="flex">
-          <Tag>{{ status.title }}</Tag>
+          <!-- <Tag>{{ status.title }}</Tag> -->
+          <span
+            class="whitespace-nowrap w-fit rounded-lg bg-gray-100 px-2.5 py-0.5 text-sm text-gray-700 lg:m-0"
+          >
+            {{ status.title }}
+          </span>
           <Icon :icon="'mdi:chevron-right'" :width="20" class="mt-2 ml-auto" />
         </div>
       </div>
@@ -68,7 +73,7 @@ defineProps({
   @apply h-56 bg-cover bg-center rounded-xl relative shadow-md;
 }
 .feature-link {
-  @apply relative flex bg-white shadow-lg mx-8 -mt-8 rounded-xl p-3 
+  @apply block relative flex bg-white shadow-lg mx-8 -mt-8 rounded-xl p-3 
           transition-all duration-300 transform-gpu translate-y-0 
           hover:shadow-xl hover:-translate-y-1 ease-in-out;
 }

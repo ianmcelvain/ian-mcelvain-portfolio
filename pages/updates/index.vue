@@ -1,7 +1,13 @@
 <template>
   <div>
+    <h4>Latest Update</h4>
     <HeroCard v-bind="latestUpdate" />
-    <CardGrid type="Blog" :categories="updateCategories" :data="updates" />
+    <CardGrid
+      type="Blog"
+      :categories="updateCategories"
+      :data="updates"
+      size="medium"
+    />
   </div>
 </template>
 

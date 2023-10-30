@@ -14,7 +14,7 @@
         <FloatingIcon icon="mdi:message" title="2" />
       </div>
     </div>
-    <div class="text-center mt-16">
+    <div class="text-center my-16">
       <div class="text-xs">
         {{ format(new Date(update.publishedAt), 'MMMM do yyyy') }}
       </div>

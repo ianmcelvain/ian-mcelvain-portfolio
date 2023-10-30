@@ -26,11 +26,9 @@
               <FloatingIcon icon="mdi:message" title="2" />
             </div>
             <p>{{ excerpt }}</p>
-            <span
-              class="whitespace-nowrap w-fit rounded-lg bg-gray-100 px-2.5 py-0.5 text-sm text-gray-700 m-auto lg:m-0"
-            >
-              {{ tags[0].title }}
-            </span>
+            <Tag v-for="tag in tags" :key="tag.slug" class="mr-4">{{
+              tag.title
+            }}</Tag>
           </div>
         </div>
       </div>

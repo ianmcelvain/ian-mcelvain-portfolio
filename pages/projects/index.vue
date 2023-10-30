@@ -1,7 +1,12 @@
 <template>
   <div>
     <h4>Projects > All</h4>
-    <CardGrid type="Project" :categories="projectCategories" :data="data" />
+    <CardGrid
+      type="Project"
+      :categories="projectCategories"
+      :data="data"
+      size="large"
+    />
   </div>
 </template>
 
