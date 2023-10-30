@@ -1,20 +1,18 @@
 <template>
   <div>
     <NavBar />
-    <Breadcrumbs
-      v-show="breadcrumbs.length > 2"
-      class="absolute top-8 left-64"
-      :breadcrumbs="breadcrumbs"
-    />
     <PageContainer>
+      <Breadcrumbs
+        v-show="breadcrumbs.length > 2"
+        class="breadcrumbs"
+        :breadcrumbs="breadcrumbs"
+      />
       <slot />
     </PageContainer>
   </div>
 </template>
 
 <script setup>
-import { useBreadcrumbs } from '../composables/useBreadcrumbs';
-
 const { breadcrumbs } = useBreadcrumbs();
 </script>
 
@@ -25,5 +23,10 @@ const { breadcrumbs } = useBreadcrumbs();
 }
 .page-container {
   @apply ml-0 sm:ml-[150px] md:ml-[150px] lg:ml-[150px];
+}
+
+.breadcrumbs {
+  @apply relative top-0 left-0 py-4 
+          sm:absolute sm:top-8 sm:left-64;
 }
 </style>
