@@ -37,15 +37,13 @@
 
 <script setup>
 import { singleUpdateQuery } from '~/graphql/queries';
-import flatten from '~/utilities/flatten';
 import { format } from 'date-fns';
 
 const { params } = useRoute();
+const { query } = useBackend();
 
-const update = await useAsyncQuery(singleUpdateQuery, {
+const update = await query(singleUpdateQuery, {
   slug: params.slug,
-}).then(({ data }) => {
-  return flatten(data.value.update);
 });
 </script>
 

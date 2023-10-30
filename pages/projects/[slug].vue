@@ -31,11 +31,10 @@ import { singleProjectQuery } from '~/graphql/queries';
 import flatten from '~/utilities/flatten';
 
 const { params } = useRoute();
+const { query } = useBackend();
 
-const project = await useAsyncQuery(singleProjectQuery, {
+const project = await query(singleProjectQuery, {
   slug: params.slug,
-}).then(({ data }) => {
-  return flatten(data.value.project);
 });
 </script>
 

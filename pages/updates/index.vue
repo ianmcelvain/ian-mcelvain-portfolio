@@ -13,17 +13,11 @@
 
 <script setup>
 import { allUpdateCategoiresQuery, allUpdatesQuery } from '~/graphql/queries';
-import flatten from '~/utilities/flatten';
 
-const graphql = useStrapiGraphQL();
+const { query } = useBackend();
 
-const updateCategories = await graphql(allUpdateCategoiresQuery).then(
-  ({ data }) => flatten(data.updateCategories)
-);
-
-const updates = await graphql(allUpdatesQuery).then(({ data }) => {
-  return flatten(data.updates);
-});
+const updateCategories = await query(allUpdateCategoiresQuery);
+const updates = await query(allUpdatesQuery);
 
 const latestUpdate = updates.pop();
 latestUpdate.location = {

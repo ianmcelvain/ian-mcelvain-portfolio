@@ -11,15 +11,11 @@
 
 <script setup>
 import { allProjectCategoiresQuery, allProjectsQuery } from '~/graphql/queries';
-import flatten from '~/utilities/flatten';
 
-const projectCategories = await useAsyncQuery(allProjectCategoiresQuery).then(
-  ({ data }) => flatten(data.value.projectCategories)
-);
+const { query } = useBackend();
 
-const data = await useAsyncQuery(allProjectsQuery).then(({ data }) =>
-  flatten(data.value.projects)
-);
+const projectCategories = await query(allProjectCategoiresQuery);
+const data = await query(allProjectsQuery);
 </script>
 
 <style scoped></style>
