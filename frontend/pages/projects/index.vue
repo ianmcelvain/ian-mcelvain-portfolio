@@ -4,7 +4,7 @@
       type="Project"
       :categories="projectCategories"
       :data="data"
-      size="large"
+      size="medium"
     />
   </div>
 </template>
