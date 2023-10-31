@@ -2,7 +2,13 @@ import gql from '@rollup/plugin-graphql';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true,
+
+    timeline: {
+      enabled: true,
+    },
+  },
   ssr: false,
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
