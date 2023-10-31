@@ -1,39 +1,31 @@
 <template>
-  <section class="text-gray-800 relative rounded-2xl mb-16">
-    <div class="block rounded-xl">
-      <div class="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 rounded-xl">
-        <NuxtLink
-          :to="location"
-          class="lg:col-span-2 xl:col-span-3 h-[400px] rounded-2xl drop-shadow-md"
-          :style="{
-            backgroundImage: `url(${useStrapiMedia(featuredImage.url)})`,
-          }"
-        ></NuxtLink>
-        <div
-          class="flex flex-col justify-center text-center lg:text-left lg:mt-0"
-        >
-          <div
-            class="z-10 -mt-8 mx-8 lg:mt-0 lg:mx-0 lg:-ml-8 bg-white rounded-xl px-4 py-6 drop-shadow-lg"
-          >
-            <div class="text-xs">
-              {{ format(new Date(publishedAt), 'MMMM do yyyy') }}
-            </div>
-            <NuxtLink :to="location">
-              <h2 class="mb-2">{{ title }}</h2>
-            </NuxtLink>
-            <div class="flex justify-center mb-8 font-medium lg:justify-normal">
-              <FloatingIcon :icon="category.icon" :title="category.title" />
-              <FloatingIcon icon="feather:message-square" title="2" />
-            </div>
-            <p>{{ excerpt }}</p>
-            <Tag v-for="tag in tags" :key="tag.slug" class="mr-4">{{
-              tag.title
-            }}</Tag>
-          </div>
+  <div class="hero-card">
+    <NuxtLink
+      :to="location"
+      class="featured-image"
+      :style="{
+        backgroundImage: `url(${useStrapiMedia(featuredImage.url)})`,
+      }"
+    ></NuxtLink>
+    <div class="details-wrapper">
+      <div class="details">
+        <div class="date">
+          {{ format(new Date(publishedAt), 'MMMM do yyyy') }}
         </div>
+        <NuxtLink :to="location">
+          <h2 class="title">{{ title }}</h2>
+        </NuxtLink>
+        <div class="category">
+          <FloatingIcon :icon="category.icon" :title="category.title" />
+          <FloatingIcon icon="feather:message-square" title="2" />
+        </div>
+        <p>{{ excerpt }}</p>
+        <Tag v-for="tag in tags" :key="tag.slug" class="tags">{{
+          tag.title
+        }}</Tag>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup>
@@ -78,4 +70,33 @@ defineProps({
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.hero-card {
+  @apply text-gray-800 relative mb-16 block rounded-xl 
+          grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4;
+}
+.featured-image {
+  @apply h-[400px] rounded-2xl drop-shadow-md
+          lg:col-span-2 xl:col-span-3;
+}
+.details-wrapper {
+  @apply flex flex-col justify-center;
+}
+.details {
+  @apply z-10 -mt-8 mx-8 px-4 py-6 bg-white rounded-xl drop-shadow-lg text-center 
+          lg:text-left lg:mt-0 lg:mx-0 lg:-ml-8;
+}
+.date {
+  @apply text-xs;
+}
+.title {
+  @apply mb-2;
+}
+.category {
+  @apply flex justify-center mb-8 font-medium 
+          lg:justify-normal;
+}
+.tags {
+  @apply mr-4;
+}
+</style>
