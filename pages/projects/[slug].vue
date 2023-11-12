@@ -32,7 +32,7 @@ import { singleProjectQuery } from '~/graphql/queries';
 const { params } = useRoute();
 const { query } = useBackend();
 
-const project = await query(singleProjectQuery, {
+const project = await query(`project-${params.slug}`, singleProjectQuery, {
   slug: params.slug,
 });
 </script>

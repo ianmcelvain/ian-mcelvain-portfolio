@@ -16,8 +16,11 @@ import { allUpdateCategoiresQuery, allUpdatesQuery } from '~/graphql/queries';
 
 const { query } = useBackend();
 
-const updateCategories = await query(allUpdateCategoiresQuery);
-const updates = await query(allUpdatesQuery);
+const updateCategories = await query(
+  'update-categories',
+  allUpdateCategoiresQuery
+);
+const updates = await query('updates', allUpdatesQuery);
 
 const latestUpdate = updates.pop();
 latestUpdate.location = {

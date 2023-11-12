@@ -42,7 +42,7 @@ import { format } from 'date-fns';
 const { params } = useRoute();
 const { query } = useBackend();
 
-const update = await query(singleUpdateQuery, {
+const update = await query(`update-${params.slug}`, singleUpdateQuery, {
   slug: params.slug,
 });
 </script>

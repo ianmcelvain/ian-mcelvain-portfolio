@@ -14,8 +14,11 @@ import { allProjectCategoiresQuery, allProjectsQuery } from '~/graphql/queries';
 
 const { query } = useBackend();
 
-const projectCategories = await query(allProjectCategoiresQuery);
-const data = await query(allProjectsQuery);
+const projectCategories = await query(
+  'project-categories',
+  allProjectCategoiresQuery
+);
+const data = await query('projects', allProjectsQuery);
 </script>
 
 <style scoped></style>
