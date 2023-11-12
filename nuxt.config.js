@@ -9,7 +9,8 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
-  ssr: false,
+  target: 'static',
+  ssr: true,
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
   },
@@ -21,26 +22,19 @@ export default defineNuxtConfig({
     apiSecret: '123',
     public: {
       apiBase: '/api',
-      baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+      baseUrl: process.env.BASE_URL || 'http://127.0.0.1:3000',
     },
   },
-  modules: [
-    '@nuxtjs/tailwindcss',
-    [
-      '@nuxtjs/strapi',
-      {
-        strapi: {
-          url: 'http://localhost:1337',
-        },
-      },
-    ],
-    ['@nuxtjs/apollo'],
-  ],
+  strapi: {
+    url: 'http://127.0.0.1:1337',
+    prefix: '/api',
+  },
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/strapi', '@nuxtjs/apollo'],
   // apollo: {
   //   clients: {
   //     default: {
   //       httpEndpoint:
-  //         process.env.BACKEND_URL || 'http://localhost:1337/graphql',
+  //         process.env.BACKEND_URL || 'http://127.0.0.1:1337/graphql',
   //     },
   //   },
   // },
@@ -48,7 +42,7 @@ export default defineNuxtConfig({
     clients: {
       default: {
         httpEndpoint:
-          process.env.BACKEND_URL || 'http://localhost:1337/graphql',
+          process.env.BACKEND_URL || 'http://127.0.0.1:1337/graphql',
       },
     },
   },
