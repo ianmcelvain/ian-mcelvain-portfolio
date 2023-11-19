@@ -3,7 +3,7 @@
     <div
       class="featured-image"
       :style="{
-        backgroundImage: `url(${useStrapiMedia(update.featuredImage.url)})`,
+        backgroundImage: `url(${update.featuredImage.url})`,
       }"
     >
       <div class="details">

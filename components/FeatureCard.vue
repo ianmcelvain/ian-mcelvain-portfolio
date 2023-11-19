@@ -1,10 +1,10 @@
 <template>
   <div class="feature-card">
     <NuxtLink
-      :to="`/${type}/${slug}`"
+      :to="`/${type}s/${slug}`"
       class="featured-image"
       :style="{
-        backgroundImage: `url(${useStrapiMedia(featuredImage.url)})`,
+        backgroundImage: `url(${featuredImage.url})`,
       }"
     ></NuxtLink>
     <div class="details-wrapper">
@@ -12,7 +12,7 @@
         <div class="date">
           {{ format(new Date(publishedAt), 'MMMM do yyyy') }}
         </div>
-        <NuxtLink :to="`/${type}/${slug}`">
+        <NuxtLink :to="`/${type}s/${slug}`">
           <h2 class="title">{{ title }}</h2>
         </NuxtLink>
         <div class="category">

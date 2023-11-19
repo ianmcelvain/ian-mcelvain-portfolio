@@ -1,6 +1,6 @@
 <template>
   <CardGrid
-    type="Blog"
+    type="Update"
     :categories="updateCategories"
     :data="updates"
     :show-latest="true"

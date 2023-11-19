@@ -3,7 +3,7 @@
     <div
       class="feature-image"
       :style="{
-        backgroundImage: `url(${useStrapiMedia(featuredImage.url)})`,
+        backgroundImage: `url(${featuredImage.url})`,
       }"
     ></div>
     <NuxtLink :to="`/projects/${slug}`" class="feature-link">
