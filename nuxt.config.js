@@ -26,7 +26,7 @@ export default defineNuxtConfig({
     },
   },
   strapi: {
-    url: 'http://127.0.0.1:1337',
+    url: 'https://ianmcelvain-backend-f1f9b229a8d4.herokuapp.com',
     prefix: '/api',
   },
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/strapi', '@nuxtjs/apollo'],

@@ -1,5 +1,11 @@
 <template>
   <div>
+    <FeatureCard
+      v-if="latestCard"
+      heading="Latest Update"
+      :type="type.toLowerCase()"
+      v-bind="latestCard"
+    />
     <h4 class="flex items-center">
       {{ type }} <Icon icon="feather:chevron-right" :width="20" class="mx-2" />
       {{ currentCategory.title }}
@@ -17,10 +23,14 @@
         :key="index"
         v-bind="card"
       />
-      <p
-        v-show="!filteredCards.length && currentCategory.title"
-        v-html="noResultsMessage"
-      />
+      <p v-show="!filteredCards.length && currentCategory.title">
+        <template v-if="currentCategory.slug === 'all'">
+          No more updates 😞
+        </template>
+        <template v-else>
+          No <strong>{{ currentCategory.slug }}</strong> updates 😞</template
+        >
+      </p>
     </Grid>
   </div>
 </template>
@@ -45,6 +55,10 @@ const props = defineProps({
     type: String,
     default: () => 'medium',
   },
+  showLatest: {
+    type: Boolean,
+    default: () => false,
+  },
 });
 
 const cardComponent = defineAsyncComponent(() =>
@@ -61,16 +75,7 @@ const adjustedCategories = ref([
 ]);
 const currentCategory = ref(adjustedCategories.value[0]);
 const filteredCards = ref(props.data);
-
-const noResultsMessage = computed(() => {
-  const { slug } = currentCategory.value;
-
-  if (slug === 'all') {
-    return 'No more updates 😞';
-  }
-
-  return `No <strong>${slug}</strong> updates 😞`;
-});
+const latestCard = ref(props.showLatest ? filteredCards.value.pop() : null);
 
 function handleActiveChange(category) {
   currentCategory.value = category;

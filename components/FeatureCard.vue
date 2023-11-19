@@ -1,7 +1,7 @@
 <template>
-  <div class="hero-card">
+  <div class="feature-card">
     <NuxtLink
-      :to="location"
+      :to="`/${type}/${slug}`"
       class="featured-image"
       :style="{
         backgroundImage: `url(${useStrapiMedia(featuredImage.url)})`,
@@ -12,7 +12,7 @@
         <div class="date">
           {{ format(new Date(publishedAt), 'MMMM do yyyy') }}
         </div>
-        <NuxtLink :to="location">
+        <NuxtLink :to="`/${type}/${slug}`">
           <h2 class="title">{{ title }}</h2>
         </NuxtLink>
         <div class="category">
@@ -63,15 +63,18 @@ defineProps({
     type: String,
     required: true,
   },
-  location: {
-    type: Object,
-    default: () => {},
+  type: {
+    type: String,
+    required: true,
+    validator(value) {
+      return ['update', 'project'].includes(value);
+    },
   },
 });
 </script>
 
 <style scoped>
-.hero-card {
+.feature-card {
   @apply text-gray-800 relative mb-16 block rounded-xl 
           grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4;
 }
