@@ -2,7 +2,7 @@
   <div class="feature-card">
     <NuxtLink
       :to="`/${type}s/${slug}`"
-      class="featured-image"
+      class="image"
       :style="{
         backgroundImage: `url(${featuredImage.url})`,
       }"
@@ -20,7 +20,7 @@
           <FloatingIcon icon="feather:message-square" title="2" />
         </div>
         <p>{{ excerpt }}</p>
-        <Tag v-for="tag in tags" :key="tag.slug" class="tags">{{
+        <Tag v-for="tag in tags" :key="tag.slug" class="tag">{{
           tag.title
         }}</Tag>
       </div>
@@ -78,7 +78,7 @@ defineProps({
   @apply text-gray-800 relative mb-16 block rounded-xl 
           grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4;
 }
-.featured-image {
+.image {
   @apply h-[400px] rounded-2xl drop-shadow-md
           lg:col-span-2 xl:col-span-3;
 }
@@ -99,7 +99,7 @@ defineProps({
   @apply flex justify-center mb-8 font-medium 
           lg:justify-normal;
 }
-.tags {
+.tag {
   @apply mr-4;
 }
 </style>

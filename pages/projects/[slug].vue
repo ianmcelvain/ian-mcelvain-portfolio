@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="single-project-page">
     <div class="header">
       <div
-        class="featured-image"
+        class="image"
         :style="{
           backgroundImage: `url(${project.featuredImage.url})`,
         }"
@@ -14,8 +14,8 @@
           :class="`${project.category.title} inline`"
         />
         <div>
-          <h3 class="text-gray-800">{{ project.title }}</h3>
-          <div class="mb-0 text-sm text-gray-500">{{ project.excerpt }}</div>
+          <h3 class="title">{{ project.title }}</h3>
+          <div class="excerpt">{{ project.excerpt }}</div>
         </div>
       </div>
     </div>
@@ -41,7 +41,7 @@ const project = await query(`project-${params.slug}`, singleProjectQuery, {
 .header {
   @apply mb-16 text-center;
 }
-.featured-image {
+.image {
   @apply bg-cover bg-center rounded-xl shadow-md h-[30vh] lg:h-[40vh];
 }
 .details {

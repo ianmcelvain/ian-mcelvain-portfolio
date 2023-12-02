@@ -1,12 +1,12 @@
 <template>
-  <article>
+  <div class="single-update-page">
     <div
-      class="featured-image"
+      class="image"
       :style="{
         backgroundImage: `url(${update.featuredImage.url})`,
       }"
     >
-      <div class="details">
+      <div class="meta-details">
         <FloatingIcon
           :icon="update.category.icon"
           :title="update.category.title"
@@ -14,12 +14,12 @@
         <FloatingIcon icon="feather:message-square" title="2" />
       </div>
     </div>
-    <div class="text-center my-16">
-      <div class="text-xs">
+    <div class="details">
+      <div class="date">
         {{ format(new Date(update.publishedAt), 'MMMM do yyyy') }}
       </div>
-      <h1 class="m-4">{{ update.title }}</h1>
-      <div>{{ update.excerpt }}</div>
+      <h1 class="title">{{ update.title }}</h1>
+      <div class="excerpt">{{ update.excerpt }}</div>
     </div>
     <ArticleContainer>
       <MarkdownRenderer :source="update.body" />
@@ -32,7 +32,7 @@
           }}
         /> -->
     </ArticleContainer>
-  </article>
+  </div>
 </template>
 
 <script setup>
@@ -48,15 +48,21 @@ const update = await query(`update-${params.slug}`, singleUpdateQuery, {
 </script>
 
 <style scoped>
-.featured-image {
+.image {
   @apply bg-cover relative rounded-2xl 
           h-[40vh] md:h-[50vh] lg:h-[60vh];
 }
-.details {
+.meta-details {
   @apply absolute flex font-medium drop-shadow-lg bottom-0 left-0 -mb-5 ml-3;
 }
+.details {
+  @apply text-center my-16;
+}
+.details.date {
+  @apply text-xs;
+}
 .details.title {
-  @apply text-gray-800;
+  @apply text-gray-800 mb-4;
 }
 .details.excerpt {
   @apply mb-0 text-sm text-gray-500;

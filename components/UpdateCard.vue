@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="`/updates/${slug}`" class="update">
+  <NuxtLink :to="`/updates/${slug}`" class="update-card">
     <div
       class="image"
       :style="{
@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="details">
-      <div class="text-xs">
+      <div class="date">
         {{ format(new Date(publishedAt), 'MMMM do yyyy') }}
       </div>
       <h3>{{ title }}</h3>
@@ -61,7 +61,7 @@ defineProps({
 </script>
 
 <style scoped>
-.update {
+.update-card {
   @apply text-gray-800 relative justify-between rounded-xl p-4 shadow-lg hover:shadow-xl p-2 
           transition-all duration-300 transform-gpu translate-y-0 hover:-translate-y-1 ease-in-out;
 }
@@ -73,5 +73,8 @@ defineProps({
 }
 .details {
   @apply mt-10;
+}
+.date {
+  @apply text-xs;
 }
 </style>
