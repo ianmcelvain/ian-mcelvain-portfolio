@@ -1,6 +1,6 @@
 <template>
   <ArticleContainer class="text-center">
-    <h4 className="subtitle">
+    <h4 class="subtitle">
       Writing games, native apps, and websites since 2012
     </h4>
     <p>
@@ -9,7 +9,7 @@
       whilst applying those software principles and patterns for apps and the
       web.
     </p>
-    <div className="flex my-8 justify-center items-center">
+    <div class="flex my-8 justify-center items-center">
       <a href="mailto:ian.mcelvain@gmail.com">
         <IconButton icon="feather:mail">
           {{ 'ian.nmcelvain@gmail.com' }}
