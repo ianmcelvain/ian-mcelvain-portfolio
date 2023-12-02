@@ -1,5 +1,5 @@
 <template>
-  <article class="prose prose-slate" v-html="markdown.render(source)" />
+  <article class="prose prose-slate m-auto" v-html="markdown.render(source)" />
 </template>
 
 <script setup>

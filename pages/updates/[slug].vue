@@ -21,9 +21,9 @@
       <h1 class="title">{{ update.title }}</h1>
       <div class="excerpt">{{ update.excerpt }}</div>
     </div>
-    <ArticleContainer>
-      <MarkdownRenderer :source="update.body" />
-      <!-- <Disqus
+
+    <MarkdownRenderer :source="update.body" />
+    <!-- <Disqus
           class="my-28"
           config={{
             url: location.href,
@@ -31,7 +31,6 @@
             title,
           }}
         /> -->
-    </ArticleContainer>
   </div>
 </template>
 

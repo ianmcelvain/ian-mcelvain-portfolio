@@ -7,8 +7,8 @@
 <style scoped>
 .page-container {
   @apply px-4 pt-8
-          sm:pl-28 sm:pr-28 sm:pt-24 
-          md:pl-28 md:pr-28 
-          lg:pl-28 lg:pr-28;
+          sm:pl-36 sm:pr-36 sm:pt-24 
+          md:pl-36 md:pr-36 
+          lg:pl-36 lg:pr-36;
 }
 </style>

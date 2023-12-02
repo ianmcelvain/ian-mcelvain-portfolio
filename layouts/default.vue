@@ -19,14 +19,14 @@ const { breadcrumbs } = useBreadcrumbs();
 <style>
 /* Layout margins to compensate sidebar width */
 .navbar {
-  @apply w-full sm:w-[150px] md:w-[150px] lg:w-[150px];
+  @apply w-full sm:w-[90px] md:w-[90px] lg:w-[90px];
 }
 .page-container {
-  @apply ml-0 sm:ml-[150px] md:ml-[150px] lg:ml-[150px];
+  @apply ml-0 sm:ml-[90px] md:ml-[90px] lg:ml-[90px];
 }
 
 .breadcrumbs {
   @apply relative top-0 left-0 py-4 
-          sm:absolute sm:top-8 sm:left-64;
+          sm:absolute sm:top-8 sm:left-52;
 }
 </style>
