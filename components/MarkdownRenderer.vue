@@ -30,3 +30,11 @@ const markdown = new MarkdownIt()
   .use(MarkdownItTasklists)
   .use(MarkdownItTOC);
 </script>
+
+<style>
+/* Hack to counter image margins so that em tags look like they at image captions */
+em {
+  display: block;
+  margin-top: -2em;
+}
+</style>
