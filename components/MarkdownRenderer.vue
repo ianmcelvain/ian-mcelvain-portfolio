@@ -1,5 +1,5 @@
 <template>
-  <article class="prose prose-slate m-auto" v-html="markdown.render(source)" />
+  <article class="markdown" v-html="markdown.render(source)" />
 </template>
 
 <script setup>
@@ -32,9 +32,11 @@ const markdown = new MarkdownIt()
 </script>
 
 <style>
+.markdown {
+  @apply prose prose-slate mx-auto mb-32;
+}
 /* Hack to counter image margins so that em tags look like they at image captions */
-em {
-  display: block;
-  margin-top: -2em;
+.markdown > p > em {
+  @apply block -mt-8;
 }
 </style>
