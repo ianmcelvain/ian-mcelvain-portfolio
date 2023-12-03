@@ -79,7 +79,7 @@ defineProps({
           grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4;
 }
 .image {
-  @apply h-[400px] rounded-2xl drop-shadow-md
+  @apply h-[400px] rounded-2xl bg-center bg-cover drop-shadow-md
           lg:col-span-2 xl:col-span-3;
 }
 .details-wrapper {
