@@ -57,13 +57,13 @@ const update = await query(`update-${params.slug}`, singleUpdateQuery, {
 .details {
   @apply text-center my-16;
 }
-.details.date {
+.date {
   @apply text-xs;
 }
-.details.title {
+.title {
   @apply text-gray-800 mb-4;
 }
-.details.excerpt {
+.excerpt {
   @apply mb-0 text-sm text-gray-500;
 }
 </style>
