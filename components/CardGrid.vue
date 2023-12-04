@@ -25,10 +25,11 @@
       />
       <p v-show="!filteredCards.length && currentCategory.title">
         <template v-if="currentCategory.slug === 'all'">
-          No more updates 😞
+          {{ `No more ${props.type.toLowerCase()}s 😞` }}
         </template>
         <template v-else>
-          No <strong>{{ currentCategory.slug }}</strong> updates 😞</template
+          No <strong>{{ currentCategory.slug }}</strong>
+          {{ `${props.type.toLowerCase()}s 😞` }}</template
         >
       </p>
     </Grid>
