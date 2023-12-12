@@ -6,7 +6,11 @@
         backgroundImage: `url(${featuredImage.url})`,
       }"
     ></div>
-    <NuxtLink :to="`/projects/${slug}`" class="feature-link">
+    <NuxtLink
+      :to="link"
+      class="feature-link"
+      :target="externalLink ? '_blank' : ''"
+    >
       <Icon :icon="category.icon" :width="26" class="flex-none mt-1.5 mr-2.5" />
       <div class="grow">
         <h3 class="text-gray-800">{{ title }}</h3>
@@ -20,7 +24,7 @@
           >
             {{ status.title }}
           </span>
-          <Icon icon="feather:chevron-right" :width="20" class="mt-2 ml-auto" />
+          <Icon :icon="linkIcon" :width="20" class="mt-2 ml-auto" />
         </div>
       </div>
     </NuxtLink>
@@ -30,7 +34,7 @@
 <script setup>
 import { Icon } from '@iconify/vue';
 
-defineProps({
+const props = defineProps({
   id: {
     type: String,
     required: true,
@@ -65,7 +69,16 @@ defineProps({
       return [('title', 'slug', 'icon')].every((key) => key in value);
     },
   },
+  externalLink: {
+    type: String,
+    default: null,
+  },
 });
+
+const link = ref(props.externalLink ?? `/projects/${props.slug}`);
+const linkIcon = ref(
+  props.externalLink ? 'feather:external-link' : 'feather:chevron-right'
+);
 </script>
 
 <style scoped>
