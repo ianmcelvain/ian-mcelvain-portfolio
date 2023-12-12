@@ -19,7 +19,7 @@
           <FloatingIcon :icon="category.icon" :title="category.title" />
           <FloatingIcon icon="feather:message-square" title="2" />
         </div>
-        <p>{{ excerpt }}</p>
+        <ExcerptText :text="excerpt" />
         <Tag v-for="tag in tags" :key="tag.slug" class="tag">{{
           tag.title
         }}</Tag>

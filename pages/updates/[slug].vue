@@ -19,7 +19,7 @@
         {{ format(new Date(update.publishedAt), 'MMMM do yyyy') }}
       </div>
       <h1 class="title">{{ update.title }}</h1>
-      <div class="excerpt">{{ update.excerpt }}</div>
+      <ExcerptText :text="update.excerpt" />
     </div>
 
     <MarkdownRenderer :source="update.body" />
@@ -62,8 +62,5 @@ const update = await query(`update-${params.slug}`, singleUpdateQuery, {
 }
 .title {
   @apply text-gray-800 mb-4;
-}
-.excerpt {
-  @apply mb-0 text-sm text-gray-500;
 }
 </style>

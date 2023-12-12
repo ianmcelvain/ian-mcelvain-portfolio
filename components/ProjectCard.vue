@@ -14,9 +14,7 @@
       <Icon :icon="category.icon" :width="26" class="flex-none mt-1.5 mr-2.5" />
       <div class="grow">
         <h3 class="text-gray-800">{{ title }}</h3>
-        <div class="mb-0 text-sm text-gray-500">
-          <p>{{ excerpt }}</p>
-        </div>
+        <ExcerptText :text="excerpt" />
         <div class="flex">
           <!-- <Tag>{{ status.title }}</Tag> -->
           <span

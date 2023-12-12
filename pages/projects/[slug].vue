@@ -15,7 +15,7 @@
         />
         <div>
           <h3 class="title">{{ project.title }}</h3>
-          <div class="excerpt">{{ project.excerpt }}</div>
+          <ExcerptText :text="project.excerpt" />
         </div>
       </div>
     </div>
@@ -47,10 +47,7 @@ const project = await query(`project-${params.slug}`, singleProjectQuery, {
 .details {
   @apply bg-white w-[70%] lg:w-[60%] xl:w-[50%] mx-auto -mt-8 shadow-lg rounded-xl p-3;
 }
-.details.title {
+.title {
   @apply text-gray-800;
-}
-.details.excerpt {
-  @apply mb-0 text-sm text-gray-500;
 }
 </style>

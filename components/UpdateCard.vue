@@ -16,7 +16,7 @@
         {{ format(new Date(publishedAt), 'MMMM do yyyy') }}
       </div>
       <h3>{{ title }}</h3>
-      <p>{{ excerpt }}</p>
+      <ExcerptText :text="excerpt" />
       <Tag v-for="tag in tags" :key="tag.slug">{{ tag.title }}</Tag>
     </div>
   </NuxtLink>
