@@ -20,7 +20,7 @@
       </div>
     </div>
     <ArticleContainer>
-      <MarkdownRenderer :source="project.body" />
+      <MarkdownRenderer v-if="project.body" :source="project.body" />
     </ArticleContainer>
   </div>
 </template>
