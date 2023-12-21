@@ -31,14 +31,7 @@
 </template>
 
 <script setup>
-import {
-  SfDropdown,
-  SfButton,
-  SfLink,
-  SfIconMoreHoriz,
-  SfIconHome,
-} from '@storefront-ui/vue';
-
+import { SfLink, SfIconHome } from '@storefront-ui/vue';
 import { resolveComponent } from 'vue';
 
 const NuxtLink = resolveComponent('NuxtLink');
