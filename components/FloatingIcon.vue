@@ -1,5 +1,5 @@
 <template>
-  <span class="wrapper">
+  <span class="floating-icon">
     <Icon :icon="icon" :width="width" class="icon" />
     <span v-if="title" class="title">{{ title }}</span>
   </span>
@@ -25,7 +25,7 @@ defineProps({
 </script>
 
 <style scoped>
-.wrapper {
+.floating-icon {
   @apply whitespace-nowrap flex rounded-2xl bg-white px-2.5 py-2.5 
           text-sm mr-2 transition-all duration-300 hover:text-white
           hover:bg-gray-700 transform-gpu translate-y-0 

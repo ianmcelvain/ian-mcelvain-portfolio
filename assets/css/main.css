@@ -17,3 +17,23 @@ h4 {
 p {
   @apply mb-6;
 }
+
+.floating-icon.development {
+  @apply text-purple-500 hover:!bg-purple-500 hover:!text-white;
+}
+.floating-icon.release {
+  @apply text-rose-500 hover:!bg-rose-500 hover:!text-white;
+}
+.floating-icon.uncategorized {
+  @apply text-gray-500 hover:!bg-gray-500 hover:!text-white;
+}
+
+.development.active {
+  @apply !bg-purple-500
+}
+.release.active {
+  @apply !bg-rose-500
+}
+.uncategorized.active {
+  @apply !bg-gray-500
+}

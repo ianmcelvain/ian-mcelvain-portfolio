@@ -3,6 +3,7 @@
     <IconButton
       v-for="item in items"
       :key="item.id"
+      :class="item.slug"
       :icon="item.icon"
       :text="item.title"
       :active="activeItem.title === item.title"

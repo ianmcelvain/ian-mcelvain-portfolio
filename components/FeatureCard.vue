@@ -16,7 +16,11 @@
           <h2 class="title">{{ title }}</h2>
         </NuxtLink>
         <div class="category">
-          <FloatingIcon :icon="category.icon" :title="category.title" />
+          <FloatingIcon
+            :class="category.slug"
+            :icon="category.icon"
+            :title="category.title"
+          />
           <FloatingIcon icon="feather:message-square" title="2" />
         </div>
         <ExcerptText :text="excerpt" />

@@ -8,6 +8,7 @@
     >
       <div class="meta-details">
         <FloatingIcon
+          :class="category.slug"
           :icon="category.icon"
           @click="emit('onCategoryClick', category)"
         />
