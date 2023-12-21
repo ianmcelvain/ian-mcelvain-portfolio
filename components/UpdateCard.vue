@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="`/updates/${slug}`" class="update-card">
+  <span class="update-card">
     <div
       class="image"
       :style="{
@@ -7,7 +7,10 @@
       }"
     >
       <div class="meta-details">
-        <FloatingIcon :icon="category.icon" />
+        <FloatingIcon
+          :icon="category.icon"
+          @click="emit('onCategoryClick', category)"
+        />
         <FloatingIcon icon="feather:message-square" />
       </div>
     </div>
@@ -19,7 +22,7 @@
       <ExcerptText :text="excerpt" />
       <Tag v-for="tag in tags" :key="tag.slug">{{ tag.title }}</Tag>
     </div>
-  </NuxtLink>
+  </span>
 </template>
 
 <script setup>
@@ -58,6 +61,8 @@ defineProps({
     required: true,
   },
 });
+
+const emit = defineEmits(['onCategoryClick']);
 </script>
 
 <style scoped>

@@ -22,6 +22,7 @@
         v-show="filteredCards.length"
         :key="index"
         v-bind="card"
+        @on-category-click="handleActiveChange"
       />
       <p v-show="!filteredCards.length && currentCategory.title">
         <template v-if="currentCategory.slug === 'all'">
