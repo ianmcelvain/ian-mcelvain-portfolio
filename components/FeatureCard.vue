@@ -15,13 +15,17 @@
         <NuxtLink :to="`/${type}s/${slug}`">
           <h2 class="title">{{ title }}</h2>
         </NuxtLink>
-        <div class="category">
-          <FloatingIcon
-            :class="category.slug"
-            :icon="category.icon"
-            :title="category.title"
-          />
-          <FloatingIcon icon="feather:message-square" title="2" />
+        <div class="meta-details">
+          <div class="flex items-center text-sm">
+            <div :class="`category ${category.slug}`">
+              <Icon class="mr-1" :icon="category.icon" :width="20" />
+              {{ category.title }}
+            </div>
+            <div class="comment-count">
+              <Icon class="mr-1" icon="feather:message-square" :width="20" />
+              {{ 2 }}
+            </div>
+          </div>
         </div>
         <ExcerptText :text="excerpt" />
         <Tag v-for="tag in tags" :key="tag.slug" class="tag">{{
@@ -34,6 +38,7 @@
 
 <script setup>
 import { format } from 'date-fns';
+import { Icon } from '@iconify/vue';
 
 defineProps({
   title: {
@@ -99,9 +104,13 @@ defineProps({
 .title {
   @apply mb-2;
 }
-.category {
-  @apply flex justify-center mb-8 font-medium 
+.meta-details {
+  @apply flex justify-center mb-8 font-medium text-sm 
           lg:justify-normal;
+}
+.category,
+.comment-count {
+  @apply flex items-center mr-2;
 }
 .tag {
   @apply mr-4;
