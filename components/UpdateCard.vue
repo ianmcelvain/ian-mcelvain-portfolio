@@ -1,5 +1,5 @@
 <template>
-  <span class="update-card">
+  <NuxtLink :to="`/updates/${slug}`" class="update-card">
     <div
       class="image"
       :style="{
@@ -23,7 +23,7 @@
       <ExcerptText :text="excerpt" />
       <Tag v-for="tag in tags" :key="tag.slug">{{ tag.title }}</Tag>
     </div>
-  </span>
+  </NuxtLink>
 </template>
 
 <script setup>
