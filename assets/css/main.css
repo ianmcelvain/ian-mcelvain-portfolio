@@ -18,6 +18,7 @@ p {
   @apply mb-6;
 }
 
+/* Update category colors */
 .development {
   @apply text-purple-500;
 }
@@ -26,6 +27,20 @@ p {
 }
 .uncategorized {
   @apply text-gray-500;
+}
+
+/* Project type colors */
+.game {
+  @apply text-pink-500;
+}
+.app {
+  @apply text-yellow-500;
+}
+.website {
+  @apply text-blue-500;
+}
+.other {
+  @apply text-orange-500;
 }
 
 .floating-icon.development {
@@ -38,6 +53,19 @@ p {
   @apply hover:!bg-gray-500 hover:!text-white;
 }
 
+.floating-icon.game {
+  @apply hover:!bg-pink-500 hover:!text-white;
+}
+.floating-icon.app {
+  @apply hover:!bg-blue-500 hover:!text-white;
+}
+.floating-icon.website {
+  @apply hover:!bg-yellow-500 hover:!text-white;
+}
+.floating-icon.other {
+  @apply hover:!bg-orange-500 hover:!text-white;
+}
+
 .development.active {
   @apply !bg-purple-500
 }
@@ -46,4 +74,16 @@ p {
 }
 .uncategorized.active {
   @apply !bg-gray-500
+}
+.game.active {
+  @apply !bg-pink-500
+}
+.app.active {
+  @apply !bg-yellow-500
+}
+.website.active {
+  @apply !bg-blue-500
+}
+.other.active {
+  @apply !bg-orange-500
 }

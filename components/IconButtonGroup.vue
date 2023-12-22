@@ -37,6 +37,6 @@ function handleClick(item) {
 
 <style scoped>
 .icon-button-group.horizontal {
-  @apply flex;
+  @apply flex mb-2;
 }
 </style>

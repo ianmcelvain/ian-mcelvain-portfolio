@@ -11,7 +11,11 @@
       class="feature-link"
       :target="externalLink ? '_blank' : ''"
     >
-      <Icon :icon="category.icon" :width="26" class="flex-none mt-1.5 mr-2.5" />
+      <Icon
+        :icon="category.icon"
+        :width="26"
+        :class="`flex-none mt-1.5 mr-2.5 ${category.slug}`"
+      />
       <div class="grow">
         <h3 class="text-gray-800">{{ title }}</h3>
         <ExcerptText :text="excerpt" />
