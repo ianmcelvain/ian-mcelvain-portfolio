@@ -4,23 +4,23 @@
       <div
         class="image"
         :style="{
-          backgroundImage: `url(${project.featuredImage.url})`,
+          backgroundImage: `url(${featuredImage.url})`,
         }"
       ></div>
       <div class="details">
         <Icon
-          :icon="project.category.icon"
+          :icon="category.icon"
           :width="28"
-          :class="`${project.category.title} inline`"
+          :class="`${category.title} inline`"
         />
         <div>
-          <h3 class="title">{{ project.title }}</h3>
-          <ExcerptText :text="project.excerpt" />
+          <h3 class="title">{{ title }}</h3>
+          <ExcerptText :text="excerpt" />
         </div>
       </div>
     </div>
     <ArticleContainer>
-      <MarkdownRenderer v-if="project.body" :source="project.body" />
+      <MarkdownRenderer v-if="body" :source="body" />
     </ArticleContainer>
   </div>
 </template>
@@ -32,9 +32,13 @@ import { singleProjectQuery } from '~/graphql/queries';
 const { params } = useRoute();
 const { query } = useBackend();
 
-const project = await query(`project-${params.slug}`, singleProjectQuery, {
-  slug: params.slug,
-});
+const { category, featuredImage, title, excerpt, body } = await query(
+  `project-${params.slug}`,
+  singleProjectQuery,
+  {
+    slug: params.slug,
+  }
+);
 </script>
 
 <style scoped>

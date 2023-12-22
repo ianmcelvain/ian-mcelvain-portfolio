@@ -3,26 +3,27 @@
     <div
       class="image"
       :style="{
-        backgroundImage: `url(${update.featuredImage.url})`,
+        backgroundImage: `url(${featuredImage.url})`,
       }"
     >
       <div class="meta-details">
         <FloatingIcon
-          :icon="update.category.icon"
-          :title="update.category.title"
+          :class="category.slug"
+          :icon="category.icon"
+          :title="category.title"
         />
         <FloatingIcon icon="feather:message-square" title="2" />
       </div>
     </div>
     <div class="details">
       <div class="date">
-        {{ format(new Date(update.publishedAt), 'MMMM do yyyy') }}
+        {{ format(new Date(publishedAt), 'MMMM do yyyy') }}
       </div>
-      <h1 class="title">{{ update.title }}</h1>
-      <ExcerptText :text="update.excerpt" />
+      <h1 class="title">{{ title }}</h1>
+      <ExcerptText :text="excerpt" />
     </div>
 
-    <MarkdownRenderer :source="update.body" />
+    <MarkdownRenderer :source="body" />
     <!-- <Disqus
           class="my-28"
           config={{
@@ -41,9 +42,10 @@ import { format } from 'date-fns';
 const { params } = useRoute();
 const { query } = useBackend();
 
-const update = await query(`update-${params.slug}`, singleUpdateQuery, {
-  slug: params.slug,
-});
+const { category, featuredImage, publishedAt, title, excerpt, body } =
+  await query(`update-${params.slug}`, singleUpdateQuery, {
+    slug: params.slug,
+  });
 </script>
 
 <style scoped>
