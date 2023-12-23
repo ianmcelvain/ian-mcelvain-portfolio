@@ -26,7 +26,7 @@ const props = defineProps({
 
 <style scoped>
 .tooltip-content {
-  @apply relative flex items-center justify-center p-2
+  @apply relative w-fit flex items-center justify-center p-2
           bottom-2 sm:bottom-0 md:bottom-0 lg:bottom-0;
 }
 .tooltip-content.horizontal {
