@@ -1,5 +1,15 @@
 <template>
-  <div class="m-auto max-w-screen-md">
+  <article>
     <slot />
-  </div>
+  </article>
 </template>
+
+<style>
+article {
+  @apply prose prose-slate mx-auto mb-32;
+}
+/* Hack to counter image margins so that em tags look like they at image captions */
+article > p > em {
+  @apply block -mt-8;
+}
+</style>

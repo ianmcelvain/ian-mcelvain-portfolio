@@ -1,5 +1,5 @@
 <template>
-  <article class="markdown" v-html="markdown.render(source)" />
+  <div v-html="markdown.render(source)" />
 </template>
 
 <script setup>
@@ -30,13 +30,3 @@ const markdown = new MarkdownIt()
   .use(MarkdownItTasklists)
   .use(MarkdownItTOC);
 </script>
-
-<style>
-.markdown {
-  @apply prose prose-slate mx-auto mb-32;
-}
-/* Hack to counter image margins so that em tags look like they at image captions */
-.markdown > p > em {
-  @apply block -mt-8;
-}
-</style>

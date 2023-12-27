@@ -23,14 +23,16 @@
       <ExcerptText :text="excerpt" />
     </div>
 
-    <MarkdownRenderer :source="body" />
-    <ClientOnly>
-      <Disqus
-        :url="`${config.public.baseUrl}${path}`"
-        :title="title"
-        :identifier="path"
-      />
-    </ClientOnly>
+    <ArticleContainer>
+      <MarkdownRenderer :source="body" />
+      <ClientOnly>
+        <Disqus
+          :url="`${config.public.baseUrl}${path}`"
+          :title="title"
+          :identifier="path"
+        />
+      </ClientOnly>
+    </ArticleContainer>
   </div>
 </template>
 
