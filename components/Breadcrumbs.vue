@@ -8,16 +8,7 @@
         class="peer flex peer-[:nth-of-type(even)]:before:content-['/'] peer-[:nth-of-type(even)]:before:px-2 peer-[:nth-of-type(even)]:before:leading-5 last-of-type:flex last-of-type:before:font-normal last-of-type:before:text-neutral-500 text-neutral-500 last-of-type:text-neutral-900 last-of-type:font-medium"
       >
         <SfLink
-          v-if="index === 0"
-          :href="item.path"
-          variant="secondary"
-          :tag="NuxtLink"
-          class-name="inline-flex leading-5 no-underline hover:underline active:underline whitespace-nowrap outline-secondary-600 text-neutral-500"
-        >
-          <SfIconHome size="sm" />
-        </SfLink>
-        <SfLink
-          v-else
+          v-if="index !== 0"
           :href="item.path"
           variant="secondary"
           :tag="NuxtLink"
@@ -36,20 +27,10 @@ import { resolveComponent } from 'vue';
 
 const NuxtLink = resolveComponent('NuxtLink');
 
-const props = defineProps({
+defineProps({
   breadcrumbs: {
     type: Array,
     required: true,
   },
 });
-
-const dropdownOpened = ref(false);
-
-function close() {
-  dropdownOpened.value = false;
-}
-
-function toggle() {
-  dropdownOpened.value = !dropdownOpened.value;
-}
 </script>

@@ -58,7 +58,7 @@ footer {
 
 .breadcrumbs {
   @apply relative top-0 left-0 py-4 
-          sm:absolute sm:top-8 sm:left-56;
+          sm:absolute sm:top-8 sm:left-60;
 }
 
 .side-quest-easter-egg {
