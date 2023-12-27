@@ -24,14 +24,13 @@
     </div>
 
     <MarkdownRenderer :source="body" />
-    <!-- <Disqus
-          class="my-28"
-          config={{
-            url: location.href,
-            identifier: id,
-            title,
-          }}
-        /> -->
+    <ClientOnly>
+      <Disqus
+        :url="`${config.public.baseUrl}${path}`"
+        :title="title"
+        :identifier="path"
+      />
+    </ClientOnly>
   </div>
 </template>
 
@@ -39,8 +38,9 @@
 import { singleUpdateQuery } from '~/graphql/queries';
 import { format } from 'date-fns';
 
-const { params } = useRoute();
+const { params, path } = useRoute();
 const { query } = useBackend();
+const config = useRuntimeConfig();
 
 const { category, featuredImage, publishedAt, title, excerpt, body } =
   await query(`update-${params.slug}`, singleUpdateQuery, {

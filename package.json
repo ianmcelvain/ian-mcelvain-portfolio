@@ -47,6 +47,7 @@
     "markdown-it-task-lists": "^2.1.1",
     "markdown-it-toc-done-right": "^4.2.0",
     "strapi-flatten-graphql": "^0.1.0",
+    "vue-disqus": "^5.1.0",
     "vue3-marquee-slider": "^1.0.5",
     "vue3-toastify": "^0.1.14"
   }
