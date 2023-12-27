@@ -18,8 +18,6 @@ export default defineNuxtConfig({
     plugins: [gql()],
   },
   runtimeConfig: {
-    // The private keys which are only available server-side
-    apiSecret: '123',
     public: {
       apiBase: '/api',
       baseUrl: process.env.BASE_URL || 'http://127.0.0.1:3000',
@@ -30,14 +28,6 @@ export default defineNuxtConfig({
     prefix: '/api',
   },
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/strapi', '@nuxtjs/apollo'],
-  // apollo: {
-  //   clients: {
-  //     default: {
-  //       httpEndpoint:
-  //         process.env.BACKEND_URL || 'http://127.0.0.1:1337/graphql',
-  //     },
-  //   },
-  // },
   apollo: {
     clients: {
       default: {
