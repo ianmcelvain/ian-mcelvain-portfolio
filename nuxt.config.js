@@ -2,6 +2,15 @@ import gql from '@rollup/plugin-graphql';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  site: {
+    url: 'https://ianmcelvain.com',
+    name: 'Ian McElvain',
+    description: 'Platform for personal projects.',
+    defaultLocale: 'en', // not needed if you have @nuxtjs/i18n installed
+  },
+  colorMode: {
+    preference: 'light',
+  },
   devtools: {
     enabled: true,
 
