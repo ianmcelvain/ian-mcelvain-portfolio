@@ -27,7 +27,7 @@ export default defineNuxtConfig({
     url: process.env.STRAPI_URL || 'http://127.0.0.1:1337',
     prefix: '/api',
   },
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/strapi', '@nuxtjs/apollo'],
+  modules: ['@nuxtjs/strapi', '@nuxtjs/apollo', '@nuxtseo/module', '@nuxt/ui'],
   apollo: {
     clients: {
       default: {

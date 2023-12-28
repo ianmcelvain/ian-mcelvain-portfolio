@@ -2,18 +2,32 @@
   <div class="wrapper">
     <NavBar />
     <PageContainer class="body">
-      <Breadcrumbs
-        v-show="breadcrumbs.length > 2"
-        class="breadcrumbs"
-        :breadcrumbs="breadcrumbs"
-      />
+      <UBreadcrumb
+        v-show="links.length > 1"
+        class="mb-4 !text-sm"
+        :links="links"
+        divider="/"
+      >
+        <!-- <template #icon="{ link, index, isActive }">
+          <UIcon v-if="link.icon" :name="link.icon" dynamic />
+        </template> -->
+        <template #default="{ link, isActive, index }">
+          <span
+            :class="`breadcrumb ${
+              isActive ? 'text-neutral-900' : 'text-neutral-500'
+            }`"
+          >
+            {{ link.label }}
+          </span>
+        </template>
+      </UBreadcrumb>
       <slot class="content" />
     </PageContainer>
   </div>
 </template>
 
 <script setup>
-const { breadcrumbs } = useBreadcrumbs();
+const links = useBreadcrumbItems({ hideRoot: true });
 </script>
 
 <style>
@@ -36,6 +50,10 @@ body,
 .breadcrumbs {
   @apply relative top-0 left-0 py-4 
           sm:absolute sm:top-8 sm:left-60;
+}
+.breadcrumb {
+  @apply text-sm font-normal no-underline hover:underline active:underline 
+          whitespace-nowrap outline-secondary-600;
 }
 
 .side-quest-easter-egg {
