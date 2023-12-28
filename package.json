@@ -19,6 +19,7 @@
     "@nuxtjs/apollo": "^5.0.0-alpha.7",
     "@nuxtjs/strapi": "^1.9.3",
     "@nuxtjs/tailwindcss": "^6.8.0",
+    "@nuxtseo/module": "^2.0.0-beta.51",
     "@storefront-ui/vue": "^2.6.0",
     "@tailwindcss/typography": "^0.5.10",
     "eslint": "^8.52.0",
