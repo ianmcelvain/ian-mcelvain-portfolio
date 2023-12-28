@@ -26,7 +26,11 @@
           >
             {{ status.title }}
           </span>
-          <Icon :icon="linkIcon" :width="20" class="mt-2 ml-auto" />
+          <Icon
+            :icon="linkIcon"
+            :width="20"
+            :class="`mt-2 ml-auto hover ${category.slug}`"
+          />
         </div>
       </div>
     </NuxtLink>
