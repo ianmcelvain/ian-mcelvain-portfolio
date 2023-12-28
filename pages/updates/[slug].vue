@@ -24,7 +24,7 @@
     </div>
 
     <ArticleContainer>
-      <MarkdownRenderer :source="body" />
+      <MarkdownRenderer class="mb-16" :source="body" />
       <ClientOnly>
         <Disqus
           :url="`${config.public.baseUrl}${path}`"
