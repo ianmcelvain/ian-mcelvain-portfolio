@@ -6,10 +6,11 @@
       :type="type.toLowerCase()"
       v-bind="latestCard"
     />
-    <h4 class="flex items-center">
-      {{ type }} <Icon icon="feather:chevron-right" :width="20" class="mx-2" />
-      {{ currentCategory.title }}
-    </h4>
+    <div class="flex items-center text-gray-500">
+      <h4>{{ type }}s</h4>
+      <h4 class="mx-2">/</h4>
+      <h4 :class="currentCategory.slug">{{ currentCategory.title }}</h4>
+    </div>
     <IconButtonGroup
       v-if="adjustedCategories.length"
       :items="adjustedCategories"
