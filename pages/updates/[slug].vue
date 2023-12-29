@@ -21,7 +21,6 @@
       <h1 class="title">{{ title }}</h1>
       <ExcerptText :text="excerpt" />
     </div>
-
     <ArticleContainer>
       <MarkdownRenderer class="mb-16" :source="body" />
       <ClientOnly>

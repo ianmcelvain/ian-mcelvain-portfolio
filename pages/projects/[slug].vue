@@ -11,7 +11,7 @@
         <Icon
           :icon="category.icon"
           :width="28"
-          :class="`${category.title} inline`"
+          :class="`${category.slug} inline`"
         />
         <div>
           <h3 class="title">{{ title }}</h3>
