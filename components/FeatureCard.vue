@@ -21,10 +21,6 @@
               <Icon class="mr-1" :icon="category.icon" :width="20" />
               {{ category.title }}
             </div>
-            <div class="comment-count">
-              <Icon class="mr-1" icon="feather:message-square" :width="20" />
-              {{ 2 }}
-            </div>
           </div>
         </div>
         <ExcerptText :text="excerpt" />
@@ -105,7 +101,7 @@ defineProps({
   @apply mb-2;
 }
 .meta-details {
-  @apply flex justify-center mb-8 font-medium text-sm 
+  @apply flex justify-center mb-6 font-medium text-sm 
           lg:justify-normal;
 }
 .category,

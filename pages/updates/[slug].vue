@@ -12,7 +12,6 @@
           :icon="category.icon"
           :title="category.title"
         />
-        <FloatingIcon icon="feather:message-square" title="2" />
       </div>
     </div>
     <div class="details">

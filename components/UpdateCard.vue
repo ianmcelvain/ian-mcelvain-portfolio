@@ -13,7 +13,6 @@
             :icon="category.icon"
             @click="emit('onCategoryClick', category)"
           />
-          <FloatingIcon icon="feather:message-square" />
         </div>
       </div>
     </NuxtLink>
