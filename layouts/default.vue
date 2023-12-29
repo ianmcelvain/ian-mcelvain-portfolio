@@ -4,18 +4,14 @@
     <PageContainer class="body">
       <UBreadcrumb
         v-show="links.length > 1"
-        class="mb-4 !text-sm"
+        class="mb-4 sm:-mt-9"
         :links="links"
         divider=" / "
       >
-        <template #default="{ link, isActive }">
-          <span
-            :class="`breadcrumb ${
-              isActive ? 'text-neutral-900' : 'text-neutral-500'
-            }`"
-          >
+        <template #default="{ link }">
+          <h4 class="mb-0">
             {{ link.label }}
-          </span>
+          </h4>
         </template>
       </UBreadcrumb>
       <slot class="content" />
@@ -42,15 +38,6 @@ body,
 }
 .page-container {
   @apply ml-0 sm:ml-[90px] md:ml-[90px] lg:ml-[90px];
-}
-
-.breadcrumbs {
-  @apply relative top-0 left-0 py-4 
-          sm:absolute sm:top-8 sm:left-60;
-}
-.breadcrumb {
-  @apply text-sm font-normal no-underline hover:underline active:underline 
-          whitespace-nowrap outline-secondary-600;
 }
 
 .side-quest-easter-egg {
