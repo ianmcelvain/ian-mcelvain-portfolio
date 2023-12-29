@@ -1,6 +1,6 @@
 <template>
   <div class="update-card">
-    <NuxtLink :to="to">
+    <NuxtLink :to="`/updates/${slug}`">
       <div
         class="image"
         :style="{
@@ -20,7 +20,7 @@
       <div class="date">
         {{ format(new Date(publishedAt), 'MMMM do yyyy') }}
       </div>
-      <NuxtLink :to="to">
+      <NuxtLink :to="`/updates/${slug}`">
         <h3>{{ title }}</h3>
       </NuxtLink>
       <ExcerptText :text="excerpt" />
@@ -67,8 +67,6 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['onCategoryClick']);
-
-const to = ref(`/updates/${props.slug}`);
 </script>
 
 <style scoped>
