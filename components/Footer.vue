@@ -1,10 +1,10 @@
 <template>
   <footer>
     <div class="side-quest-easter-egg">
-      <SfTooltip
-        label="Hey psss, I have a surprise for you :)"
-        placement="left"
-        :show-arrow="true"
+      <UTooltip
+        text="Hey psss, I have a surprise for you :)"
+        :shortcuts="['⌘', 'O']"
+        :popper="{ arrow: true }"
       >
         <NuxtLink to="/cake">
           <img
@@ -14,14 +14,12 @@
             :width="40"
           />
         </NuxtLink>
-      </SfTooltip>
+      </UTooltip>
     </div>
   </footer>
 </template>
 
-<script setup>
-import { SfTooltip } from '@storefront-ui/vue';
-</script>
+<script setup></script>
 
 <style scoped>
 footer {
