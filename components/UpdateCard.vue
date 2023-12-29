@@ -1,35 +1,39 @@
 <template>
-  <NuxtLink :to="`/updates/${slug}`" class="update-card">
-    <div
-      class="image"
-      :style="{
-        backgroundImage: `url(${featuredImage.url})`,
-      }"
-    >
-      <div class="meta-details">
-        <FloatingIcon
-          :class="category.slug"
-          :icon="category.icon"
-          @click="emit('onCategoryClick', category)"
-        />
-        <FloatingIcon icon="feather:message-square" />
+  <div class="update-card">
+    <NuxtLink :to="to">
+      <div
+        class="image"
+        :style="{
+          backgroundImage: `url(${featuredImage.url})`,
+        }"
+      >
+        <div class="meta-details">
+          <FloatingIcon
+            :class="category.slug"
+            :icon="category.icon"
+            @click="emit('onCategoryClick', category)"
+          />
+          <FloatingIcon icon="feather:message-square" />
+        </div>
       </div>
-    </div>
+    </NuxtLink>
     <div class="details">
       <div class="date">
         {{ format(new Date(publishedAt), 'MMMM do yyyy') }}
       </div>
-      <h3>{{ title }}</h3>
+      <NuxtLink :to="to">
+        <h3>{{ title }}</h3>
+      </NuxtLink>
       <ExcerptText :text="excerpt" />
       <Tag v-for="tag in tags" :key="tag.slug">{{ tag.title }}</Tag>
     </div>
-  </NuxtLink>
+  </div>
 </template>
 
 <script setup>
 import { format } from 'date-fns';
 
-defineProps({
+const props = defineProps({
   title: {
     type: String,
     required: true,
@@ -64,6 +68,8 @@ defineProps({
 });
 
 const emit = defineEmits(['onCategoryClick']);
+
+const to = ref(`/updates/${props.slug}`);
 </script>
 
 <style scoped>

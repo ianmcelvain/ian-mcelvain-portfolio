@@ -1,5 +1,10 @@
 export default defineAppConfig({
   ui: {
+    primary: 'red',
+    gray: 'slate',
+    icons: {
+      dynamic: true,
+    },
     button: {
       default: {
         loadingIcon: 'i-octicon-sync-24',

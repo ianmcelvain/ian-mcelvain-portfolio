@@ -52,7 +52,7 @@ const { category, featuredImage, publishedAt, title, excerpt, body } =
 
 <style scoped>
 .image {
-  @apply bg-cover relative rounded-2xl 
+  @apply bg-cover bg-center relative rounded-2xl 
           h-[40vh] md:h-[50vh] lg:h-[60vh];
 }
 .meta-details {

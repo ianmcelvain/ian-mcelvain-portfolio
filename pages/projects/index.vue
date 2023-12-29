@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <CardGrid
-      type="Project"
-      :categories="projectCategories"
-      :data="data"
-      size="medium"
-    />
-  </div>
+  <CardGrid
+    type="Project"
+    :categories="projectCategories"
+    :data="data"
+    size="small"
+  />
 </template>
 
 <script setup>

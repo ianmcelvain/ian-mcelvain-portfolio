@@ -7,7 +7,7 @@
       }"
     ></div>
     <NuxtLink
-      :to="link"
+      :to="externalLink ?? `/projects/${props.slug}`"
       class="feature-link"
       :target="externalLink ? '_blank' : ''"
     >
@@ -27,7 +27,11 @@
             {{ status.title }}
           </span>
           <Icon
-            :icon="linkIcon"
+            :icon="
+              props.externalLink
+                ? 'feather:external-link'
+                : 'feather:chevron-right'
+            "
             :width="20"
             :class="`mt-2 ml-auto hover ${category.slug}`"
           />
@@ -80,11 +84,6 @@ const props = defineProps({
     default: null,
   },
 });
-
-const link = ref(props.externalLink ?? `/projects/${props.slug}`);
-const linkIcon = ref(
-  props.externalLink ? 'feather:external-link' : 'feather:chevron-right'
-);
 </script>
 
 <style scoped>

@@ -2,6 +2,7 @@
   <span class="floating-icon">
     <Icon :icon="icon" :width="width" class="icon" />
     <span v-if="title" class="title">{{ title }}</span>
+    <slot />
   </span>
 </template>
 

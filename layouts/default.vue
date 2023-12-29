@@ -6,12 +6,9 @@
         v-show="links.length > 1"
         class="mb-4 !text-sm"
         :links="links"
-        divider="/"
+        divider=" / "
       >
-        <!-- <template #icon="{ link, index, isActive }">
-          <UIcon v-if="link.icon" :name="link.icon" dynamic />
-        </template> -->
-        <template #default="{ link, isActive, index }">
+        <template #default="{ link, isActive }">
           <span
             :class="`breadcrumb ${
               isActive ? 'text-neutral-900' : 'text-neutral-500'
