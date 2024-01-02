@@ -1,7 +1,24 @@
 <template>
-  <div>Hello World</div>
+  <div></div>
 </template>
 
-<script setup></script>
+<script>
+import { onBeforeRouteUpdate } from 'vue-router';
+
+export default {
+  setup() {
+    const route = useRoute();
+    watch(
+      () => route.path,
+      () => {
+        console.log('CHANGED');
+      }
+    );
+  },
+  mounted() {
+    this.$confetti.start();
+  },
+};
+</script>
 
 <style lang="scss" scoped></style>
