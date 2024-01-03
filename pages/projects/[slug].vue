@@ -39,6 +39,17 @@ const { category, featuredImage, title, excerpt, body } = await query(
     slug: params.slug,
   }
 );
+
+useSeoMeta({
+  title,
+  ogTitle: title,
+  ogDescription: excerpt,
+  ogImage: featuredImage.url,
+  twitterTitle: title,
+  twitterDescription: excerpt,
+  twitterImage: featuredImage.url,
+  twitterCard: excerpt,
+});
 </script>
 
 <style scoped>

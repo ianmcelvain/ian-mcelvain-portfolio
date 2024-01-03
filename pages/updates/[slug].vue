@@ -46,6 +46,17 @@ const { category, featuredImage, publishedAt, title, excerpt, body } =
   await query(`update-${params.slug}`, singleUpdateQuery, {
     slug: params.slug,
   });
+
+useSeoMeta({
+  title,
+  ogTitle: title,
+  ogDescription: excerpt,
+  ogImage: featuredImage.url,
+  twitterTitle: title,
+  twitterDescription: excerpt,
+  twitterImage: featuredImage.url,
+  twitterCard: excerpt,
+});
 </script>
 
 <style scoped>

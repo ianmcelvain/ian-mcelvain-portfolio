@@ -22,6 +22,14 @@
   </ArticleContainer>
 </template>
 
-<script setup></script>
+<script setup>
+useSeoMeta({
+  ogImage: 'https://avatars.githubusercontent.com/u/45335671?v=4.png',
+  twitterTitle: '[twitter:title]',
+  twitterDescription: '[twitter:description]',
+  twitterImage: '[twitter:image]',
+  twitterCard: 'summary',
+});
+</script>
 
 <style scoped></style>
