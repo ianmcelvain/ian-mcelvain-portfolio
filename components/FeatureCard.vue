@@ -1,32 +1,35 @@
 <template>
-  <div class="feature-card">
-    <NuxtLink
-      :to="`/${type}s/${slug}`"
-      class="image"
-      :style="{
-        backgroundImage: `url(${featuredImage.url})`,
-      }"
-    ></NuxtLink>
-    <div class="details-wrapper">
-      <div class="details">
-        <div class="date">
-          {{ format(new Date(publishedAt), 'MMMM do yyyy') }}
-        </div>
-        <NuxtLink :to="`/${type}s/${slug}`">
-          <h2 class="title">{{ title }}</h2>
-        </NuxtLink>
-        <div class="meta-details">
-          <div class="flex items-center text-sm">
-            <div :class="`category ${category.slug}`">
-              <Icon class="mr-1" :icon="category.icon" :width="20" />
-              {{ category.title }}
+  <div>
+    <h4>Latest Update</h4>
+    <div class="feature-card">
+      <NuxtLink
+        :to="`/${type}s/${slug}`"
+        class="image"
+        :style="{
+          backgroundImage: `url(${featuredImage.url})`,
+        }"
+      ></NuxtLink>
+      <div class="details-wrapper">
+        <div class="details">
+          <div class="date">
+            {{ format(new Date(publishedAt), 'MMMM do yyyy') }}
+          </div>
+          <NuxtLink :to="`/${type}s/${slug}`">
+            <h2 class="title">{{ title }}</h2>
+          </NuxtLink>
+          <div class="meta-details">
+            <div class="flex items-center text-sm">
+              <div :class="`category ${category.slug}`">
+                <Icon class="mr-1" :icon="category.icon" :width="20" />
+                {{ category.title }}
+              </div>
             </div>
           </div>
+          <ExcerptText :text="excerpt" />
+          <Tag v-for="tag in tags" :key="tag.slug" class="tag">{{
+            tag.title
+          }}</Tag>
         </div>
-        <ExcerptText :text="excerpt" />
-        <Tag v-for="tag in tags" :key="tag.slug" class="tag">{{
-          tag.title
-        }}</Tag>
       </div>
     </div>
   </div>

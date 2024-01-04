@@ -2,18 +2,20 @@
   <div class="wrapper">
     <NavBar />
     <PageContainer class="body">
-      <UBreadcrumb
-        v-show="links.length > 1"
-        class="mb-4 sm:-mt-9"
-        :links="links"
-        divider=" / "
-      >
-        <template #default="{ link }">
-          <h4 class="mb-0">
-            {{ link.label }}
-          </h4>
-        </template>
-      </UBreadcrumb>
+      <Transition>
+        <UBreadcrumb
+          v-show="links.length > 1"
+          class="absolute -mt-12 mb-8"
+          :links="links"
+          divider=" / "
+        >
+          <template #default="{ link }">
+            <h4 class="mb-0">
+              {{ link.label }}
+            </h4>
+          </template>
+        </UBreadcrumb>
+      </Transition>
       <slot class="content" />
     </PageContainer>
   </div>
@@ -24,6 +26,15 @@ const links = useBreadcrumbItems({ hideRoot: true });
 </script>
 
 <style>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
 html,
 body,
 #__nuxt,
