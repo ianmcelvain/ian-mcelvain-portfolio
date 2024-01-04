@@ -22,6 +22,23 @@
 import Typewriter from 'typewriter-effect/dist/core';
 
 export default {
+  setup() {
+    const title = 'CAKE!';
+    const image =
+      'https://res.cloudinary.com/dksdnxvzm/image/upload/v1704332106/200px_Portal_Cake_c03b0dcbed.png';
+    const description = 'You have worked hard and have earned this.';
+
+    useSeoMeta({
+      title,
+      ogTitle: title,
+      ogDescription: description,
+      ogImage: image,
+      twitterTitle: title,
+      twitterDescription: description,
+      twitterImage: image,
+      twitterCard: description,
+    });
+  },
   mounted() {
     this.$confetti.start();
 
