@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   site: {
     url: 'https://ianmcelvain.com',
     name: 'Ian McElvain',
-    description: 'Platform for personal projects.',
+    description: 'Writing games, native apps, & websites since 2012',
     defaultLocale: 'en', // not needed if you have @nuxtjs/i18n installed
   },
   colorMode: {

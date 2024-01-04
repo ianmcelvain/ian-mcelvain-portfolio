@@ -6,7 +6,7 @@
       :type="type.toLowerCase()"
       v-bind="latestCard"
     />
-    <div class="flex items-center text-gray-500">
+    <div class="flex items-center">
       <h4>{{ type }}s</h4>
       <h4 class="mx-2">/</h4>
       <h4 :class="currentCategory.slug">{{ currentCategory.title }}</h4>
