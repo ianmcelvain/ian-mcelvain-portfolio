@@ -7619,7 +7619,7 @@ type-is@^1.6.16:
     media-typer "0.3.0"
     mime-types "~2.1.24"
 
-typewriter-effect@^2.19.0:
+typewriter-effect@^2.21.0:
   version "2.21.0"
   resolved "https://registry.yarnpkg.com/typewriter-effect/-/typewriter-effect-2.21.0.tgz#7150f12fd2c188248ab2b2b031f77c0663d24c54"
   integrity sha512-Y3VL1fuJpUBj0gS4OTXBLzy1gnYTYaBuVuuO99tGNyTkkub5CXi+b/hsV7Og9fp6HlhogOwWJwgq7iXI5sQlEg==
@@ -8101,13 +8101,6 @@ vue-router@^4.2.5:
   integrity sha512-DIUpKcyg4+PTQKfFPX88UWhlagBEBEfJ5A8XDXRJLUnZOvcpMF8o/dnL90vpVkGaPbjvXazV/rC1qBKrZlFugw==
   dependencies:
     "@vue/devtools-api" "^6.5.0"
-
-vue-typewriter-effect@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/vue-typewriter-effect/-/vue-typewriter-effect-1.0.1.tgz#c46a08c13089d5b4310e2f6b472c59dadf1d2fff"
-  integrity sha512-Z154Ax79N66btsstF9X3yOY7cc+B8H5fJpcRxuJhcPQd5ii/yKAgwSXbRaT1lClnqwTcmzs1RG1ULqZKhC8UvQ==
-  dependencies:
-    typewriter-effect "^2.19.0"
 
 vue3-marquee-slider@^1.0.5:
   version "1.0.5"
