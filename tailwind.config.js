@@ -16,7 +16,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter'],
+        sans: ['Inter', 'Helvetica'],
       },
       typography: ({ theme }) => ({
         primary: {
