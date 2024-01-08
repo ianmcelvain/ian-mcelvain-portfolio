@@ -78,7 +78,7 @@ const adjustedCategories = ref([
 ]);
 const currentCategory = ref(adjustedCategories.value[0]);
 const filteredCards = ref(props.data);
-const latestCard = ref(props.showLatest ? filteredCards.value.pop() : null);
+const latestCard = ref(props.showLatest ? filteredCards.value.shift() : null);
 
 function handleActiveChange(category) {
   currentCategory.value = category;

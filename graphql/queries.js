@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 
 export const allUpdatesQuery = gql`
   query allUpdatesQuery {
-    updates {
+    updates(sort: "publishedAt:DESC") {
       data {
         id
         attributes {
