@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h4>Latest Update</h4>
+    <h4>Latest {{ type }}</h4>
     <div class="feature-card">
       <NuxtLink
         :to="`/${type}s/${slug}`"
