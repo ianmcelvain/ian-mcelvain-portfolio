@@ -120,7 +120,7 @@ export const singleProjectQuery = gql`
 
 export const allProjectsQuery = gql`
   query allProjectsQuery {
-    projects {
+    projects(sort: "startedAt:DESC") {
       data {
         id
         attributes {
@@ -135,6 +135,7 @@ export const allProjectsQuery = gql`
           }
           body
           publishedAt
+          startedAt
           slug
           status {
             data {
