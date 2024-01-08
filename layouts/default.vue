@@ -35,12 +35,13 @@ const links = useBreadcrumbItems({ hideRoot: true });
 .v-leave-to {
   opacity: 0;
 }
+
 html,
 body,
+.body,
 #__nuxt,
-.wrapper,
-.body {
-  @apply h-full;
+.wrapper {
+  @apply mb-16 sm:mb-0 sm:h-full;
 }
 
 /* Layout margins to compensate sidebar width */
