@@ -163,6 +163,51 @@ export const allProjectsQuery = gql`
   }
 `;
 
+export const multipleProjectsQuery = gql`
+  query multipleProjectsQuery($slugs: [String]!) {
+    projects(sort: "startedAt:DESC", filters: { slug: { in: $slugs } }) {
+      data {
+        id
+        attributes {
+          title
+          excerpt
+          featuredImage {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+          body
+          publishedAt
+          startedAt
+          slug
+          status {
+            data {
+              id
+              attributes {
+                title
+                slug
+                icon
+              }
+            }
+          }
+          category: project_category {
+            data {
+              attributes {
+                title
+                icon
+                slug
+              }
+            }
+          }
+          externalLink
+        }
+      }
+    }
+  }
+`;
+
 export const allProjectCategoiresQuery = gql`
   query allProjectCategoriesQuery {
     projectCategories {

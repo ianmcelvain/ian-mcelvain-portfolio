@@ -4,13 +4,13 @@
 
 @layer base {
   @font-face {
-    font-family: "Inter";
+    font-family: 'Inter';
     src: url(/fonts/Inter.ttf);
   }
 }
 
 h1 {
-  @apply text-4xl font-bold mb-8;
+  @apply text-7xl font-semibold uppercase mb-8;
 }
 h2 {
   @apply text-xl font-bold mb-8;
@@ -19,7 +19,7 @@ h3 {
   @apply text-lg font-bold mb-4;
 }
 h4 {
-  @apply text-sm font-semibold uppercase tracking-widest mb-8
+  @apply text-sm font-semibold uppercase tracking-widest mb-8;
 }
 p {
   @apply mb-6;
@@ -74,23 +74,23 @@ p {
 }
 
 .development.active {
-  @apply !bg-purple-500
+  @apply !bg-purple-500;
 }
 .release.active {
-  @apply !bg-rose-500
+  @apply !bg-rose-500;
 }
 .uncategorized.active {
-  @apply !bg-gray-500
+  @apply !bg-gray-500;
 }
 .game.active {
-  @apply !bg-pink-500
+  @apply !bg-pink-500;
 }
 .app.active {
-  @apply !bg-yellow-500
+  @apply !bg-yellow-500;
 }
 .website.active {
-  @apply !bg-blue-500
+  @apply !bg-blue-500;
 }
 .other.active {
-  @apply !bg-orange-500
+  @apply !bg-orange-500;
 }

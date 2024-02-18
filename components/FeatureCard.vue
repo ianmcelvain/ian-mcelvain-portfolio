@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h4>Latest {{ type }}</h4>
+    <h4 v-if="showHeading">Latest {{ type }}</h4>
     <div class="feature-card">
       <NuxtLink
         :to="`/${type}s/${slug}`"
@@ -77,6 +77,10 @@ defineProps({
     validator(value) {
       return ['update', 'project'].includes(value);
     },
+  },
+  showHeading: {
+    type: Boolean,
+    default: () => true,
   },
 });
 </script>
