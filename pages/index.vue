@@ -9,14 +9,18 @@
     <div class="col-span-2 text-left">
       <h4>Ian C.G. McElvain</h4>
       <p>
-        I was introduced to programming by making popular mods for Call of Duty
-        using C++ at 15 years old with my Modern Warfare 2 and World at War mods
-        being featured. That obsession hobby later transitioned into designing
-        games shortly after using GameMaker Studio, Unity3D, and Unreal Engine.
-        Since then I have gained immense professional experience as full stack
-        engineer with a focus on front end whilst playing a role in design
-        trying to push the envelope on tech and creative standards. I still
-        design games independently that can be read about on the site.
+        I learned how to program by making mods for Call of Duty on the Xbox 360
+        using C++. Majority of my mods would later become popular for Modern
+        Warfare 2 and World at War games. That hobby transitioned into designing
+        games shortly after whilst my occupation would become a full stack
+        engineer. I have gained immense professional experience developing web
+        and native apps with a focus on the frontend. Sharing design patterns
+        from different software mediums has made unique experiences for creative
+        projects.
+        <br />
+        <br />
+        I still design games independently and can be seen on this site as well
+        as any other software I write.
       </p>
       <!-- <h2>Ian C.G. McElvain</h2>
       <h2>
@@ -27,7 +31,7 @@
       </h2> -->
     </div>
     <div class="col-start-2 col-span-3">
-      <h4 class="text-center">Notible Projects</h4>
+      <h4>Notible Projects</h4>
       <Grid size="large">
         <ProjectCard
           v-for="project in notibleProjects"
@@ -38,7 +42,7 @@
         />
       </Grid>
     </div>
-    <div class="col-start-2 col-span-3 text-center">
+    <div class="col-start-2 col-span-3">
       <h4>Recent Update</h4>
       <FeatureCard v-bind="recentUpdate" type="update" :show-heading="false" />
     </div>
