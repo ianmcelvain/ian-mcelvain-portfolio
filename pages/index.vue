@@ -1,12 +1,14 @@
 <template>
-  <div class="grid grid-cols-5 gap-y-36 gap-x-12">
+  <div class="grid grid-cols-5 gap-y-16 md:gap-y-36 gap-x-12">
     <div class="hero col-span-5">
       <h4>Writing</h4>
       <h1>games, apps, websites</h1>
       <h4 class="text-right">since 2012</h4>
     </div>
-    <div class="col-start-2 col-span-1 avatar"></div>
-    <div class="col-span-2 text-left">
+    <div
+      class="col-span-5 h-56 md:h-full md:col-span-2 lg:col-span-1 lg:col-start-2 avatar"
+    ></div>
+    <div class="col-span-5 sm:col-span-3 lg:col-span-2 text-left">
       <h4>Ian C.G. McElvain</h4>
       <p>
         I learned how to program by making mods for Call of Duty on the Xbox 360
