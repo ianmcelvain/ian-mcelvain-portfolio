@@ -84,10 +84,20 @@
 </template>
 
 <script setup>
+import mailchimp from '@mailchimp/mailchimp_marketing';
 import { multipleProjectsQuery, allUpdatesQuery } from '~/graphql/queries';
 const { query } = useBackend();
-
 const { $toast } = useNuxtApp();
+const test = useRuntimeConfig();
+console.log('🚀 ~ mailchimpAPIKey:', test);
+
+mailchimp.setConfig({
+  apiKey: '02deb201ff9e46b5915dda61910eafa0',
+  server: 'us8',
+});
+
+const listID = '5b856bb52a';
+console.log('🚀 ~ listID:', listID);
 
 const notibleProjects = await query(
   'multiple-projects',
@@ -117,17 +127,15 @@ async function submitNewsletterSignup(e) {
     return;
   }
 
-  const { data, error } = await useFetch('/api/subscribe', {
-    method: 'POST',
-    body: { email: newsletterInput.email },
-  });
+  const response = await mailchimp.ping.get();
+  console.log('🚀 ~ submitNewsletterSignup ~ response:', response);
 
-  if (error.value) {
-    $toast.error(error.value.data.message);
-    return;
-  }
+  // if (error.value) {
+  //   $toast.error(error.value.data.message);
+  //   return;
+  // }
 
-  $toast.success('Thanks for subscribing!');
+  // $toast.success('Thanks for subscribing!');
 }
 </script>
 
