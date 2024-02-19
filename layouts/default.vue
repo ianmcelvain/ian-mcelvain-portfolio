@@ -46,10 +46,10 @@ body,
 
 /* Layout margins to compensate sidebar width */
 .navbar {
-  @apply w-full sm:w-[90px] md:w-[90px] lg:w-[90px];
+  @apply w-full lg:w-[90px];
 }
 .page-container {
-  @apply ml-0 sm:ml-[90px] md:ml-[90px] lg:ml-[90px];
+  @apply ml-0 lg:ml-[90px];
 }
 
 .side-quest-easter-egg {

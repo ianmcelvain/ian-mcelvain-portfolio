@@ -61,8 +61,6 @@ pages.value.forEach((page) => {
 <style scoped>
 .navbar {
   @apply lg:top-0 lg:left-0 lg:flex lg:flex-col lg:h-screen
-          md:top-0 md:left-0 md:flex md:flex-col md:h-screen
-          sm:top-0 sm:left-0 sm:flex sm:flex-col sm:h-screen
           mt-20 px-16 text-white fixed inline-flex flex-row bg-white bottom-0 z-20;
 }
 </style>

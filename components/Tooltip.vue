@@ -43,8 +43,6 @@ const props = defineProps({
 }
 .tooltip.vertical {
   @apply m-[-15px] p-0 bottom-0 shadow-none scale-100 text-gray-800 bg-transparent
-          lg:left-14 lg:m-2 lg:p-2 lg:drop-shadow-md lg:scale-0 lg:text-white lg:bg-gray-800
-          md:left-14 md:m-2 md:p-2 md:drop-shadow-md md:scale-0 md:text-white md:bg-gray-800
-          sm:left-14 sm:m-2 sm:p-2 sm:drop-shadow-md sm:scale-0 sm:text-white sm:bg-gray-800;
+          lg:left-14 lg:m-2 lg:p-2 lg:drop-shadow-md lg:scale-0 lg:text-white lg:bg-gray-800;
 }
 </style>
