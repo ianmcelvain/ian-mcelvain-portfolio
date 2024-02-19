@@ -49,10 +49,20 @@
     <div class="col-start-2 col-span-3 text-center">
       <h4 class="!mb-2">Like what you see?</h4>
       <h4 class="!font-normal">Be first to checkout a release!</h4>
-      <input type="email" placeholder="Email Address" />
-      <button type="submit" @click="handleNewsletterClick">
-        <span>Submit</span>
-      </button>
+      <form @submit.prevent="submitNewsletterSignup">
+        <p v-show="newsletterInput.error" class="text-red-500">
+          {{ newsletterInput.error }}
+        </p>
+        <input
+          v-model="newsletterInput.email"
+          type="email"
+          placeholder="Email Address"
+          :class="newsletterInput.error ? '!outline-red-500' : ''"
+        />
+        <button class="button" type="submit">
+          <span>Submit</span>
+        </button>
+      </form>
     </div>
     <div class="col-start-2 col-span-3 text-center">
       <div class="flex my-8 justify-center items-center">
@@ -75,6 +85,8 @@
 import { multipleProjectsQuery, allUpdatesQuery } from '~/graphql/queries';
 const { query } = useBackend();
 
+const { $toast } = useNuxtApp();
+
 const notibleProjects = await query(
   'multiple-projects',
   multipleProjectsQuery,
@@ -87,7 +99,34 @@ const recentUpdate = await query('recent-update', allUpdatesQuery).then(
   (updates) => updates[0]
 );
 
-function handleNewsletterClick(e) {}
+const newsletterInput = reactive({
+  email: '',
+  error: null,
+});
+
+async function submitNewsletterSignup(e) {
+  if (
+    !newsletterInput.email ||
+    !/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/.test(
+      newsletterInput.email
+    )
+  ) {
+    newsletterInput.error = 'Form invalid';
+    return;
+  }
+
+  const { data, error } = await useFetch('/api/subscribe', {
+    method: 'POST',
+    body: { email: newsletterInput.email },
+  });
+
+  if (error.value) {
+    $toast.error(error.value.data.message);
+    return;
+  }
+
+  $toast.success('Thanks for subscribing!');
+}
 </script>
 
 <style scoped>
@@ -102,5 +141,25 @@ function handleNewsletterClick(e) {}
   background-size: cover;
   background-position: center;
   @apply rounded-2xl;
+}
+
+/* button {
+  @apply bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded;
+} */
+
+button {
+  @apply text-white py-2 px-4 mx-4 shadow-md cursor-pointer 
+          rounded-xl transition-all duration-100 ease-in bg-orange-500
+          hover:scale-110 hover:shadow-lg
+          active:scale-90 active:shadow-none;
+}
+button span {
+  @apply font-semibold text-sm uppercase tracking-widest;
+}
+input {
+  @apply py-2 px-4 mx-4 shadow-md
+          rounded-xl transition-all duration-100 ease-in
+          focus:scale-90 focus:shadow-none focus:outline-orange-500
+          !border-none outline-none;
 }
 </style>
