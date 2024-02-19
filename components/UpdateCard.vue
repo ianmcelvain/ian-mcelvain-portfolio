@@ -71,11 +71,11 @@ const emit = defineEmits(['onCategoryClick']);
 
 <style scoped>
 .update-card {
-  @apply text-gray-800 relative justify-between rounded-xl p-4 shadow-lg hover:shadow-xl p-2 
+  @apply text-gray-800 relative justify-between rounded-xl p-4 shadow-lg hover:shadow-xl p-4 
           transition-all duration-300 transform-gpu translate-y-0 hover:-translate-y-1 ease-in-out;
 }
 .image {
-  @apply bg-cover bg-center h-60 mb-4 relative;
+  @apply bg-cover rounded-xl bg-center h-60 mb-4 relative;
 }
 .meta-details {
   @apply absolute flex font-medium drop-shadow-lg bottom-0 left-0 -mb-5 ml-3;
