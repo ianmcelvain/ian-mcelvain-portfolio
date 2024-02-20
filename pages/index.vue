@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-5 gap-y-16 lg:gap-y-36 gap-x-12">
+  <div class="grid grid-cols-5 gap-y-16 md:gap-y-36 gap-x-12">
     <div class="hero col-span-5">
       <h4>Writing</h4>
       <h1>games, apps, websites</h1>
@@ -144,7 +144,8 @@ async function submitNewsletterSignup(e) {
   @apply w-fit m-auto;
 }
 .hero h1 {
-  font-size: clamp(70px, 7vw, 100px);
+  font-size: clamp(55px, 6vw, 100px);
+  @apply sm:whitespace-nowrap;
 }
 .avatar {
   background-image: url('https://i.imgur.com/6Ay2gYA.jpg');
