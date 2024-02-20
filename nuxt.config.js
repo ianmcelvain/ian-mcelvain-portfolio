@@ -27,9 +27,6 @@ export default defineNuxtConfig({
     plugins: [gql()],
   },
   runtimeConfig: {
-    mailchimpAPIKey: process.env.MAILCHIMP_API_KEY,
-    mailchimpServer: process.env.MAILCHIMP_SERVER,
-    mailchimpAudienceID: process.env.MAILCHIMP_AUDIENCE_ID,
     public: {
       apiBase: '/api',
       baseUrl: process.env.BASE_URL || 'http://127.0.0.1:3000',
