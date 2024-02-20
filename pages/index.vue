@@ -6,9 +6,9 @@
       <h4 class="text-right">since 2012</h4>
     </div>
     <div
-      class="col-span-5 h-56 md:h-full md:col-span-2 lg:col-span-1 lg:col-start-2 avatar"
+      class="col-span-5 h-56 lg:h-full lg:col-span-2 2xl:col-span-1 2xl:col-start-2 avatar"
     ></div>
-    <div class="col-span-5 sm:col-span-3 lg:col-span-2 text-left">
+    <div class="col-span-5 lg:col-span-3 2xl:col-span-2 text-left">
       <h4>Ian C.G. McElvain</h4>
       <p>
         I learned how to program by making mods for Call of Duty on the Xbox 360
@@ -32,7 +32,7 @@
         and the web.
       </h2> -->
     </div>
-    <div class="col-start-2 col-span-3">
+    <div class="col-start-1 col-span-5 2xl:col-span-3 2xl:col-start-2">
       <h4>Notible Projects</h4>
       <Grid size="large">
         <ProjectCard
@@ -44,11 +44,11 @@
         />
       </Grid>
     </div>
-    <div class="col-start-2 col-span-3">
+    <div class="col-start-1 col-span-5 2xl:col-start-2 2xl:col-span-3">
       <h4>Recent Update</h4>
       <FeatureCard v-bind="recentUpdate" type="update" :show-heading="false" />
     </div>
-    <div class="col-start-2 col-span-3 text-center">
+    <div class="col-span-5 text-center">
       <h4 class="!mb-2">Like what you see?</h4>
       <h4 class="!font-normal">Be first to checkout a release!</h4>
       <form
@@ -107,21 +107,8 @@
 </template>
 
 <script setup>
-import mailchimp from '@mailchimp/mailchimp_marketing';
 import { multipleProjectsQuery, allUpdatesQuery } from '~/graphql/queries';
 const { query } = useBackend();
-const { $toast } = useNuxtApp();
-const test = useRuntimeConfig();
-console.log('🚀 ~ mailchimpAPIKey:', test);
-
-mailchimp.setConfig({
-  apiKey: '02deb201ff9e46b5915dda61910eafa0',
-  server: 'us8',
-});
-
-const listID = '5b856bb52a';
-console.log('🚀 ~ listID:', listID);
-
 const notibleProjects = await query(
   'multiple-projects',
   multipleProjectsQuery,
@@ -149,16 +136,6 @@ async function submitNewsletterSignup(e) {
     newsletterInput.error = 'Form invalid';
     return;
   }
-
-  const response = await mailchimp.ping.get();
-  console.log('🚀 ~ submitNewsletterSignup ~ response:', response);
-
-  // if (error.value) {
-  //   $toast.error(error.value.data.message);
-  //   return;
-  // }
-
-  // $toast.success('Thanks for subscribing!');
 }
 </script>
 
