@@ -7,6 +7,9 @@
     </div>
     <div
       class="col-span-5 h-80 md:h-full md:col-span-2 2xl:col-span-1 2xl:col-start-2 avatar"
+      :style="{
+        backgroundImage: `url(${avatarURL})`,
+      }"
     ></div>
     <div class="col-span-5 md:col-span-3 2xl:col-span-2 text-left">
       <h4>Ian C.G. McElvain</h4>
@@ -49,43 +52,7 @@
     <div class="col-span-5 text-center">
       <h4 class="!mb-2">Like what you see?</h4>
       <h4 class="!font-normal">Be first to checkout a release!</h4>
-      <form
-        action="https://ianmcelvain.us8.list-manage.com/subscribe/post?u=e7692bdd97e4ee4f988f767cd&amp;id=5b856bb52a&amp;f_id=00717ce0f0"
-        method="post"
-        id="mc-embedded-subscribe-form"
-        name="mc-embedded-subscribe-form"
-        class="validate"
-        target="_blank"
-        novalidate=""
-      >
-        <input
-          type="email"
-          name="EMAIL"
-          placeholder="Email Address"
-          class="my-4"
-          id="mce-EMAIL"
-          required=""
-          value=""
-        />
-        <div aria-hidden="true" style="position: absolute; left: -5000px">
-          /* real people should not fill this in and expect good things - do not
-          remove this or risk form bot signups */
-          <input
-            type="text"
-            name="b_e7692bdd97e4ee4f988f767cd_5b856bb52a"
-            tabindex="-1"
-            value=""
-          />
-        </div>
-        <button
-          type="submit"
-          name="subscribe"
-          id="mc-embedded-subscribe"
-          class="button"
-        >
-          Submit
-        </button>
-      </form>
+      <MailchimpForm />
     </div>
     <div class="col-start-2 col-span-3 text-center">
       <div class="flex my-8 justify-center items-center">
@@ -131,18 +98,6 @@ useSeoMeta({
   ogImage: avatarURL,
   twitterImage: avatarURL,
 });
-
-async function submitNewsletterSignup(e) {
-  if (
-    !newsletterInput.email ||
-    !/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/.test(
-      newsletterInput.email
-    )
-  ) {
-    newsletterInput.error = 'Form invalid';
-    return;
-  }
-}
 </script>
 
 <style scoped>
@@ -154,26 +109,6 @@ async function submitNewsletterSignup(e) {
   @apply sm:whitespace-nowrap;
 }
 .avatar {
-  background-image: url('https://i.imgur.com/6Ay2gYA.jpg');
-  background-size: cover;
-  background-position: center;
-  @apply rounded-2xl;
-}
-
-button {
-  @apply text-white py-2 px-4 mx-4 shadow-md cursor-pointer 
-          font-semibold text-sm uppercase tracking-widest
-          rounded-xl transition-all duration-100 ease-in bg-orange-500
-          hover:scale-110 hover:shadow-lg
-          active:scale-90 active:shadow-none;
-}
-button span {
-  @apply font-semibold text-sm uppercase tracking-widest;
-}
-input {
-  @apply py-2 px-4 mx-4 shadow-md
-          rounded-xl transition-all duration-100 ease-in
-          focus:scale-90 focus:shadow-none focus:outline-orange-500
-          !border-none outline-none;
+  @apply rounded-2xl bg-cover bg-center;
 }
 </style>
