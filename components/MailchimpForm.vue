@@ -31,7 +31,7 @@
       type="submit"
       name="subscribe"
       id="mc-embedded-subscribe"
-      class="button"
+      class="secondary"
     >
       Submit
     </button>
