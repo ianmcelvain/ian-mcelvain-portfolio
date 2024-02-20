@@ -51,18 +51,41 @@
     <div class="col-start-2 col-span-3 text-center">
       <h4 class="!mb-2">Like what you see?</h4>
       <h4 class="!font-normal">Be first to checkout a release!</h4>
-      <form @submit.prevent="submitNewsletterSignup">
-        <p v-show="newsletterInput.error" class="text-red-500">
-          {{ newsletterInput.error }}
-        </p>
+      <form
+        action="https://ianmcelvain.us8.list-manage.com/subscribe/post?u=e7692bdd97e4ee4f988f767cd&amp;id=5b856bb52a&amp;f_id=00717ce0f0"
+        method="post"
+        id="mc-embedded-subscribe-form"
+        name="mc-embedded-subscribe-form"
+        class="validate"
+        target="_blank"
+        novalidate=""
+      >
         <input
-          v-model="newsletterInput.email"
           type="email"
+          name="EMAIL"
           placeholder="Email Address"
-          :class="newsletterInput.error ? '!outline-red-500' : ''"
+          class="my-4"
+          id="mce-EMAIL"
+          required=""
+          value=""
         />
-        <button class="button" type="submit">
-          <span>Submit</span>
+        <div aria-hidden="true" style="position: absolute; left: -5000px">
+          /* real people should not fill this in and expect good things - do not
+          remove this or risk form bot signups */
+          <input
+            type="text"
+            name="b_e7692bdd97e4ee4f988f767cd_5b856bb52a"
+            tabindex="-1"
+            value=""
+          />
+        </div>
+        <button
+          type="submit"
+          name="subscribe"
+          id="mc-embedded-subscribe"
+          class="button"
+        >
+          Submit
         </button>
       </form>
     </div>
@@ -159,6 +182,7 @@ async function submitNewsletterSignup(e) {
 
 button {
   @apply text-white py-2 px-4 mx-4 shadow-md cursor-pointer 
+          font-semibold text-sm uppercase tracking-widest
           rounded-xl transition-all duration-100 ease-in bg-orange-500
           hover:scale-110 hover:shadow-lg
           active:scale-90 active:shadow-none;
