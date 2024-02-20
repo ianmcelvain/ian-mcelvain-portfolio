@@ -120,9 +120,16 @@ const recentUpdate = await query('recent-update', allUpdatesQuery).then(
   (updates) => updates[0]
 );
 
+const avatarURL = 'https://i.imgur.com/6Ay2gYA.jpg';
+
 const newsletterInput = reactive({
   email: '',
   error: null,
+});
+
+useSeoMeta({
+  ogImage: avatarURL,
+  twitterImage: avatarURL,
 });
 
 async function submitNewsletterSignup(e) {
@@ -152,10 +159,6 @@ async function submitNewsletterSignup(e) {
   background-position: center;
   @apply rounded-2xl;
 }
-
-/* button {
-  @apply bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded;
-} */
 
 button {
   @apply text-white py-2 px-4 mx-4 shadow-md cursor-pointer 
