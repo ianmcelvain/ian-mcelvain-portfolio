@@ -24,13 +24,11 @@
         I still design games independently and can be seen on this site as well
         as any other software I write.
       </p>
-      <!-- <h2>Ian C.G. McElvain</h2>
-      <h2>
-        I started by making mods for Call of Duty using C++ which transitioned
-        into designing games shortly after. Since then I've been working on
-        games whilst applying those software principles and patterns for apps
-        and the web.
-      </h2> -->
+      <NuxtLink to="mailto:ian.mcelvain@gmail.com">
+        <button class="button block !ml-auto !mr-0">
+          <Icon class="inline mr-2" icon="feather:mail" :width="24" />Contact
+        </button>
+      </NuxtLink>
     </div>
     <div class="col-start-1 col-span-5 2xl:col-span-3 2xl:col-start-2">
       <h4>Notible Projects</h4>
@@ -107,6 +105,7 @@
 </template>
 
 <script setup>
+import { Icon } from '@iconify/vue';
 import { multipleProjectsQuery, allUpdatesQuery } from '~/graphql/queries';
 const { query } = useBackend();
 const notibleProjects = await query(
