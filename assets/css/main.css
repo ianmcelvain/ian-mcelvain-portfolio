@@ -24,6 +24,19 @@ h4 {
 p {
   @apply mb-6;
 }
+button {
+  @apply text-white py-2 px-4 mx-4 shadow-md cursor-pointer 
+          font-semibold text-sm uppercase tracking-widest
+          rounded-xl transition-all duration-100 ease-in !bg-orange-500
+          hover:scale-110 hover:shadow-lg
+          active:scale-90 active:shadow-none;
+}
+input {
+  @apply py-2 px-4 mx-4 shadow-none outline-orange-500
+          rounded-xl transition-all duration-100 ease-in
+          focus:scale-110
+          !border-none outline-none;
+}
 
 /* Update category colors */
 .development {
