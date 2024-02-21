@@ -14,18 +14,19 @@
     <div class="col-span-5 md:col-span-3 2xl:col-span-2 text-left">
       <h4>Ian C.G. McElvain</h4>
       <p>
-        I learned how to program by making mods for Call of Duty on the Xbox 360
-        using C++. Majority of my mods would later become popular for Modern
-        Warfare 2 and World at War games. That hobby transitioned into designing
-        games shortly after whilst my occupation would become a full stack
-        engineer. I have gained immense professional experience developing web
-        and native apps with a focus on the frontend. Sharing design patterns
-        from different software mediums has made unique experiences for creative
-        projects.
+        At 15-years-old, I first learned how to program by making mods for Call
+        of Duty on the Xbox 360 using C++. The majority of my mods would later
+        become featured downloads for Modern Warfare 2 and World at War games.
+        While building mods was a hobby, it transitioned into actively designing
+        games while also gaining experience working as a full stack engineer. I
+        have years of professional experience developing web and native apps
+        with a focus on the frontend. My understanding to utilize design
+        principles from a wide range of software practices has brought unique
+        outcomes to creative projects.
         <br />
         <br />
-        I still design games independently and can be seen on this site as well
-        as any other software I write.
+        I still design games independently and that work can be viewed on this
+        website as well as any other software I write.
       </p>
       <NuxtLink to="mailto:ian.mcelvain@gmail.com">
         <button class="button block !ml-auto !mr-0">
