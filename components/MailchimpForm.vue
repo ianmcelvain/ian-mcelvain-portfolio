@@ -23,32 +23,34 @@ const form = reactive({
 async function submit(e) {
   e.preventDefault();
 
-  const responseToast = $toast.loading('Subscribing...');
+  const responseToast = $toast.loading('Subscribing...', { timeout: -1 });
 
-  try {
-    const response = await addToNewsletter(form.email);
+  // Toast will not update properly if changed on the same tick
+  nextTick(async () => {
+    try {
+      const response = await addToNewsletter(form.email);
 
-    if (response.result === MailchimpStatus.SUCCESS) {
-      $toast.update(responseToast, {
-        type: 'success',
-        render: response.msg,
-        ...toastDefaults,
-      });
-    } else {
+      if (response.result === MailchimpStatus.SUCCESS) {
+        $toast.update(responseToast, {
+          type: 'success',
+          render: response.msg,
+          ...toastDefaults,
+        });
+      } else {
+        $toast.update(responseToast, {
+          type: 'error',
+          render: response.msg,
+          ...toastDefaults,
+        });
+      }
+    } catch (e) {
       $toast.update(responseToast, {
         type: 'error',
-        render: response.msg,
+        render: `There's a snake in my boot and I cannot process this request.`,
         ...toastDefaults,
       });
     }
-  } catch (e) {
-    console.error(e);
-    $toast.update(responseToast, {
-      type: 'error',
-      render: `There's a snake in my boot and I cannot process this request.`,
-      ...toastDefaults,
-    });
-  }
+  });
 }
 </script>
 
