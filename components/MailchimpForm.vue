@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="submit">
     <input v-model="form.email" type="email" placeholder="Email Address" />
-    <button class="button" type="submit">
+    <button class="secondary" type="submit">
       <span>Submit</span>
     </button>
   </form>
