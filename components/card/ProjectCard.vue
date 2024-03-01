@@ -19,13 +19,8 @@
       <div class="grow">
         <h3 class="text-gray-800">{{ title }}</h3>
         <ExcerptText :text="excerpt" />
-        <div class="flex">
-          <!-- <Tag>{{ status.title }}</Tag> -->
-          <span
-            class="whitespace-nowrap w-fit rounded-lg bg-gray-100 px-2.5 py-0.5 text-sm text-gray-700 lg:m-0"
-          >
-            {{ status.title }}
-          </span>
+        <div class="flex mt-6">
+          <Tag>{{ status.title }}</Tag>
           <Icon
             :icon="
               props.externalLink
