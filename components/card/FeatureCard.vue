@@ -8,7 +8,22 @@
         :style="{
           backgroundImage: `url(${featuredImage.url})`,
         }"
-      ></NuxtLink>
+      >
+        <div v-if="hasFloatingMetaDetails" class="floating-meta-details">
+          <FloatingIcon
+            :class="category.slug"
+            :icon="category.icon"
+            :title="category.title"
+          />
+          <FloatingIcon
+            v-for="tag in tags"
+            :key="tag.slug"
+            class="tag"
+            icon="feather:tag"
+            :title="tag.title"
+          />
+        </div>
+      </NuxtLink>
       <div class="details-wrapper">
         <div class="details">
           <div class="date">
@@ -17,7 +32,7 @@
           <NuxtLink :to="`/${type}s/${slug}`">
             <h2 class="title">{{ title }}</h2>
           </NuxtLink>
-          <div class="meta-details">
+          <div v-if="!hasFloatingMetaDetails" class="meta-details">
             <div class="flex items-center text-sm">
               <div :class="`category ${category.slug}`">
                 <Icon class="mr-1" :icon="category.icon" :width="20" />
@@ -26,9 +41,11 @@
             </div>
           </div>
           <ExcerptText :text="excerpt" />
-          <Tag v-for="tag in tags" :key="tag.slug" class="tag">{{
-            tag.title
-          }}</Tag>
+          <div v-if="!hasFloatingMetaDetails" class="tags">
+            <Tag v-for="tag in tags" :key="tag.slug" class="tag">{{
+              tag.title
+            }}</Tag>
+          </div>
         </div>
       </div>
     </div>
@@ -82,6 +99,10 @@ defineProps({
     type: Boolean,
     default: () => true,
   },
+  hasFloatingMetaDetails: {
+    type: Boolean,
+    default: () => false,
+  },
 });
 </script>
 
@@ -107,6 +128,10 @@ defineProps({
 .title {
   @apply mb-2;
 }
+.floating-meta-details {
+  @apply absolute flex font-medium drop-shadow-lg top-0 right-0 -mt-5 ml-3
+          lg:bottom-0 lg:top-auto lg:left-0 lg:-mb-5 lg:-ml-3;
+}
 .meta-details {
   @apply flex justify-center mb-6 font-medium text-sm 
           lg:justify-normal;
@@ -114,6 +139,9 @@ defineProps({
 .category,
 .comment-count {
   @apply flex items-center mr-2;
+}
+.tags {
+  @apply mt-6;
 }
 .tag {
   @apply mr-4;

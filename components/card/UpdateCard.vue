@@ -24,7 +24,9 @@
         <h3>{{ title }}</h3>
       </NuxtLink>
       <ExcerptText :text="excerpt" />
-      <Tag v-for="tag in tags" :key="tag.slug">{{ tag.title }}</Tag>
+      <div class="tags">
+        <Tag v-for="tag in tags" :key="tag.slug">{{ tag.title }}</Tag>
+      </div>
     </div>
   </div>
 </template>
@@ -71,7 +73,7 @@ const emit = defineEmits(['onCategoryClick']);
 
 <style scoped>
 .update-card {
-  @apply text-gray-800 relative justify-between rounded-xl p-4 shadow-lg hover:shadow-xl p-4 
+  @apply text-gray-800 relative justify-between rounded-xl p-4 shadow-lg hover:shadow-xl h-fit
           transition-all duration-300 transform-gpu translate-y-0 hover:-translate-y-1 ease-in-out;
 }
 .image {
@@ -85,5 +87,8 @@ const emit = defineEmits(['onCategoryClick']);
 }
 .date {
   @apply text-xs;
+}
+.tags {
+  @apply mt-6;
 }
 </style>

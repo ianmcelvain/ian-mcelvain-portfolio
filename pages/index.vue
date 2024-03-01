@@ -48,7 +48,12 @@
     </div>
     <div class="col-start-1 col-span-5 2xl:col-start-2 2xl:col-span-3">
       <h4>Recent Update</h4>
-      <FeatureCard v-bind="recentUpdate" type="update" :show-heading="false" />
+      <FeatureCard
+        v-bind="recentUpdate"
+        type="update"
+        :show-heading="false"
+        :has-floating-meta-details="true"
+      />
     </div>
     <div class="col-span-5 text-center">
       <h4 class="!mb-2">Like what you see?</h4>

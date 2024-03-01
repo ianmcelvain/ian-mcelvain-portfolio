@@ -1,4 +1,8 @@
+import path from 'path';
 import gql from '@rollup/plugin-graphql';
+
+const __filename = import.meta.url;
+const __dirname = path.dirname(__filename);
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -48,10 +52,6 @@ export default defineNuxtConfig({
   components: [
     {
       path: '~/components',
-      pathPrefix: false,
-    },
-    {
-      path: '~/components/layout',
       pathPrefix: false,
     },
   ],

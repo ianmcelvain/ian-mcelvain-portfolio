@@ -12,6 +12,13 @@
           :icon="category.icon"
           :title="category.title"
         />
+        <FloatingIcon
+          v-for="tag in tags"
+          :key="tag.slug"
+          class="tag"
+          icon="feather:tag"
+          :title="tag.title"
+        />
       </div>
     </div>
     <div class="details">
@@ -42,7 +49,7 @@ const { params, path } = useRoute();
 const { query } = useBackend();
 const config = useRuntimeConfig();
 
-const { category, featuredImage, publishedAt, title, excerpt, body } =
+const { category, featuredImage, publishedAt, title, tags, excerpt, body } =
   await query(`update-${params.slug}`, singleUpdateQuery, {
     slug: params.slug,
   });

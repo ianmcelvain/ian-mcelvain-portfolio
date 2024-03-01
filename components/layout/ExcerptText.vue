@@ -1,5 +1,5 @@
 <template>
-  <p class="text-sm text-gray-500">{{ text }}</p>
+  <p class="excerpt">{{ text }}</p>
 </template>
 
 <script setup>
@@ -10,3 +10,9 @@ defineProps({
   },
 });
 </script>
+
+<style scoped>
+.excerpt {
+  @apply text-sm !m-0 text-gray-500;
+}
+</style>

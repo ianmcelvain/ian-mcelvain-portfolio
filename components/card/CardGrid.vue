@@ -65,7 +65,7 @@ const props = defineProps({
 });
 
 const cardComponent = defineAsyncComponent(
-  () => import(`../components/${props.type}Card.vue`)
+  () => import(`~/components/card/${props.type}Card.vue`)
 );
 
 const adjustedCategories = ref([

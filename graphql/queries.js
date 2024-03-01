@@ -65,6 +65,14 @@ export const singleUpdateQuery = gql`
               }
             }
           }
+          tags {
+            data {
+              attributes {
+                title
+                slug
+              }
+            }
+          }
           body
           publishedAt
           slug

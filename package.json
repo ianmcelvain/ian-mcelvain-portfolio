@@ -27,7 +27,7 @@
     "eslint-plugin-tailwindcss": "^3.13.0",
     "eslint-plugin-vue": "^9.17.0",
     "eslint-prettier": "^0.0.0-empty",
-    "nuxt": "^3.8.0",
+    "nuxt": "^3.10.3",
     "prettier": "^3.0.3",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"
