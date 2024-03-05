@@ -6,7 +6,7 @@
         :to="`/${type}s/${slug}`"
         class="image"
         :style="{
-          backgroundImage: `url(${featuredImage.url})`,
+          backgroundImage: `url(${featuredImageURL})`,
         }"
       >
         <div v-if="hasFloatingMetaDetails" class="floating-meta-details">
@@ -17,10 +17,10 @@
           />
           <FloatingIcon
             v-for="tag in tags"
-            :key="tag.slug"
+            :key="tag"
             class="tag"
             icon="feather:tag"
-            :title="tag.title"
+            :title="tag"
           />
         </div>
       </NuxtLink>
@@ -42,9 +42,7 @@
           </div>
           <ExcerptText :text="excerpt" />
           <div v-if="!hasFloatingMetaDetails" class="tags">
-            <Tag v-for="tag in tags" :key="tag.slug" class="tag">{{
-              tag.title
-            }}</Tag>
+            <Tag v-for="tag in tags" :key="tag.slug" class="tag">{{ tag }}</Tag>
           </div>
         </div>
       </div>
@@ -65,8 +63,8 @@ defineProps({
     type: String,
     required: true,
   },
-  featuredImage: {
-    type: Object,
+  featuredImageURL: {
+    type: String,
     required: true,
   },
   excerpt: {

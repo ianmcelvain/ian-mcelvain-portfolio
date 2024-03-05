@@ -1,5 +1,4 @@
 import path from 'path';
-import gql from '@rollup/plugin-graphql';
 
 const __filename = import.meta.url;
 const __dirname = path.dirname(__filename);
@@ -27,28 +26,13 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
   },
-  vite: {
-    plugins: [gql()],
-  },
   runtimeConfig: {
     public: {
       apiBase: '/api',
       baseUrl: process.env.BASE_URL || 'http://127.0.0.1:3000',
     },
   },
-  strapi: {
-    url: process.env.STRAPI_URL || 'http://127.0.0.1:1337',
-    prefix: '/api',
-  },
-  modules: ['@nuxtjs/strapi', '@nuxtjs/apollo', '@nuxtseo/module', '@nuxt/ui'],
-  apollo: {
-    clients: {
-      default: {
-        httpEndpoint:
-          process.env.BACKEND_URL || 'http://127.0.0.1:1337/graphql',
-      },
-    },
-  },
+  modules: ['@nuxtseo/module', '@nuxt/ui', '@nuxt/content'],
   components: [
     {
       path: '~/components',
@@ -60,6 +44,11 @@ export default defineNuxtConfig({
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
+    },
+  },
+  content: {
+    markdown: {
+      anchorLinks: false,
     },
   },
 });

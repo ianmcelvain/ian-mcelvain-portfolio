@@ -4,7 +4,7 @@
       <div
         class="image"
         :style="{
-          backgroundImage: `url(${featuredImage.url})`,
+          backgroundImage: `url(${featuredImageURL})`,
         }"
       >
         <div class="meta-details">
@@ -25,7 +25,7 @@
       </NuxtLink>
       <ExcerptText :text="excerpt" />
       <div class="tags">
-        <Tag v-for="tag in tags" :key="tag.slug">{{ tag.title }}</Tag>
+        <Tag v-for="tag in tags" :key="tag">{{ tag }}</Tag>
       </div>
     </div>
   </div>
@@ -43,8 +43,8 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  featuredImage: {
-    type: Object,
+  featuredImageURL: {
+    type: String,
     required: true,
   },
   excerpt: {

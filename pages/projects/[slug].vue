@@ -4,51 +4,44 @@
       <div
         class="image"
         :style="{
-          backgroundImage: `url(${featuredImage.url})`,
+          backgroundImage: `url(${project.featuredImageURL})`,
         }"
       ></div>
       <div class="details">
         <Icon
-          :icon="category.icon"
+          :icon="project.category.icon"
           :width="28"
-          :class="`${category.slug} inline`"
+          :class="`${project.category.slug} inline`"
         />
         <div>
-          <h3 class="title">{{ title }}</h3>
-          <ExcerptText :text="excerpt" />
+          <h3 class="title">{{ project.title }}</h3>
+          <ExcerptText :text="project.excerpt" />
         </div>
       </div>
     </div>
     <ArticleContainer>
-      <MarkdownRenderer v-if="body" :source="body" />
+      <ContentRenderer v-if="project.body.children.length" :value="project" />
     </ArticleContainer>
   </div>
 </template>
 
 <script setup>
 import { Icon } from '@iconify/vue';
-import { singleProjectQuery } from '~/graphql/queries';
 
 const { params } = useRoute();
-const { query } = useBackend();
+const { getContentBySlug } = useStaticContent();
 
-const { category, featuredImage, title, excerpt, body } = await query(
-  `project-${params.slug}`,
-  singleProjectQuery,
-  {
-    slug: params.slug,
-  }
-);
+const project = await getContentBySlug('project', params.slug);
 
 useSeoMeta({
-  title,
-  ogTitle: title,
-  ogDescription: excerpt,
-  ogImage: featuredImage.url,
-  twitterTitle: title,
-  twitterDescription: excerpt,
-  twitterImage: featuredImage.url,
-  twitterCard: excerpt,
+  title: project.title,
+  ogTitle: project.title,
+  ogDescription: project.excerpt,
+  ogImage: project.featuredImageURL,
+  twitterTitle: project.title,
+  twitterDescription: project.excerpt,
+  twitterImage: project.featuredImageURL,
+  twitterCard: project.excerpt,
 });
 </script>
 

@@ -3,37 +3,37 @@
     <div
       class="image"
       :style="{
-        backgroundImage: `url(${featuredImage.url})`,
+        backgroundImage: `url(${update.featuredImageURL})`,
       }"
     >
       <div class="meta-details">
         <FloatingIcon
-          :class="category.slug"
-          :icon="category.icon"
-          :title="category.title"
+          :class="update.category.slug"
+          :icon="update.category.icon"
+          :title="update.category.title"
         />
         <FloatingIcon
-          v-for="tag in tags"
-          :key="tag.slug"
+          v-for="tag in update.tags"
+          :key="tag"
           class="tag"
           icon="feather:tag"
-          :title="tag.title"
+          :title="tag"
         />
       </div>
     </div>
     <div class="details">
       <div class="date">
-        {{ format(new Date(publishedAt), 'MMMM do yyyy') }}
+        {{ format(new Date(update.publishedAt), 'MMMM do yyyy') }}
       </div>
-      <h1 class="title">{{ title }}</h1>
-      <ExcerptText :text="excerpt" />
+      <h1 class="title">{{ update.title }}</h1>
+      <ExcerptText :text="update.excerpt" />
     </div>
     <ArticleContainer>
-      <MarkdownRenderer class="mb-16" :source="body" />
+      <ContentRenderer class="mb-16" :value="update" />
       <ClientOnly>
         <Disqus
           :url="`${config.public.baseUrl}${path}`"
-          :title="title"
+          :title="update.title"
           :identifier="path"
         />
       </ClientOnly>
@@ -42,27 +42,24 @@
 </template>
 
 <script setup>
-import { singleUpdateQuery } from '~/graphql/queries';
 import { format } from 'date-fns';
 
 const { params, path } = useRoute();
-const { query } = useBackend();
 const config = useRuntimeConfig();
 
-const { category, featuredImage, publishedAt, title, tags, excerpt, body } =
-  await query(`update-${params.slug}`, singleUpdateQuery, {
-    slug: params.slug,
-  });
+const { getContentBySlug } = useStaticContent();
+
+const update = await getContentBySlug('update', params.slug);
 
 useSeoMeta({
-  title,
-  ogTitle: title,
-  ogDescription: excerpt,
-  ogImage: featuredImage.url,
-  twitterTitle: title,
-  twitterDescription: excerpt,
-  twitterImage: featuredImage.url,
-  twitterCard: excerpt,
+  title: update.title,
+  ogTitle: update.title,
+  ogDescription: update.excerpt,
+  ogImage: update.featuredImageURL,
+  twitterTitle: update.title,
+  twitterDescription: update.excerpt,
+  twitterImage: update.featuredImageURL,
+  twitterCard: update.excerpt,
 });
 </script>
 

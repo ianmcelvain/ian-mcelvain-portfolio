@@ -9,15 +9,12 @@
 </template>
 
 <script setup>
-import { allUpdateCategoiresQuery, allUpdatesQuery } from '~/graphql/queries';
+import { CategoryMap } from '~/constants/category-map';
 
-const { query } = useBackend();
+const { getContent } = useStaticContent();
 
-const updateCategories = await query(
-  'update-categories',
-  allUpdateCategoiresQuery
-);
-const updates = await query('updates', allUpdatesQuery);
+const updateCategories = Object.values(CategoryMap['update']);
+const updates = await getContent('update');
 
 const title = 'Updates';
 const image =

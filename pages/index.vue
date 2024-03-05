@@ -38,8 +38,8 @@
       <h4>Notible Projects</h4>
       <Grid size="large">
         <ProjectCard
-          v-for="project in notibleProjects"
-          :key="project.id"
+          v-for="project in featuredProjects"
+          :key="project.slug"
           type="project"
           :show-heading="false"
           v-bind="project"
@@ -49,7 +49,7 @@
     <div class="col-start-1 col-span-5 2xl:col-start-2 2xl:col-span-3">
       <h4>Recent Update</h4>
       <FeatureCard
-        v-bind="recentUpdate"
+        v-bind="updates[0]"
         type="update"
         :show-heading="false"
         :has-floating-meta-details="true"
@@ -79,26 +79,16 @@
 
 <script setup>
 import { Icon } from '@iconify/vue';
-import { multipleProjectsQuery, allUpdatesQuery } from '~/graphql/queries';
-const { query } = useBackend();
-const notibleProjects = await query(
-  'multiple-projects',
-  multipleProjectsQuery,
-  {
-    slugs: ['balloon-fight', 'vue-form-api', 'cardinal-financial', 'foo-mo'],
-  }
-);
+import { FeaturedProjects } from '~/constants/featured-projects';
 
-const recentUpdate = await query('recent-update', allUpdatesQuery).then(
-  (updates) => updates[0]
-);
+const { getContent } = useStaticContent();
+
+const updates = await getContent('update');
+const featuredProjects = await getContent('project', {
+  title: { $in: FeaturedProjects },
+});
 
 const avatarURL = 'https://i.imgur.com/6Ay2gYA.jpg';
-
-const newsletterInput = reactive({
-  email: '',
-  error: null,
-});
 
 useSeoMeta({
   ogImage: avatarURL,

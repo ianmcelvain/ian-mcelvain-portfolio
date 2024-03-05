@@ -3,7 +3,7 @@
     <div
       class="feature-image"
       :style="{
-        backgroundImage: `url(${featuredImage.url})`,
+        backgroundImage: `url(${featuredImageURL})`,
       }"
     ></div>
     <NuxtLink
@@ -20,7 +20,7 @@
         <h3 class="text-gray-800">{{ title }}</h3>
         <ExcerptText :text="excerpt" />
         <div class="flex mt-6">
-          <Tag>{{ status.title }}</Tag>
+          <Tag>{{ status }}</Tag>
           <Icon
             :icon="
               props.externalLink
@@ -40,12 +40,8 @@
 import { Icon } from '@iconify/vue';
 
 const props = defineProps({
-  id: {
+  featuredImageURL: {
     type: String,
-    required: true,
-  },
-  featuredImage: {
-    type: Object,
     required: true,
   },
   title: {
@@ -61,11 +57,8 @@ const props = defineProps({
     required: true,
   },
   status: {
-    type: Object,
+    type: String,
     required: true,
-    validator(value) {
-      return [('title', 'slug', 'icon')].every((key) => key in value);
-    },
   },
   category: {
     type: Object,

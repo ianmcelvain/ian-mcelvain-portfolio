@@ -2,21 +2,18 @@
   <CardGrid
     type="Project"
     :categories="projectCategories"
-    :data="data"
+    :data="projects"
     size="small"
   />
 </template>
 
 <script setup>
-import { allProjectCategoiresQuery, allProjectsQuery } from '~/graphql/queries';
+import { CategoryMap } from '~/constants/category-map';
 
-const { query } = useBackend();
+const { getContent } = useStaticContent();
 
-const projectCategories = await query(
-  'project-categories',
-  allProjectCategoiresQuery
-);
-const data = await query('projects', allProjectsQuery);
+const projectCategories = Object.values(CategoryMap['project']);
+const projects = await getContent('project');
 
 const title = 'Projects';
 const image =
