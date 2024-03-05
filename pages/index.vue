@@ -83,9 +83,11 @@ import { FeaturedProjects } from '~/constants/featured-projects';
 
 const { getContent } = useStaticContent();
 
-const updates = await getContent('update');
+const updates = await getContent('update', { sort: { publishedAt: -1 } });
 const featuredProjects = await getContent('project', {
-  title: { $in: FeaturedProjects },
+  query: {
+    title: { $in: FeaturedProjects },
+  },
 });
 
 const avatarURL = 'https://i.imgur.com/6Ay2gYA.jpg';

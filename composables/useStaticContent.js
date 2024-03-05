@@ -9,8 +9,9 @@ export function useStaticContent() {
     return content;
   }
 
-  async function getContent(type, query = {}) {
-    const content = await queryContent(type).where(query).find();
+  async function getContent(type, options = {}) {
+    const { query, sort } = options;
+    const content = await queryContent(type).where(query).sort(sort).find();
 
     content.forEach((value) => {
       value = cleanValues(type, value);
