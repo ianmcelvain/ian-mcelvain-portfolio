@@ -1,7 +1,7 @@
 ---
 title: 'Vue Form API'
 description: 'Repo that shows the fundamentals of a form API with Vue 3'
-tags: ['utility']
+tags: ['Utility']
 category: 'release'
 featuredImageURL: 'https://res.cloudinary.com/dksdnxvzm/image/upload/v1701623579/form_api_cover_b8e6491034.avif'
 publishedAt: '2023-06-30T17:14:28.652Z'
