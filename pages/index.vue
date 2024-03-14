@@ -35,7 +35,7 @@
       </NuxtLink>
     </div>
     <div class="col-start-1 col-span-5 2xl:col-span-3 2xl:col-start-2">
-      <h4>Notible Projects</h4>
+      <h4>Notable Projects</h4>
       <Grid size="large">
         <ProjectCard
           v-for="project in featuredProjects"
