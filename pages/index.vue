@@ -2,7 +2,7 @@
   <div class="grid grid-cols-5 gap-y-16 md:gap-y-36 gap-x-12">
     <div class="hero col-span-5">
       <h4>Writing</h4>
-      <h1>games, apps, websites</h1>
+      <h1>apps, games, websites</h1>
       <h4 class="text-right">since 2012</h4>
     </div>
     <div
