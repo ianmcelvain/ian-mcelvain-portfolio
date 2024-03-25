@@ -14,7 +14,7 @@
 ![Screenshot 2024-03-25 at 6 04 32 PM](https://github.com/ianmcelvain/ian-mcelvain-portfolio/assets/45335671/deec0c2b-dd3e-458d-ad62-b38b2b8dc7a8)
 
 ## :information_source: Forking
-Feel free to fork this repo. The purpose of this repo is to provide an example to be used educationally. For any question, please reach out via GitHub :)
+Feel free to fork this repo. The purpose of this repo is to provide an example to be used educationally. For any questions, please reach out via GitHub :)
 
 ```diff
 - if you plan to copy + paste this as your own
@@ -24,7 +24,7 @@ Feel free to fork this repo. The purpose of this repo is to provide an example t
 
 ## 🛠 Usage
 
-1. Install and use the correct version of Node using node version manager like [n package](https://github.com/tj/n)
+1. Install and use the correct version of Node using a node version manager like [n package](https://github.com/tj/n)
    
    Via [Node](https://nodejs.org/en):
    ```sh
