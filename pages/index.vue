@@ -134,7 +134,7 @@ onMounted(() => {
         easing: "easeOutExpo",
         duration: 1400,
         delay: function(el, i) {
-          return 60 * i;
+          return 30 * i;
         }
       });
     
