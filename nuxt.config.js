@@ -32,7 +32,10 @@ export default defineNuxtConfig({
       baseUrl: process.env.BASE_URL || 'http://127.0.0.1:3000',
     },
   },
-  modules: ['@nuxtseo/module', '@nuxt/ui', '@nuxt/content'],
+  modules: ['@nuxtseo/module', '@nuxt/ui', '@nuxt/content', '@nuxt/eslint'],
+  eslint: {
+
+  },
   components: [
     {
       path: '~/components',
