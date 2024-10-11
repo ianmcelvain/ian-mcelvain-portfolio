@@ -1,7 +1,4 @@
-import path from 'path';
-
-const __filename = import.meta.url;
-const __dirname = path.dirname(__filename);
+import { defineNuxtConfig } from 'nuxt/config'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -24,7 +21,10 @@ export default defineNuxtConfig({
   target: 'static',
   ssr: true,
   app: {
-    pageTransition: { name: 'page', mode: 'out-in' },
+    pageTransition: {
+ name: 'page',
+mode: 'out-in' 
+},
   },
   runtimeConfig: {
     public: {
@@ -33,9 +33,7 @@ export default defineNuxtConfig({
     },
   },
   modules: ['@nuxtseo/module', '@nuxt/ui', '@nuxt/content', '@nuxt/eslint'],
-  eslint: {
-
-  },
+  eslint: {},
   components: [
     {
       path: '~/components',

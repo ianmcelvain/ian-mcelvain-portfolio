@@ -14,7 +14,11 @@ import { CategoryMap } from '~/constants/category-map';
 const { getContent } = useStaticContent();
 
 const updateCategories = Object.values(CategoryMap['update']);
-const updates = await getContent('update', { sort: { publishedAt: -1 } });
+const updates = await getContent('update', {
+ sort: {
+ publishedAt: -1 
+} 
+});
 
 const title = 'Updates';
 const image =

@@ -14,7 +14,7 @@ module.exports = {
       fontFamily: {
         sans: ['Inter', 'Helvetica'],
       },
-      typography: ({ theme }) => ({
+      typography: () => ({
         primary: {
           css: {
             '--tw-prose-body': 'rgb(var(--color-gray-700))',

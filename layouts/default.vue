@@ -22,7 +22,9 @@
 </template>
 
 <script setup>
-const links = useBreadcrumbItems({ hideRoot: true });
+const links = useBreadcrumbItems({
+ hideRoot: true 
+});
 </script>
 
 <style>

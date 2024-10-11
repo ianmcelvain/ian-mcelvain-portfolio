@@ -39,8 +39,6 @@
 </template>
 
 <script setup>
-import { Icon } from '@iconify/vue';
-
 const props = defineProps({
   type: {
     type: String,

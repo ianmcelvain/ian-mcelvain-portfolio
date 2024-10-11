@@ -34,7 +34,7 @@
 <script setup>
 import { format } from 'date-fns';
 
-const props = defineProps({
+defineProps({
   title: {
     type: String,
     required: true,

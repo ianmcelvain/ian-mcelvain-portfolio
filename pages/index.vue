@@ -84,10 +84,16 @@ import { FeaturedProjects } from '~/constants/featured-projects';
 
 const { getContent } = useStaticContent();
 
-const updates = await getContent('update', { sort: { publishedAt: -1 } });
+const updates = await getContent('update', {
+ sort: {
+ publishedAt: -1 
+} 
+});
 const featuredProjects = await getContent('project', {
   query: {
-    title: { $in: FeaturedProjects },
+    title: {
+ $in: FeaturedProjects 
+},
   },
 });
 

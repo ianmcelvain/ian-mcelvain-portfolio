@@ -22,7 +22,10 @@ export function useMailchimp() {
 
   function subscribeEmailToMailchimp({ url, timeout }) {
     return new Promise((resolve, reject) =>
-      jsonp(url, { param: 'c', timeout }, (err, data) => {
+      jsonp(url, {
+ param: 'c',
+timeout 
+}, (err, data) => {
         if (err) reject(err);
         if (data) resolve(data);
       })
@@ -90,7 +93,10 @@ export function useMailchimp() {
     const queryParams = `&EMAIL=${emailEncoded}${convertListFields(fields)}`;
     const url = `${endpoint}${queryParams}`;
 
-    return subscribeEmailToMailchimp({ url, timeout });
+    return subscribeEmailToMailchimp({
+ url,
+timeout 
+});
   }
 
   return {

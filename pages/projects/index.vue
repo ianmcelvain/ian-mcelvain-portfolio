@@ -13,7 +13,11 @@ import { CategoryMap } from '~/constants/category-map';
 const { getContent } = useStaticContent();
 
 const projectCategories = Object.values(CategoryMap['project']);
-const projects = await getContent('project', { sort: { startedAt: -1 } });
+const projects = await getContent('project', {
+ sort: {
+ startedAt: -1 
+} 
+});
 
 const title = 'Projects';
 const image =

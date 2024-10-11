@@ -23,7 +23,9 @@ const form = reactive({
 async function submit(e) {
   e.preventDefault();
 
-  const responseToast = $toast.loading('Subscribing...', { timeout: -1 });
+  const responseToast = $toast.loading('Subscribing...', {
+ timeout: -1 
+});
 
   // Toast will not update properly if changed on the same tick
   nextTick(async () => {
@@ -43,7 +45,7 @@ async function submit(e) {
           ...toastDefaults,
         });
       }
-    } catch (e) {
+    } catch {
       $toast.update(responseToast, {
         type: 'error',
         render: `There's a snake in my boot and I cannot process this request.`,
