@@ -115,12 +115,16 @@ onMounted(() => {
     element.innerHTML = '';
     
     // // Loop through each word, wrap each letter in a span
-    for(const word of words) {
+    words.forEach((word, i) => {
       const wordSplit = word.replace(/[a-zA-Z,0-9]/g, "<span class='letter'>$&</span>");
       
       // Wrap another span around each word, add word to header
-      element.innerHTML += '<span class="word">' + wordSplit + '</span>';
-    }
+      element.innerHTML += `<span class="word">${wordSplit}</span>`;
+
+      if (i < words.length - 1) {
+        element.innerHTML += '&nbsp;'
+      }
+    })
   });
 
   anime.timeline()
