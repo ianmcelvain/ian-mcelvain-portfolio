@@ -1,9 +1,9 @@
 <template>
   <div class="grid grid-cols-5 gap-y-16 md:gap-y-36 gap-x-12">
     <div class="hero col-span-5">
-      <h4>Writing</h4>
-      <h1>apps, games, websites</h1>
-      <h4 class="text-right">since 2012</h4>
+      <h4 class="word-pop">Writing</h4>
+        <h1 class="word-pop">apps, games, websites</h1>
+      <h4 class="text-right word-pop">since 2012</h4>
     </div>
     <div
       class="col-span-5 h-80 md:h-full md:col-span-2 2xl:col-span-1 2xl:col-start-2 avatar"
@@ -78,6 +78,7 @@
 </template>
 
 <script setup>
+import anime from 'animejs';
 import { Icon } from '@iconify/vue';
 import { FeaturedProjects } from '~/constants/featured-projects';
 
@@ -96,9 +97,41 @@ useSeoMeta({
   ogImage: avatarURL,
   twitterImage: avatarURL,
 });
+
+onMounted(() => {
+  const elements = [...document.getElementsByClassName('word-pop')];
+
+  elements.forEach((element) => {
+    let text = element.textContent;
+    let words = text.split(' ');
+    
+    // // Clear current element
+    element.innerHTML = '';
+    
+    // // Loop through each word, wrap each letter in a span
+    for(let word of words) {
+      let wordSplit = word.replace(/[a-zA-Z,0-9]/g, "<span class='letter'>$&</span>");
+      
+      // Wrap another span around each word, add word to header
+      element.innerHTML += '<span class="word">' + wordSplit + '</span>';
+    }
+  });
+
+  anime.timeline()
+      .add({
+        targets: '.word-pop .letter',
+        translateY: [1000, 0],
+        easing: "easeOutExpo",
+        duration: 1400,
+        delay: function(el, i) {
+          return 60 * i;
+        }
+      });
+    
+})
 </script>
 
-<style scoped>
+<style>
 .hero {
   @apply w-fit m-auto;
 }
@@ -108,5 +141,17 @@ useSeoMeta({
 }
 .avatar {
   @apply rounded-2xl bg-cover bg-center;
+}
+.word-pop {
+  overflow: hidden;
+}
+
+.word-pop .word {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.word-pop .letter {
+  display: inline-block;
 }
 </style>
