@@ -5,7 +5,7 @@
       :style="{
         backgroundImage: `url(${featuredImageURL})`,
       }"
-    ></div>
+    />
     <NuxtLink
       :to="externalLink ?? `/projects/${props.slug}`"
       class="feature-link"

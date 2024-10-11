@@ -72,8 +72,8 @@ export function useMailchimp() {
     }
 
     let endpoint =
-      'https://ianmcelvain.us8.list-manage.com/subscribe/post?u=e7692bdd97e4ee4f988f767cd&amp;id=5b856bb52a&amp;f_id=00717ce0f0'; // eslint-disable-line no-undef
-    const timeout = 3000; // eslint-disable-line no-undef
+      'https://ianmcelvain.us8.list-manage.com/subscribe/post?u=e7692bdd97e4ee4f988f767cd&amp;id=5b856bb52a&amp;f_id=00717ce0f0';  
+    const timeout = 3000;  
 
     // The following tests for whether you passed in a `fields` object. If
     // there are only two params and the second is a string, then we can safely

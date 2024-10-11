@@ -10,10 +10,10 @@
             alt="portal-cake-is-a-lie"
             class="m-auto"
             src="https://res.cloudinary.com/dksdnxvzm/image/upload/v1704332106/200px_Portal_Cake_c03b0dcbed.png"
-          />
+          >
         </NuxtLink>
       </div>
-      <div id="typewriter" class="text-center mt-8"></div>
+      <div id="typewriter" class="text-center mt-8"/>
     </div>
   </section>
 </template>

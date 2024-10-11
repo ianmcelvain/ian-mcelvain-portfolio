@@ -6,7 +6,7 @@
         :style="{
           backgroundImage: `url(${project.featuredImageURL})`,
         }"
-      ></div>
+      />
       <div class="details">
         <Icon
           :icon="project.category.icon"

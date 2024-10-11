@@ -10,7 +10,7 @@
       :style="{
         backgroundImage: `url(${avatarURL})`,
       }"
-    ></div>
+    />
     <div class="col-span-5 md:col-span-3 2xl:col-span-2 text-left">
       <h4>Ian C.G. McElvain</h4>
       <p>
@@ -23,8 +23,8 @@
         with a focus on the frontend. My understanding to utilize design
         principles from a wide range of software practices has brought unique
         outcomes to creative projects.
-        <br />
-        <br />
+        <br >
+        <br >
         I still design games independently and that work can be viewed on this
         website as well as any other software I write.
       </p>
@@ -102,15 +102,15 @@ onMounted(() => {
   const elements = [...document.getElementsByClassName('word-pop')];
 
   elements.forEach((element) => {
-    let text = element.textContent;
-    let words = text.split(' ');
+    const text = element.textContent;
+    const words = text.split(' ');
     
     // // Clear current element
     element.innerHTML = '';
     
     // // Loop through each word, wrap each letter in a span
-    for(let word of words) {
-      let wordSplit = word.replace(/[a-zA-Z,0-9]/g, "<span class='letter'>$&</span>");
+    for(const word of words) {
+      const wordSplit = word.replace(/[a-zA-Z,0-9]/g, "<span class='letter'>$&</span>");
       
       // Wrap another span around each word, add word to header
       element.innerHTML += '<span class="word">' + wordSplit + '</span>';

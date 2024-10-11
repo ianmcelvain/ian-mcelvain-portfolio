@@ -14,7 +14,7 @@
               alt="ianmcelvain-game"
               className="side-quest"
               :width="40"
-            />
+            >
           </NuxtLink>
         </UTooltip>
       </ClientOnly>
