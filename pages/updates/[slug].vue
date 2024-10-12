@@ -25,7 +25,7 @@
       <div class="date">
         {{ format(new Date(update.publishedAt), 'MMMM do yyyy') }}
       </div>
-      <h1 class="title">{{ update.title }}</h1>
+      <h1 ref="titleRef" class="title">{{ update.title }}</h1>
       <ExcerptText :text="update.excerpt" />
     </div>
     <ArticleContainer>
@@ -60,6 +60,12 @@ useSeoMeta({
   twitterDescription: update.excerpt,
   twitterImage: update.featuredImageURL,
   twitterCard: update.excerpt,
+});
+
+const titleRef = ref(null);
+onMounted(() => {
+  const { play } = useWordPop([titleRef.value]);
+  play();
 });
 </script>
 

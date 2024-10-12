@@ -57,4 +57,18 @@ body,
 .side-quest-easter-egg {
   @apply flex justify-end;
 }
+
+.word-pop {
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.word-pop .word {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.word-pop .letter {
+  display: inline-block;
+}
 </style>
