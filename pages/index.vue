@@ -24,7 +24,7 @@
       <h4>Ian C.G. McElvain</h4>
       <p>
         I learned how to program when I was 15 years old writing mods for Call
-        of Duty with C++ on a modified Xbox 360 (JTAG). The majority of my mods would later
+        of Duty in C++ on a modified Xbox 360 (JTAG). The majority of my mods would later
         become featured downloads on modding/hacking forums for Modern Warfare 2 and World at War games.
         While building mods was a hobby, it transitioned into designing
         games while also gaining experience building web and native apps as a full stack engineer.
