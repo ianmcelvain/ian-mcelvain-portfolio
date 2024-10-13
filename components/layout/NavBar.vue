@@ -8,7 +8,7 @@
       :key="page.route"
       :to="page.route"
       class="mx-auto my-4"
-      @click="handleClick(page)"
+      @click="setPage(page)"
     >
       <IconButton
         :icon="page.icon"
@@ -24,7 +24,7 @@
 </template>
 
 <script setup>
-const { path } = useRoute();
+const route = useRoute();
 
 const pages = ref([
   {
@@ -50,14 +50,20 @@ function resetActivePages() {
   });
 }
 
-function handleClick(page) {
+function setPage(page) {
   resetActivePages();
   page.active = true;
 }
 
-// Set current page on initial site visit to active
-pages.value.forEach((page) => {
-  if (page.route === path) page.active = true;
+watch(() => route.path, (newPath) => {
+  pages.value.forEach((page) => {
+    if (page.route === newPath) {
+      setPage(page);
+    }
+  });
+}, {
+  // Set current page on initial site visit to active
+  immediate: true,
 });
 </script>
 
