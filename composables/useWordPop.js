@@ -31,12 +31,12 @@ export function useWordPop(elements, options = {}) {
 
       setTimeout(() => {
         element.style.visibility = 'visible';
-      }, 100);
+      }, 50);
     });
 
     anime({
       targets: '.word-pop .letter',
-      translateY: [1000, 0],
+      translateY: [400, 0],
       easing: 'easeOutExpo',
       duration: 1400,
       delay: function (el, i) {
