@@ -23,19 +23,19 @@
     <div class="col-span-5 md:col-span-3 2xl:col-span-2 text-left">
       <h4>Ian C.G. McElvain</h4>
       <p>
-        At 15-years-old, I first learned how to program by making mods for Call
-        of Duty on the Xbox 360 using C++. The majority of my mods would later
-        become featured downloads for Modern Warfare 2 and World at War games.
-        While building mods was a hobby, it transitioned into actively designing
-        games while also gaining experience working as a full stack engineer. I
-        have years of professional experience developing web and native apps
-        with a focus on the frontend. My understanding to utilize design
-        principles from a wide range of software practices has brought unique
-        outcomes to creative projects.
+        I learned how to program when I was 15 years old writing mods for Call
+        of Duty with C++ on a modified Xbox 360 (JTAG). The majority of my mods would later
+        become featured downloads on modding/hacking forums for Modern Warfare 2 and World at War games.
+        While building mods was a hobby, it transitioned into designing
+        games while also gaining experience building web and native apps as a full stack engineer.
         <br>
         <br>
-        I still design games independently and that work can be viewed on this
-        website as well as any other software I write.
+        Today, I still design games independently and I am currently working on
+        <NuxtLink to="/updates/next-project-balloon-fight">
+          Balloon Fight
+        </NuxtLink>, a physics brawler. Check out the <NuxtLink to="/updates">
+          Updates
+        </NuxtLink> page for more information.
       </p>
       <NuxtLink to="mailto:ian.mcelvain@gmail.com">
         <button class="button block !ml-auto !mr-0">
