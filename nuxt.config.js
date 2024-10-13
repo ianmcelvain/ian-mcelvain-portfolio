@@ -1,4 +1,4 @@
-import { defineNuxtConfig } from 'nuxt/config'
+import { defineNuxtConfig } from 'nuxt/config';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -22,9 +22,9 @@ export default defineNuxtConfig({
   ssr: true,
   app: {
     pageTransition: {
- name: 'page',
-mode: 'out-in' 
-},
+      name: 'page',
+      mode: 'out-in',
+    },
   },
   runtimeConfig: {
     public: {
@@ -33,7 +33,13 @@ mode: 'out-in'
     },
   },
   modules: ['@nuxtseo/module', '@nuxt/ui', '@nuxt/content', '@nuxt/eslint'],
-  eslint: {},
+  eslint: {
+    config: {
+      stylistic: {
+        semi: true,
+      },
+    },
+  },
   components: [
     {
       path: '~/components',

@@ -23,12 +23,12 @@ export function useMailchimp() {
   function subscribeEmailToMailchimp({ url, timeout }) {
     return new Promise((resolve, reject) =>
       jsonp(url, {
- param: 'c',
-timeout 
-}, (err, data) => {
+        param: 'c',
+        timeout,
+      }, (err, data) => {
         if (err) reject(err);
         if (data) resolve(data);
-      })
+      }),
     );
   }
 
@@ -47,10 +47,10 @@ timeout
       if (Object.prototype.hasOwnProperty.call(fields, field)) {
         // If this is a list group, not user field then keep lowercase, as per MC reqs
         // https://github.com/benjaminhoffman/gatsby-plugin-mailchimp/blob/master/README.md#groups
-        const fieldTransformed =
-          field.substring(0, 6) === 'group[' ? field : field.toUpperCase();
+        const fieldTransformed
+          = field.substring(0, 6) === 'group[' ? field : field.toUpperCase();
         queryParams = queryParams.concat(
-          `&${fieldTransformed}=${fields[field]}`
+          `&${fieldTransformed}=${fields[field]}`,
         );
       }
     }
@@ -74,16 +74,17 @@ timeout
       });
     }
 
-    let endpoint =
-      'https://ianmcelvain.us8.list-manage.com/subscribe/post?u=e7692bdd97e4ee4f988f767cd&amp;id=5b856bb52a&amp;f_id=00717ce0f0';  
-    const timeout = 3000;  
+    let endpoint
+      = 'https://ianmcelvain.us8.list-manage.com/subscribe/post?u=e7692bdd97e4ee4f988f767cd&amp;id=5b856bb52a&amp;f_id=00717ce0f0';
+    const timeout = 3000;
 
     // The following tests for whether you passed in a `fields` object. If
     // there are only two params and the second is a string, then we can safely
     // assume the second param is a MC mailing list, and not a fields object.
     if (arguments.length < 3 && typeof fields === 'string') {
       endpoint = fields;
-    } else if (typeof endpointOverride === 'string') {
+    }
+    else if (typeof endpointOverride === 'string') {
       endpoint = endpointOverride;
     }
 
@@ -94,9 +95,9 @@ timeout
     const url = `${endpoint}${queryParams}`;
 
     return subscribeEmailToMailchimp({
- url,
-timeout 
-});
+      url,
+      timeout,
+    });
   }
 
   return {

@@ -1,9 +1,18 @@
 <template>
   <div class="grid grid-cols-5 gap-y-16 md:gap-y-36 gap-x-12">
-    <div ref="titleWrapperRef" class="hero col-span-5">
-      <h4 class="word-pop">Writing</h4>
-      <h1 class="word-pop">apps, games, websites</h1>
-      <h4 class="text-right word-pop">since 2012</h4>
+    <div
+      ref="titleWrapperRef"
+      class="hero col-span-5"
+    >
+      <h4 class="word-pop">
+        Writing
+      </h4>
+      <h1 class="word-pop">
+        apps, games, websites
+      </h1>
+      <h4 class="text-right word-pop">
+        since 2012
+      </h4>
     </div>
     <div
       class="col-span-5 h-80 md:h-full md:col-span-2 2xl:col-span-1 2xl:col-start-2 avatar"
@@ -23,14 +32,18 @@
         with a focus on the frontend. My understanding to utilize design
         principles from a wide range of software practices has brought unique
         outcomes to creative projects.
-        <br >
-        <br >
+        <br>
+        <br>
         I still design games independently and that work can be viewed on this
         website as well as any other software I write.
       </p>
       <NuxtLink to="mailto:ian.mcelvain@gmail.com">
         <button class="button block !ml-auto !mr-0">
-          <Icon class="inline mr-2" icon="feather:mail" :width="24" />Contact
+          <Icon
+            class="inline mr-2"
+            icon="feather:mail"
+            :width="24"
+          />Contact
         </button>
       </NuxtLink>
     </div>
@@ -56,21 +69,31 @@
       />
     </div>
     <div class="col-span-5 text-center">
-      <h4 class="!mb-2">Like what you see?</h4>
-      <h4 class="!font-normal">Be first to checkout a release!</h4>
+      <h4 class="!mb-2">
+        Like what you see?
+      </h4>
+      <h4 class="!font-normal">
+        Be first to checkout a release!
+      </h4>
       <MailchimpForm />
     </div>
     <div class="col-start-2 col-span-3 text-center">
       <div class="flex my-8 justify-center items-center">
         <a href="mailto:ian.mcelvain@gmail.com">
-          <IconButton text="ian.nmcelvain@gmail.com" icon="feather:mail" />
+          <IconButton
+            text="ian.nmcelvain@gmail.com"
+            icon="feather:mail"
+          />
         </a>
         <a
           href="https://github.com/ianmcelvain"
           target="_blank"
           rel="noreferrer"
         >
-          <IconButton text="ianmcelvain" icon="feather:github" />
+          <IconButton
+            text="ianmcelvain"
+            icon="feather:github"
+          />
         </a>
       </div>
     </div>
@@ -86,14 +109,14 @@ const { getContent } = useStaticContent();
 const titleWrapperRef = ref(null);
 
 const updates = await getContent('update', {
- sort: {
- publishedAt: -1 
-} 
+  sort: {
+    publishedAt: -1,
+  },
 });
 const featuredProjects = await getContent('project', {
   query: {
     title: {
-      $in: FeaturedProjects 
+      $in: FeaturedProjects,
     },
   },
 });

@@ -5,8 +5,8 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.config.globalProperties.Vue3Toastify = {
     install: () => {
       updateGlobalOptions({
- autoClose: 1000 
-});
+        autoClose: 1000,
+      });
     },
   };
 

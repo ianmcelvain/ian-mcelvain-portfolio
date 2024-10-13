@@ -4,9 +4,13 @@
       <ClientOnly>
         <UTooltip :popper="{ arrow: true }">
           <template #text>
-            <Glitch id="glitchy" complex text="THE CAKE IS A LIE!!!!!!!!!"
-              >Hey psss, I have a surprise for you :)</Glitch
+            <Glitch
+              id="glitchy"
+              complex
+              text="THE CAKE IS A LIE!!!!!!!!!"
             >
+              Hey psss, I have a surprise for you :)
+            </Glitch>
           </template>
           <NuxtLink to="/cake">
             <img

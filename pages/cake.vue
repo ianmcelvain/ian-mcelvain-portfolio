@@ -13,7 +13,10 @@
           >
         </NuxtLink>
       </div>
-      <div id="typewriter" class="text-center mt-8"/>
+      <div
+        id="typewriter"
+        class="text-center mt-8"
+      />
     </div>
   </section>
 </template>
@@ -24,8 +27,8 @@ import Typewriter from 'typewriter-effect/dist/core';
 export default {
   setup() {
     const title = 'CAKE!';
-    const image =
-      'https://res.cloudinary.com/dksdnxvzm/image/upload/v1704332106/200px_Portal_Cake_c03b0dcbed.png';
+    const image
+      = 'https://res.cloudinary.com/dksdnxvzm/image/upload/v1704332106/200px_Portal_Cake_c03b0dcbed.png';
     const description = 'You have worked hard and have earned this.';
 
     useSeoMeta({
@@ -51,7 +54,7 @@ export default {
     typewriter
       .pauseFor(1000)
       .typeString(
-        'Enjoy your <strong><span style="color: #27ae60;">PRIS</span></strong>'
+        'Enjoy your <strong><span style="color: #27ae60;">PRIS</span></strong>',
       )
       .pauseFor(300)
       .deleteChars(1)
@@ -63,32 +66,32 @@ export default {
       .deleteAll(1)
       .changeDelay(1)
       .typeString(
-        'The cake is a <strong><span style="color: red;">LIE</span></strong>'
+        'The cake is a <strong><span style="color: red;">LIE</span></strong>',
       )
       .typeString('<br>')
       .typeString(
-        'The cake is a <strong><span style="color: red;">LIE</span></strong>'
+        'The cake is a <strong><span style="color: red;">LIE</span></strong>',
       )
       .typeString('<br>')
       .typeString(
-        'The cake is a <strong><span style="color: red;">LIE</span></strong>'
+        'The cake is a <strong><span style="color: red;">LIE</span></strong>',
       )
       .typeString('<br>')
       .changeDelay('natural')
       .typeString(
-        'The cake is a <strong><span style="color: red;">L</span></strong>'
+        'The cake is a <strong><span style="color: red;">L</span></strong>',
       )
       .pauseFor(2000)
       .deleteAll(1)
       .typeString('Sorry about that, ')
       .pauseFor(500)
       .typeString(
-        'I think I might have a <span style="color: red;">virus</span>.'
+        'I think I might have a <span style="color: red;">virus</span>.',
       )
       .pauseFor(800)
       .typeString('<br>')
       .typeString(
-        'If you can find the <span style="color: red;">virus</span> on this site,'
+        'If you can find the <span style="color: red;">virus</span> on this site,',
       )
       .pauseFor(500)
       .typeString(' please let me know.')

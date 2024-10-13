@@ -14,14 +14,14 @@ const { getContent } = useStaticContent();
 
 const projectCategories = Object.values(CategoryMap['project']);
 const projects = await getContent('project', {
- sort: {
- startedAt: -1 
-} 
+  sort: {
+    startedAt: -1,
+  },
 });
 
 const title = 'Projects';
-const image =
-  'https://res.cloudinary.com/dksdnxvzm/image/upload/v1701619061/balloon_fight_projectile_block_ea6c139171.jpg';
+const image
+  = 'https://res.cloudinary.com/dksdnxvzm/image/upload/v1701619061/balloon_fight_projectile_block_ea6c139171.jpg';
 const description = 'Professional and hobby software contributions.';
 
 useSeoMeta({

@@ -1,7 +1,14 @@
 <template>
   <form @submit.prevent="submit">
-    <input v-model="form.email" type="email" placeholder="Email Address" >
-    <button class="secondary" type="submit">
+    <input
+      v-model="form.email"
+      type="email"
+      placeholder="Email Address"
+    >
+    <button
+      class="secondary"
+      type="submit"
+    >
       <span>Submit</span>
     </button>
   </form>
@@ -24,8 +31,8 @@ async function submit(e) {
   e.preventDefault();
 
   const responseToast = $toast.loading('Subscribing...', {
- timeout: -1 
-});
+    timeout: -1,
+  });
 
   // Toast will not update properly if changed on the same tick
   nextTick(async () => {
@@ -38,14 +45,16 @@ async function submit(e) {
           render: response.msg,
           ...toastDefaults,
         });
-      } else {
+      }
+      else {
         $toast.update(responseToast, {
           type: 'error',
           render: response.msg,
           ...toastDefaults,
         });
       }
-    } catch {
+    }
+    catch {
       $toast.update(responseToast, {
         type: 'error',
         render: `There's a snake in my boot and I cannot process this request.`,

@@ -14,13 +14,18 @@
           :class="`${project.category.slug} inline`"
         />
         <div>
-          <h3 class="title">{{ project.title }}</h3>
+          <h3 class="title">
+            {{ project.title }}
+          </h3>
           <ExcerptText :text="project.excerpt" />
         </div>
       </div>
     </div>
     <ArticleContainer>
-      <ContentRenderer v-if="project.body.children.length" :value="project" />
+      <ContentRenderer
+        v-if="project.body.children.length"
+        :value="project"
+      />
     </ArticleContainer>
   </div>
 </template>

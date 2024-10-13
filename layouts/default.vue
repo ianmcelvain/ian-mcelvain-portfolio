@@ -23,7 +23,7 @@
 
 <script setup>
 const links = useBreadcrumbItems({
- hideRoot: true 
+  hideRoot: true,
 });
 </script>
 

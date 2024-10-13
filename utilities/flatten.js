@@ -1,5 +1,5 @@
 function flattenArray(obj) {
-  return obj.map((e) => flatten(e));
+  return obj.map(e => flatten(e));
 }
 
 function flattenData(obj) {

@@ -1,7 +1,10 @@
 <template>
   <span :class="`tooltip-content group ${orientation}`">
     <slot />
-    <span v-show="!disabled" :class="`tooltip ${orientation}`">
+    <span
+      v-show="!disabled"
+      :class="`tooltip ${orientation}`"
+    >
       {{ title }}
     </span>
   </span>

@@ -25,11 +25,19 @@
       <div class="date">
         {{ format(new Date(update.publishedAt), 'MMMM do yyyy') }}
       </div>
-      <h1 ref="titleRef" class="title">{{ update.title }}</h1>
+      <h1
+        ref="titleRef"
+        class="title"
+      >
+        {{ update.title }}
+      </h1>
       <ExcerptText :text="update.excerpt" />
     </div>
     <ArticleContainer>
-      <ContentRenderer class="mb-16" :value="update" />
+      <ContentRenderer
+        class="mb-16"
+        :value="update"
+      />
       <ClientOnly>
         <Disqus
           :url="`${config.public.baseUrl}${path}`"
@@ -71,7 +79,7 @@ onMounted(() => {
 
 <style scoped>
 .image {
-  @apply bg-cover bg-center relative rounded-2xl 
+  @apply bg-cover bg-center relative rounded-2xl
           h-[40vh] md:h-[50vh] lg:h-[60vh];
 }
 .meta-details {

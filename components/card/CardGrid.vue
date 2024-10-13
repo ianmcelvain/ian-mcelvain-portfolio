@@ -8,8 +8,12 @@
     />
     <div class="flex items-center">
       <h4>{{ type }}s</h4>
-      <h4 class="mx-2">/</h4>
-      <h4 :class="currentCategory.slug">{{ currentCategory.title }}</h4>
+      <h4 class="mx-2">
+        /
+      </h4>
+      <h4 :class="currentCategory.slug">
+        {{ currentCategory.title }}
+      </h4>
     </div>
     <IconButtonGroup
       v-if="adjustedCategories.length"
@@ -31,8 +35,8 @@
         </template>
         <template v-else>
           No <strong>{{ currentCategory.slug }}</strong>
-          {{ `${props.type.toLowerCase()}s 😞` }}</template
-        >
+          {{ `${props.type.toLowerCase()}s 😞` }}
+        </template>
       </p>
     </Grid>
   </div>
@@ -63,7 +67,7 @@ const props = defineProps({
 });
 
 const cardComponent = defineAsyncComponent(
-  () => import(`~/components/card/${props.type}Card.vue`)
+  () => import(`~/components/card/${props.type}Card.vue`),
 );
 
 const adjustedCategories = ref([

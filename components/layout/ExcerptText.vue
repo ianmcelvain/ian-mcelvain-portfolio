@@ -1,5 +1,7 @@
 <template>
-  <p class="excerpt">{{ text }}</p>
+  <p class="excerpt">
+    {{ text }}
+  </p>
 </template>
 
 <script setup>

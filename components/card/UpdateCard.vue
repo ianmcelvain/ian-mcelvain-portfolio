@@ -25,7 +25,12 @@
       </NuxtLink>
       <ExcerptText :text="excerpt" />
       <div class="tags">
-        <Tag v-for="tag in tags" :key="tag">{{ tag }}</Tag>
+        <Tag
+          v-for="tag in tags"
+          :key="tag"
+        >
+          {{ tag }}
+        </Tag>
       </div>
     </div>
   </div>
@@ -59,7 +64,7 @@ defineProps({
     type: Object,
     required: true,
     validator(value) {
-      return [('title', 'slug', 'icon')].every((key) => key in value);
+      return [('title', 'slug', 'icon')].every(key => key in value);
     },
   },
   publishedAt: {

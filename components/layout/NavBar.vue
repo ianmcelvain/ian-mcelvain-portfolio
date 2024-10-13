@@ -1,5 +1,8 @@
 <template>
-  <div id="navigation" class="navbar">
+  <div
+    id="navigation"
+    class="navbar"
+  >
     <NuxtLink
       v-for="page in pages"
       :key="page.route"

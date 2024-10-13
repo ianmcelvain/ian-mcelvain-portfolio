@@ -15,14 +15,14 @@ const { getContent } = useStaticContent();
 
 const updateCategories = Object.values(CategoryMap['update']);
 const updates = await getContent('update', {
- sort: {
- publishedAt: -1 
-} 
+  sort: {
+    publishedAt: -1,
+  },
 });
 
 const title = 'Updates';
-const image =
-  'https://res.cloudinary.com/dksdnxvzm/image/upload/v1701622291/balloon_fight_system_board_ad99313dec.jpg';
+const image
+  = 'https://res.cloudinary.com/dksdnxvzm/image/upload/v1701622291/balloon_fight_system_board_ad99313dec.jpg';
 const description = 'Development logs and release updates for projects.';
 
 useSeoMeta({

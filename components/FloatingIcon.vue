@@ -1,7 +1,14 @@
 <template>
   <span class="floating-icon">
-    <Icon :icon="icon" :width="width" class="icon" />
-    <span v-if="title" class="title">{{ title }}</span>
+    <Icon
+      :icon="icon"
+      :width="width"
+      class="icon"
+    />
+    <span
+      v-if="title"
+      class="title"
+    >{{ title }}</span>
     <slot />
   </span>
 </template>
@@ -27,9 +34,9 @@ defineProps({
 
 <style scoped>
 .floating-icon {
-  @apply whitespace-nowrap flex rounded-2xl bg-white px-2.5 py-2.5 
+  @apply whitespace-nowrap flex rounded-2xl bg-white px-2.5 py-2.5
           text-sm mr-2 transition-all duration-300 hover:text-white
-          hover:bg-gray-700 transform-gpu translate-y-0 
+          hover:bg-gray-700 transform-gpu translate-y-0
           hover:-translate-y-1 ease-in-out;
 }
 .icon {

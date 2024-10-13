@@ -17,7 +17,9 @@
         :class="`flex-none mt-1.5 mr-2.5 ${category.slug}`"
       />
       <div class="grow">
-        <h3 class="text-gray-800">{{ title }}</h3>
+        <h3 class="text-gray-800">
+          {{ title }}
+        </h3>
         <ExcerptText :text="excerpt" />
         <div class="flex mt-6">
           <Tag>{{ status }}</Tag>
@@ -64,7 +66,7 @@ const props = defineProps({
     type: Object,
     required: true,
     validator(value) {
-      return [('title', 'slug', 'icon')].every((key) => key in value);
+      return [('title', 'slug', 'icon')].every(key => key in value);
     },
   },
   externalLink: {
@@ -79,8 +81,8 @@ const props = defineProps({
   @apply h-56 bg-cover bg-center rounded-xl relative shadow-md;
 }
 .feature-link {
-  @apply block relative flex bg-white shadow-lg mx-8 -mt-8 rounded-xl p-3 
-          transition-all duration-300 transform-gpu translate-y-0 
+  @apply block relative flex bg-white shadow-lg mx-8 -mt-8 rounded-xl p-3
+          transition-all duration-300 transform-gpu translate-y-0
           hover:shadow-xl hover:-translate-y-1 ease-in-out;
 }
 </style>

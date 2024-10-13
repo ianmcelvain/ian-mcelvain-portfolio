@@ -42,7 +42,7 @@ defineProps({
 
 <style scoped>
 .button-tooltip {
-  @apply text-gray-800 hover:scale-110 hover:shadow-md cursor-pointer 
+  @apply text-gray-800 hover:scale-110 hover:shadow-md cursor-pointer
           hover:rounded-xl transition-all duration-200 ease-linear;
 }
 .button-tooltip.active {
