@@ -8,9 +8,11 @@ export default defineNuxtConfig({
     description: 'Writing games, native apps, & websites since 2012',
     defaultLocale: 'en', // not needed if you have @nuxtjs/i18n installed
   },
+
   colorMode: {
     preference: 'light',
   },
+
   devtools: {
     enabled: true,
 
@@ -18,27 +20,33 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
+
   target: 'static',
   ssr: true,
+
   app: {
     pageTransition: {
       name: 'page',
       mode: 'out-in',
     },
   },
+
   runtimeConfig: {
     public: {
       apiBase: '/api',
       baseUrl: process.env.BASE_URL || 'http://127.0.0.1:3000',
     },
   },
+
   modules: [
     '@nuxtjs/seo',
     '@nuxt/ui',
     '@nuxt/content',
     '@nuxt/eslint',
     '@nuxtjs/seo',
+    '@nuxtjs/tailwindcss',
   ],
+
   eslint: {
     config: {
       stylistic: {
@@ -46,22 +54,27 @@ export default defineNuxtConfig({
       },
     },
   },
+
   components: [
     {
       path: '~/components',
       pathPrefix: false,
     },
   ],
+
   css: ['~/assets/css/main.css'],
+
   postcss: {
     plugins: {
-      tailwindcss: {},
       autoprefixer: {},
     },
   },
+
   content: {
     markdown: {
       anchorLinks: false,
     },
   },
+
+  compatibilityDate: '2024-12-06',
 });
