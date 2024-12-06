@@ -1,7 +1,7 @@
 import anime from 'animejs';
 
 export function useWordPop(elements, options = {}) {
-  const { letterDelay = 30 } = options;
+  const { letterDelay = 30, addSpace = false } = options;
 
   function play() {
     elements.forEach(async (element) => {
@@ -24,7 +24,7 @@ export function useWordPop(elements, options = {}) {
         element.innerHTML += `<span class="word">${wordSplit}</span>`;
 
         // Add space between words unless it is the last word
-        if (i < words.length - 1) {
+        if (addSpace && i < words.length - 1) {
           element.innerHTML += '&nbsp;';
         }
       });

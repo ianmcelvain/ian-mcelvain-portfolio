@@ -8,10 +8,10 @@
         Writing
       </h4>
       <h1 class="word-pop">
-        apps, games, websites
+        apps, &nbsp; games, &nbsp; websites
       </h1>
       <h4 class="text-right word-pop">
-        since 2012
+        since &nbsp; 2012
       </h4>
     </div>
     <div

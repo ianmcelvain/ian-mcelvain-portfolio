@@ -72,7 +72,9 @@ useSeoMeta({
 
 const titleRef = ref(null);
 onMounted(() => {
-  const { play } = useWordPop([titleRef.value]);
+  const { play } = useWordPop([titleRef.value], {
+    addSpace: true,
+  });
   play();
 });
 </script>
