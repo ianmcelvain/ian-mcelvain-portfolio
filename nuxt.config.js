@@ -2,6 +2,40 @@ import { defineNuxtConfig } from 'nuxt/config';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+
+  modules: [
+    '@nuxtjs/seo',
+    '@nuxt/ui',
+    '@nuxt/content',
+    '@nuxt/eslint',
+    '@nuxtjs/seo',
+    '@nuxtjs/tailwindcss',
+  ],
+  ssr: true,
+
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false,
+    },
+  ],
+
+  devtools: {
+    enabled: true,
+
+    timeline: {
+      enabled: true,
+    },
+  },
+
+  app: {
+    pageTransition: {
+      name: 'page',
+      mode: 'out-in',
+    },
+  },
+
+  css: ['~/assets/css/main.css'],
   site: {
     url: 'https://ianmcelvain.com',
     name: 'Ian McElvain',
@@ -13,21 +47,9 @@ export default defineNuxtConfig({
     preference: 'light',
   },
 
-  devtools: {
-    enabled: true,
-
-    timeline: {
-      enabled: true,
-    },
-  },
-
-  target: 'static',
-  ssr: true,
-
-  app: {
-    pageTransition: {
-      name: 'page',
-      mode: 'out-in',
+  content: {
+    markdown: {
+      anchorLinks: false,
     },
   },
 
@@ -38,14 +60,13 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: [
-    '@nuxtjs/seo',
-    '@nuxt/ui',
-    '@nuxt/content',
-    '@nuxt/eslint',
-    '@nuxtjs/seo',
-    '@nuxtjs/tailwindcss',
-  ],
+  compatibilityDate: '2024-12-06',
+
+  postcss: {
+    plugins: {
+      autoprefixer: {},
+    },
+  },
 
   eslint: {
     config: {
@@ -55,26 +76,5 @@ export default defineNuxtConfig({
     },
   },
 
-  components: [
-    {
-      path: '~/components',
-      pathPrefix: false,
-    },
-  ],
-
-  css: ['~/assets/css/main.css'],
-
-  postcss: {
-    plugins: {
-      autoprefixer: {},
-    },
-  },
-
-  content: {
-    markdown: {
-      anchorLinks: false,
-    },
-  },
-
-  compatibilityDate: '2024-12-06',
+  target: 'static',
 });
