@@ -17,9 +17,9 @@
 Feel free to fork this repo. The purpose of this repo is to provide an example to be used educationally. For any questions, please reach out via GitHub :)
 
 ```diff
-- if you plan to copy + paste this as your own
-+ leave credit to https://ianmcelvain.com
-- or don't and never learn :/
+- if you plan to use this as your own
++ please leave credit to https://ianmcelvain.com
++ or this repo so others can learn from it :)
 ```
 
 ## 🛠 Usage
