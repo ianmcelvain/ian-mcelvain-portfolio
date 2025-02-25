@@ -23,19 +23,29 @@
     <div class="col-span-5 md:col-span-3 2xl:col-span-2 text-left">
       <h4>Ian C.G. McElvain</h4>
       <p>
-        I learned how to program when I was 15 years old writing mods for Call
-        of Duty in C++ on a modified Xbox 360 (JTAG). The majority of my mods would later
-        become featured downloads on modding/hacking forums for Modern Warfare 2 and World at War games.
-        While building mods was a hobby, it transitioned into designing
-        games while also gaining experience building web and native apps as a full stack engineer.
+        I started programming at 15, creating mods for Call of Duty in
+        C++ on a modified Xbox 360 (JTAG). Many of <NuxtLink
+          external
+          to="https://www.youtube.com/watch?v=nMDJxzE6gmk&ab_channel=EnterTheArktic"
+          target="_blank"
+        >my mods</NuxtLink> were featured
+        on popular modding forums for Modern Warfare 2 and World at War.
+        What began as a hobby quickly turned into a passion for game design,
+        where I began exploring that art medium.
         <br>
         <br>
-        Today, I still design games independently and I am currently working on
+        As I honed those skills, I expanded into professional web and native
+        app development, gaining a well-rounded understanding of
+        interactive software as well as design patterns.
+        <br>
+        <br>
+        These days, I’m still building games. Currently, I’m developing
         <NuxtLink to="/updates/next-project-balloon-fight">
-          Balloon Fight
-        </NuxtLink>, a physics brawler. Check out the <NuxtLink to="/updates">
+          Balloon Fight</NuxtLink>, a physics-driven brawler that blends strategic gameplay
+        with chaotic combat. For a closer look at the project and its
+        progress, be sure to check out the <NuxtLink to="/updates">
           Updates
-        </NuxtLink> page for more information.
+        </NuxtLink> page.
       </p>
       <NuxtLink to="mailto:ian.mcelvain@gmail.com">
         <button class="button block !ml-auto !mr-0">
